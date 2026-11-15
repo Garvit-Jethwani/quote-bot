@@ -1,0 +1,17 @@
+{
+  "handle": "@yourhandle",
+  "swipe_hint": "SWIPE",
+  "closing_line": "Save this for a slow evening.",
+  "labels": {
+    "book": "FROM THE PAGE",
+    "movie": "FROM THE SCREEN"
+  },
+  "hashtags": {
+    "film": "#filmstagram #cinephile #scenestudy #worldcinema",
+    "music": "#linernotes #albumoftheday #musicdiscovery",
+    "book": "#bookquotes #booklover #bookstagram #literature",
+    "movie": "#moviequotes #filmquotes #cinema #movielover",
+    "art": "#paintingoftheday #lookcloser #museumlover"
+  },
+  "caption_footer": ""
+}
