@@ -112,8 +112,10 @@ def post_caption(p, cfg, image_credit):
     parts = [p["caption"]]
     pairs = [f"{x['label'].lower()}: {x['title']} by {x['by']}"
              for x in p.get("pairs", []) if x.get("caption", True)]
-    if pairs:
+    if pairs and cfg.get("recommendations_in_caption", True):
         parts.append("\n".join(pairs))
+    if not cfg.get("image_credit_in_caption", True):
+        image_credit = ""
     if p["kind"] == "film":
         credit = f"{p['title']} ({p['year']}), dir. {p['director']}."
         parts.append(f"{credit} {image_credit}".strip())

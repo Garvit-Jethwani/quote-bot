@@ -15,5 +15,7 @@
     "book_quote": "#bookquotes #bookstagram #literature #booklover #quoteoftheday"
   },
   "caption_footer": "",
-  "max_hashtags": 5
+  "max_hashtags": 5,
+  "recommendations_in_caption": false,
+  "image_credit_in_caption": false
 }
