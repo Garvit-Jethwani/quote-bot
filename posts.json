@@ -3268,5 +3268,419 @@
     "slides": [],
     "caption": "the only character test you'll ever need.",
     "tags": "#billyconnolly"
+  },
+  {
+    "id": "deadpan-grandfather",
+    "kind": "bit",
+    "label": "DEADPAN",
+    "title": "A true story, probably",
+    "hook": "My grandfather's last words.",
+    "slides": [
+      {
+        "t": "My grandfather was a quiet man. Forty years at the same factory. Never complained. Never said much at all, really. You'd ask him how he was and he'd say \"here\"."
+      },
+      {
+        "t": "At the end he waved me over to the bed. I leaned right in. I thought, this is it. Eighty-six years. This is where he tells me what it was all for."
+      },
+      {
+        "t": "He said: \"The wifi password is on the fridge.\""
+      },
+      {
+        "t": "It wasn't. That was the old one. He went out the way he lived. Calm, dignified, and no fucking use to anyone."
+      }
+    ],
+    "caption": "we did find the new password eventually. it was his own name, spelled wrong.",
+    "tags": "#deadpan #longjoke #darkcomedy"
+  },
+  {
+    "id": "deadpan-doctor",
+    "kind": "bit",
+    "label": "DEADPAN",
+    "title": "A medical opinion",
+    "hook": "I went to the doctor.",
+    "slides": [
+      {
+        "t": "Doctor says I need more exercise. I said I walk to the fridge and back about forty times a day. He says that doesn't count."
+      },
+      {
+        "t": "I said why not. He says because of what you do when you get there."
+      },
+      {
+        "t": "Now, I'm no doctor. He is. That's sort of the whole arrangement. But that felt personal."
+      },
+      {
+        "t": "Anyway, I've moved the fridge upstairs. Lost four pounds. Then I bought a stairlift. So we're about even."
+      }
+    ],
+    "caption": "he also said I should cut down on salt. I said which salt. he wrote something down and underlined it.",
+    "tags": "#deadpan #longjoke #darkcomedy"
+  },
+  {
+    "id": "deadpan-self-help",
+    "kind": "bit",
+    "label": "DEADPAN",
+    "title": "A book review",
+    "hook": "I bought a book called How to Stop Procrastinating.",
+    "slides": [
+      {
+        "t": "Great cover. Very motivating cover. A man on a mountain. You look at that and think, he didn't put things off."
+      },
+      {
+        "t": "That was in 2019. I'm told the ending is very strong."
+      },
+      {
+        "t": "My wife asked how I was getting on with it. I said I'm waiting for the film."
+      },
+      {
+        "t": "There is a film. It came out two years ago. I've got it saved."
+      }
+    ],
+    "caption": "I've since bought the follow-up. it's called Finish What You Start. it's still in the bag.",
+    "tags": "#deadpan #longjoke #procrastination"
+  },
+  {
+    "id": "deadpan-parrot",
+    "kind": "bit",
+    "label": "DEADPAN",
+    "title": "A story about Gary",
+    "hook": "My neighbour got a parrot.",
+    "slides": [
+      {
+        "t": "It can say eleven words. Nine of them are his ex-wife's name, and it says it in her voice. Tired. Like it's found a wet towel on the bed."
+      },
+      {
+        "t": "He says it's company. I said Gary, that's not company. That's a voicemail with feathers."
+      },
+      {
+        "t": "The parrot turned its head, looked right at me, and said: \"Gary.\" Flat. Disappointed."
+      },
+      {
+        "t": "Thirty years I've lived on that street. First time anyone there has confused me for somebody with a wife."
+      }
+    ],
+    "caption": "the other two words are \"again\" and \"fine\". you can pretty much rebuild the marriage from that.",
+    "tags": "#deadpan #longjoke #darkcomedy"
+  },
+  {
+    "id": "deadpan-gym",
+    "kind": "bit",
+    "label": "DEADPAN",
+    "title": "A fitness journey",
+    "hook": "I've had a gym membership for six years.",
+    "slides": [
+      {
+        "t": "I've been twice. Once to sign up. Once to ask how you cancel."
+      },
+      {
+        "t": "They said you have to cancel in person, on a weekday, between ten and eleven, with a letter from your mother."
+      },
+      {
+        "t": "I said my mother's been dead since 2011. The fella didn't even look up. He said: then I'm afraid it's a lifetime membership."
+      },
+      {
+        "t": "And you know what, fair enough. Forty quid a month. It's the most commitment anybody has ever shown me."
+      }
+    ],
+    "caption": "they send me a birthday email every year. nobody else does. I'm not cancelling now, we've got history.",
+    "tags": "#deadpan #longjoke #gymlife"
+  },
+  {
+    "id": "deadpan-funeral",
+    "kind": "bit",
+    "label": "DEADPAN",
+    "title": "A eulogy, sort of",
+    "hook": "At my uncle's funeral the priest said he's in a better place.",
+    "slides": [
+      {
+        "t": "Now, my uncle lived in a van behind a tyre shop. So the bar was not high. Almost anywhere is a better place. A bus stop is a better place."
+      },
+      {
+        "t": "But the priest said it with a lot of confidence. Like he'd been. Like he'd checked the reviews."
+      },
+      {
+        "t": "I just think if you're going to make a claim like that, about a property, you should have a brochure. Some photos. Is there parking."
+      },
+      {
+        "t": "My aunt cried all the way through. Not about him. She'd lent him the van."
+      }
+    ],
+    "caption": "she got it back in the end. smelled of soup. nobody could explain the soup.",
+    "tags": "#deadpan #longjoke #darkcomedy"
+  },
+  {
+    "id": "roast-ross-geller",
+    "kind": "bit",
+    "label": "ROAST",
+    "title": "Friends",
+    "hook": "Let's talk about Ross Geller.",
+    "slides": [
+      {
+        "t": "Three divorces by thirty-five. The fossils he works with have had longer relationships. And they're happier. They're rocks."
+      },
+      {
+        "t": "Said the wrong woman's name at his own wedding. Twelve years of university and the man could not get through one sentence."
+      },
+      {
+        "t": "A palaeontologist. He looked at every job on Earth and went: bones. But old. And I'd like to correct people at parties."
+      },
+      {
+        "t": "He had a monkey. The monkey left him. For show business. Even the monkey looked at Ross and thought, I can do better than this."
+      }
+    ],
+    "caption": "and somehow he's the one who thinks he was wronged. ten seasons. \"we were on a break.\" sit down, Ross.",
+    "tags": "#friends #rossgeller #roast"
+  },
+  {
+    "id": "roast-batman",
+    "kind": "bit",
+    "label": "ROAST",
+    "title": "Gotham City",
+    "hook": "Batman. Look at this guy.",
+    "slides": [
+      {
+        "t": "A billionaire who looked at crime in his city and thought: I'll fix this myself. One mugger at a time. At night. In a cape. That's not a plan, that's a hobby that got out of hand."
+      },
+      {
+        "t": "Has a cave full of supercomputers and the police still have to shine a torch at a cloud to get his attention."
+      },
+      {
+        "t": "Dresses as a bat. Is scared of bats. That's not a superhero. That's exposure therapy with a budget."
+      },
+      {
+        "t": "And every villain in that city has been to his house for a charity dinner. Shook his hand. Complimented the chin. World's greatest detective, everybody."
+      }
+    ],
+    "caption": "his butler raised him, dresses his wounds and does the laundry. the cape is dry clean only. nobody ever thanks Alfred.",
+    "tags": "#batman #dccomics #roast"
+  },
+  {
+    "id": "roast-james-bond",
+    "kind": "bit",
+    "label": "ROAST",
+    "title": "Her Majesty's Secret Service",
+    "hook": "James Bond, ladies and gentlemen.",
+    "slides": [
+      {
+        "t": "A secret agent. Introduces himself by full name to every barman in Europe. Surname first, in case they need it for the report."
+      },
+      {
+        "t": "Sixty years of drinking on the job and they keep handing him the car keys. I've seen people sacked for less at a car wash."
+      },
+      {
+        "t": "Orders a martini with instructions. No one behind that bar has ever been impressed. They just want him to pay and stop looking at the piano player."
+      },
+      {
+        "t": "He's saved the world twenty-five times and never filled in a single form. His boss isn't angry with him. His boss is his entire HR department."
+      }
+    ],
+    "caption": "licence to kill. no licence to do anything else. I guarantee that man has never renewed a passport on time.",
+    "tags": "#jamesbond #007 #roast"
+  },
+  {
+    "id": "roast-rose-titanic",
+    "kind": "bit",
+    "label": "ROAST",
+    "title": "Titanic",
+    "hook": "Rose from Titanic. Sweetheart.",
+    "slides": [
+      {
+        "t": "Eighty-four years she waited to tell this story. And she still left out the part where she could have moved over."
+      },
+      {
+        "t": "Knew the man four days. Four. I've had colds that lasted longer and meant more."
+      },
+      {
+        "t": "\"I'll never let go, Jack.\" Lets go. Immediately. Didn't even count to three. Peeled him off like a sticker."
+      },
+      {
+        "t": "Then, as an old woman, she throws a diamond the size of a plum into the sea. In front of her granddaughter. Who rents."
+      }
+    ],
+    "caption": "the man drew her one picture and froze to death. she got a hundred more years, a pottery hobby and a helicopter ride. I'd call that a result.",
+    "tags": "#titanic #roast #moviehumor"
+  },
+  {
+    "id": "roast-gandalf",
+    "kind": "bit",
+    "label": "ROAST",
+    "title": "Middle-earth",
+    "hook": "Gandalf. Where do I start.",
+    "slides": [
+      {
+        "t": "A wizard. Walks everywhere. Thousands of years old, all the magic in the world, and his big move is a stick and a strong opinion."
+      },
+      {
+        "t": "Shows up late to every battle and says a wizard arrives precisely when he means to. That's not wisdom. That's every builder I've ever hired."
+      },
+      {
+        "t": "Knew about the giant eagles the whole time. The whole time. Let two small barefoot men walk to a volcano. Said nothing. Smoked his pipe."
+      },
+      {
+        "t": "Died. Came back from the dead. And the only thing that changed was the colour of his robe. I've seen people come back from a weekend in Lisbon with more to say."
+      }
+    ],
+    "caption": "also sends a hobbit to fight a dragon with zero training. Bilbo was a homeowner. he had doilies.",
+    "tags": "#lordoftherings #gandalf #roast"
+  },
+  {
+    "id": "roast-michael-scott",
+    "kind": "bit",
+    "label": "ROAST",
+    "title": "The Office",
+    "hook": "Michael Scott. World's Best Boss.",
+    "slides": [
+      {
+        "t": "Bought the mug himself. It's the only performance review he's ever passed."
+      },
+      {
+        "t": "Hit an employee with his car in the car park and spent three episodes on how hard it had been for him."
+      },
+      {
+        "t": "Once promised a class of children he'd pay for college. Turned up ten years later with laptop batteries. Not laptops. The batteries."
+      },
+      {
+        "t": "And every single person in that building would still walk into traffic for him. That's the really annoying part. You roast him and you end up feeling bad."
+      }
+    ],
+    "caption": "he also burned his foot on a grill he sleeps next to so he can wake up to bacon. this man ran a branch.",
+    "tags": "#theoffice #michaelscott #roast"
+  },
+  {
+    "id": "story-the-lift",
+    "kind": "bit",
+    "label": "SHORT STORY",
+    "title": "A very short story",
+    "hook": "The lift has a button for the 14th floor. The building has nine.",
+    "slides": [
+      {
+        "t": "Nobody has ever pressed it. Human Resources sent an email about it once. The whole email was one word: \"Please.\""
+      },
+      {
+        "t": "Last Tuesday, Dennis from accounts pressed it. He said afterwards he didn't know why. He'd had a sandwich. He felt bold."
+      },
+      {
+        "t": "The doors closed. The lift went up for eleven minutes."
+      },
+      {
+        "t": "Dennis came back on Thursday with a tan and a better job title. He won't talk about it. He takes the stairs now. He's started saying \"if we're spared.\""
+      }
+    ],
+    "caption": "there's also a B3. the car park stops at B2. nobody from accounts has been bold enough yet.",
+    "tags": "#shortstory #microfiction #weirdfiction"
+  },
+  {
+    "id": "story-wrong-number",
+    "kind": "bit",
+    "label": "SHORT STORY",
+    "title": "A very short story",
+    "hook": "A man kept getting texts meant for someone called Brenda.",
+    "slides": [
+      {
+        "t": "\"Running late.\" \"Did you feed the cat.\" \"I miss you.\" Twice a day, for a year. He never said wrong number. It felt rude by then."
+      },
+      {
+        "t": "One night he wrote back. \"Take your time.\" Then, the next day: \"Yes.\" Then, a week later: \"Me too.\""
+      },
+      {
+        "t": "They were married in March. Small thing. Registry office, a few friends, a buffet."
+      },
+      {
+        "t": "Nobody has ever mentioned Brenda. The cat is fine. The cat has, if anything, put on weight."
+      }
+    ],
+    "caption": "somewhere out there Brenda thinks she got ghosted. she did. by a phone company.",
+    "tags": "#shortstory #microfiction #lovestory"
+  },
+  {
+    "id": "story-the-audition",
+    "kind": "bit",
+    "label": "SHORT STORY",
+    "title": "A very short story",
+    "hook": "An actor auditioned to play himself in the film of his own life.",
+    "slides": [
+      {
+        "t": "He didn't get it."
+      },
+      {
+        "t": "The director was very kind about it. He said: \"We just didn't believe you. We want someone who feels more like him.\""
+      },
+      {
+        "t": "They cast a man called Greg. Greg was wonderful. Greg did the walk, the laugh, the thing with the hands. The actor's own mother rang to say Greg had really captured him."
+      },
+      {
+        "t": "Greg won the award. In his speech he thanked the man who'd made it all possible. Got the name wrong."
+      }
+    ],
+    "caption": "they're doing a sequel. he's been asked to consult. unpaid.",
+    "tags": "#shortstory #microfiction #hollywood"
+  },
+  {
+    "id": "story-the-review",
+    "kind": "bit",
+    "label": "SHORT STORY",
+    "title": "A very short story",
+    "hook": "A restaurant critic gave a small diner one star.",
+    "slides": [
+      {
+        "t": "\"Soup: cold. Service: slow. Owner: rude, and stood over me while I ate. Would not return.\""
+      },
+      {
+        "t": "Two days later the owner replied underneath."
+      },
+      {
+        "t": "\"You came in at closing. The soup was gazpacho. I stood over you because you were eating it with a fork. I am your mother.\""
+      },
+      {
+        "t": "The review has since been updated to two stars. \"Portions generous. Was sent home with leftovers and a coat.\""
+      }
+    ],
+    "caption": "she's reported the review. he's reported the reply. they're both coming for sunday lunch.",
+    "tags": "#shortstory #microfiction #comedy"
+  },
+  {
+    "id": "story-the-ghost",
+    "kind": "bit",
+    "label": "SHORT STORY",
+    "title": "A very short story",
+    "hook": "A family moved into a haunted house.",
+    "slides": [
+      {
+        "t": "The first week the ghost did everything. Chains at midnight. Doors slamming. GET OUT written in the steam on the bathroom mirror."
+      },
+      {
+        "t": "The father looked at the mirror for a long time. Then he said the rent was eleven hundred under market and they'd be staying."
+      },
+      {
+        "t": "By winter the ghost had mostly given up. It still does the mirror, but properly now, with a cloth. It has started leaving notes about the recycling."
+      },
+      {
+        "t": "Last month they asked it to chip in for the wifi. It has gone very quiet. Typical."
+      }
+    ],
+    "caption": "the kids call it Alan. it hates that. you can tell because the lights flicker in a hurt sort of way.",
+    "tags": "#shortstory #microfiction #ghoststory"
+  },
+  {
+    "id": "story-time-traveller",
+    "kind": "bit",
+    "label": "SHORT STORY",
+    "title": "A very short story",
+    "hook": "A man built a time machine in his shed.",
+    "slides": [
+      {
+        "t": "Thirty years it took him. He lost his job, his marriage and most of the feeling in one hand. He only wanted to go back once, to 1987, and tell himself one thing."
+      },
+      {
+        "t": "He found himself at nineteen, on a bench, eating chips. He grabbed him by the shoulders and said: \"Buy shares in the fruit company. The fruit company!\""
+      },
+      {
+        "t": "His younger self said: \"Who are you? Why are you crying? Is that my nose?\""
+      },
+      {
+        "t": "He came home to the present. Nothing had changed. Just a faint new memory from 1987, of a weird old man who cared a great deal about fruit."
+      }
+    ],
+    "caption": "he's building another one. this time he's bringing a pen.",
+    "tags": "#shortstory #microfiction #timetravel"
   }
 ]

@@ -107,6 +107,9 @@ func AltText(p Post, slide int) string {
 	}
 	if slide > 0 && slide-1 < len(p.Slides) {
 		s := p.Slides[slide-1]
+		if s.Text != "" {
+			return clip(s.Text)
+		}
 		if s.IsQuote() {
 			return clip(s.Quote + " " + s.By)
 		}

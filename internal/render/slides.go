@@ -28,6 +28,7 @@ var Themes = map[string]Theme{
 	"comedy":  theme("#F2C230", "#1A1712", "#A3271B", "#6E5A14"),
 	"take":    theme("#B3261E", "#FFF6E9", "#FFD166", "#F0B8AE"),
 	"thought": theme("#1F1535", "#F4EEFF", "#C6A6FF", "#8E7FB0"),
+	"bit":     theme("#EFEDE6", "#141414", "#C0392B", "#77736B"),
 	"quote":   theme("#14213D", "#F7F3E9", "#FCA311", "#9AA5BD"),
 }
 
@@ -82,6 +83,9 @@ func chrome(dc *gg.Context, th Theme, label string, n, total int, handle, hint s
 
 func byline(p content.Post) string {
 	who := p.Maker()
+	if who == "" && p.Year == 0 {
+		return ""
+	}
 	if who == "" {
 		return fmt.Sprint(p.Year)
 	}
@@ -232,6 +236,10 @@ func Post(p content.Post, cfg content.Config, stills []image.Image) []image.Imag
 	out := []image.Image{Cover(p, th, first, total, cfg)}
 	for i, s := range p.Slides {
 		n := i + 2
+		if s.Text != "" {
+			out = append(out, Page(p, th, s.Text, n, total, cfg))
+			continue
+		}
 		if s.IsQuote() {
 			out = append(out, QuoteSlide(p.Label, th, s.Quote, s.By, n, total, cfg))
 			continue
@@ -246,6 +254,18 @@ func Post(p content.Post, cfg content.Config, stills []image.Image) []image.Imag
 		out = append(out, Outro(p, th, line, total, cfg))
 	}
 	return out
+}
+
+// Page draws one beat of a joke or story: a page of large text and nothing else.
+func Page(p content.Post, th Theme, body string, n, total int, cfg content.Config) image.Image {
+	dc := canvas(th)
+	fy := chrome(dc, th, p.Label, n, total, cfg.Handle, "")
+	width := float64(W - 2*M)
+	top, bottom := 190.0, fy-60
+	f, lines, lh := fit(SerifMedium, body, width, bottom-top-80, 84, 40, 1.3)
+	y := top + math.Floor((bottom-top-float64(len(lines))*lh)*2/5)
+	para(dc, f, lines, M, y, lh, th.FG)
+	return dc.Image()
 }
 
 // Outro draws the closing slide: one line asking for a send, a save or a reply.

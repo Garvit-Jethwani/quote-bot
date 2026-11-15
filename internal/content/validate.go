@@ -21,10 +21,14 @@ var Series = map[string]struct {
 	"ONE-LINER":      {[]string{"comedy"}, 0, 0},
 	"HOT TAKE":       {[]string{"take"}, 0, 0},
 	"RANDOM THOUGHT": {[]string{"thought"}, 0, 0},
+	"DEADPAN":        {[]string{"bit"}, 3, 6},
+	"ROAST":          {[]string{"bit"}, 3, 6},
+	"SHORT STORY":    {[]string{"bit"}, 3, 6},
 }
 
 const (
 	maxBodyWords = 62
+	maxPageWords = 48
 	maxHookWords = 16
 	maxTags      = 4
 )
@@ -80,10 +84,10 @@ func Validate(posts []Post) []string {
 			if n := len(strings.Fields(p.Hook)); n > maxHookWords {
 				add(p, "hook is %d words; keep it to %d", n, maxHookWords)
 			}
-			if p.Year == 0 {
+			if p.Year == 0 && p.Kind != "bit" {
 				add(p, "missing year")
 			}
-			if p.Maker() == "" {
+			if p.Maker() == "" && p.Kind != "bit" {
 				add(p, "missing director, author, artist or creator")
 			}
 		}
@@ -99,6 +103,10 @@ func Validate(posts []Post) []string {
 
 		for n, s := range p.Slides {
 			switch {
+			case s.Text != "":
+				if w := len(strings.Fields(s.Text)); w > maxPageWords {
+					add(p, "slide %d: page is %d words; keep it to %d", n+1, w, maxPageWords)
+				}
 			case s.IsQuote():
 				if s.By == "" {
 					add(p, "slide %d: quotation has no source", n+1)
@@ -124,7 +132,7 @@ func Validate(posts []Post) []string {
 func (p Post) texts() []string {
 	out := []string{p.Hook, p.Quote, p.Caption, p.Title, p.Tags, p.Ask}
 	for _, s := range p.Slides {
-		out = append(out, s.Kicker, s.Head, s.Body, s.Quote, s.By)
+		out = append(out, s.Kicker, s.Head, s.Body, s.Quote, s.By, s.Text)
 	}
 	return out
 }

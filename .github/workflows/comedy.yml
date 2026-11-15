@@ -1,0 +1,89 @@
+name: Post comedy
+
+# Posts from the humour series only: deadpan bits, roasts, very short stories
+# and stand-up one-liners. These series are kept out of the main rotation.
+on:
+  schedule:
+    - cron: "37 17 * * *"   # 18:37 Central Europe, 12:37 US East, 23:07 India
+  # Committing a post id (or the word "next") into .github/run-comedy starts a run.
+  push:
+    branches: [main]
+    paths: [".github/run-comedy"]
+  workflow_dispatch:
+    inputs:
+      series:
+        description: "Which kind to post"
+        type: choice
+        options: ["any", "DEADPAN", "ROAST", "SHORT STORY", "ONE-LINER"]
+        default: "any"
+      id:
+        description: "Post id from posts.json (leave empty for a random unposted one)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Build the bot
+        run: go build -o "$RUNNER_TEMP/quotebot" ./cmd/quotebot
+
+      - name: Pick a comedy post and draw its slides
+        run: |
+          set -o pipefail
+          if [ "$EVENT" = "push" ]; then POST_ID="$(tr -d '[:space:]' < .github/run-comedy)"; fi
+          if [ "$POST_ID" = "next" ]; then POST_ID=""; fi
+          if [ -z "$SERIES" ] || [ "$SERIES" = "any" ]; then SERIES="DEADPAN,ROAST,SHORT STORY,ONE-LINER"; fi
+          "$RUNNER_TEMP/quotebot" render -series "$SERIES" ${POST_ID:+-id "$POST_ID"} 2>&1 | tee "$RUNNER_TEMP/run.log"
+        env:
+          EVENT: ${{ github.event_name }}
+          SERIES: ${{ inputs.series }}
+          POST_ID: ${{ inputs.id }}
+
+      - name: Push the slides so Instagram can download them
+        run: |
+          git config user.name "quote-bot"
+          git config user.email "quote-bot@users.noreply.github.com"
+          git add -A out
+          git commit -m "Add slides" || echo "Nothing new to commit"
+          git pull --rebase
+          git push
+
+      - name: Publish to Instagram
+        run: |
+          set -o pipefail
+          "$RUNNER_TEMP/quotebot" publish 2>&1 | tee -a "$RUNNER_TEMP/run.log"
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+
+      - name: Record the post so it is never repeated
+        run: |
+          git rm -q --ignore-unmatch last-error.log
+          git add posted.json
+          git commit -m "Record post"
+          git pull --rebase
+          git push
+
+      - name: On failure, save the error where it can be read
+        if: failure()
+        run: |
+          git config user.name "quote-bot"
+          git config user.email "quote-bot@users.noreply.github.com"
+          { echo "Failed comedy run on $(date -u +%Y-%m-%dT%H:%MZ)"; echo; tail -n 60 "$RUNNER_TEMP/run.log" 2>/dev/null || echo "The run failed before the bot produced any output."; } > last-error.log
+          git add last-error.log
+          git commit -m "Save error from failed run" || true
+          git pull --rebase || true
+          git push || true

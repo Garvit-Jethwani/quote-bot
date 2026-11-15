@@ -23,6 +23,9 @@ row and never the same post twice.
 | One-Liner | A stand-up joke | Single card |
 | Hot Take | An opinion to argue with | Single card |
 | Random Thought | An observation about films, TV or music | Single card |
+| Deadpan | An original long joke, told flat, one beat per slide | Carousel |
+| Roast | Insult comedy aimed at a fictional character | Carousel |
+| Short Story | A complete absurd story in a few slides | Carousel |
 
 Any carousel can also go out as a **Reel**: a vertical video that shows each
 slide long enough to read, with a progress bar.
@@ -35,6 +38,7 @@ its evening.
 | Time (UTC) | What | Evening for |
 |---|---|---|
 | 13:07 | Post | India |
+| 17:37 | Comedy | Europe |
 | 01:07 | Post | The Americas |
 
 Reels are not scheduled. They can be made by hand from the Actions tab.
@@ -80,6 +84,8 @@ Paintings from the Art Institute of Chicago are public domain.
 In the repository's **Actions** tab:
 
 - **Post to Instagram**: posts now. Type a post's `id` to choose which.
+- **Post comedy**: posts from the humour series only (Deadpan, Roast, Short
+  Story, One-Liner). You can choose which kind. It also runs daily at 17:37 UTC.
 - **Post a Reel**: posts a video, or only makes the file.
 - **Checks**: runs the tests and validates `posts.json`. It runs by itself on
   every change.

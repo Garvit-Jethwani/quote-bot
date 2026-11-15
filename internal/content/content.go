@@ -17,6 +17,8 @@ type Slide struct {
 	Body   string `json:"b,omitempty"`
 	Quote  string `json:"q,omitempty"`
 	By     string `json:"by,omitempty"`
+	// Text is a plain page of prose: one beat of a joke or a story.
+	Text string `json:"t,omitempty"`
 }
 
 // IsQuote reports whether the slide is a quotation.
@@ -111,13 +113,16 @@ type Quote struct {
 
 // Config is config.json.
 type Config struct {
-	Handle               string            `json:"handle"`
-	SwipeHint            string            `json:"swipe_hint"`
-	Hashtags             map[string]string `json:"hashtags"`
-	MaxHashtags          int               `json:"max_hashtags"`
-	CaptionFooter        string            `json:"caption_footer"`
-	Outro                map[string]string `json:"outro"` // closing line per series label
-	ImageCreditInCaption bool              `json:"image_credit_in_caption"`
+	Handle        string            `json:"handle"`
+	SwipeHint     string            `json:"swipe_hint"`
+	Hashtags      map[string]string `json:"hashtags"`
+	MaxHashtags   int               `json:"max_hashtags"`
+	CaptionFooter string            `json:"caption_footer"`
+	Outro         map[string]string `json:"outro"` // closing line per series label
+	// SeparateSeries are labels kept out of the main rotation because they
+	// have a workflow of their own.
+	SeparateSeries       []string `json:"separate_series"`
+	ImageCreditInCaption bool     `json:"image_credit_in_caption"`
 }
 
 // Entry records one published item in posted.json.

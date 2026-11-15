@@ -23,7 +23,7 @@ func TestRepositoryQueueIsValid(t *testing.T) {
 
 func TestValidateCatchesMistakes(t *testing.T) {
 	good := Post{ID: "a", Kind: "film", Label: "SCENE STUDY", Title: "T", Year: 2000, Director: "D", Hook: "A hook",
-		Caption: "c", Tags: "#a", Slides: []Slide{{"K", "H", "B", "", ""}, {"K", "H", "B", "", ""}, {"K", "H", "B", "", ""}}}
+		Caption: "c", Tags: "#a", Slides: []Slide{{Kicker: "K", Head: "H", Body: "B"}, {Kicker: "K", Head: "H", Body: "B"}, {Kicker: "K", Head: "H", Body: "B"}}}
 	if p := Validate([]Post{good}); len(p) != 0 {
 		t.Fatalf("valid post rejected: %v", p)
 	}
@@ -182,5 +182,24 @@ func TestNextQuoteAlternates(t *testing.T) {
 	q, _ = NextQuote(quotes, []Entry{{ID: QuoteID(quotes[0]), Type: "book"}}, rng)
 	if q.Type != "movie" {
 		t.Errorf("after a book quote comes a movie quote, got %s", q.Type)
+	}
+}
+
+func TestSeriesFilters(t *testing.T) {
+	posts := []Post{{ID: "a", Label: "ROAST"}, {ID: "b", Label: "SCENE STUDY"}, {ID: "c", Label: "DEADPAN"}}
+	rng := rand.New(rand.NewSource(3))
+	for i := 0; i < 30; i++ {
+		if p, _ := NextIn(posts, nil, "", []string{"ROAST", "DEADPAN"}, nil, false, rng); p.Label == "SCENE STUDY" {
+			t.Fatal("picked a series outside the requested ones")
+		}
+		if p, _ := NextIn(posts, nil, "", nil, []string{"ROAST", "DEADPAN"}, false, rng); p.Label != "SCENE STUDY" {
+			t.Fatal("picked an excluded series")
+		}
+	}
+	if _, ok := NextIn(posts, []Entry{{ID: "a"}, {ID: "c"}}, "", []string{"ROAST", "DEADPAN"}, nil, false, rng); ok {
+		t.Error("nothing should be left in the requested series")
+	}
+	if p, ok := NextIn(posts, nil, "a", nil, []string{"ROAST"}, false, rng); !ok || p.ID != "a" {
+		t.Error("asking for a post by id should work even if its series is excluded")
 	}
 }

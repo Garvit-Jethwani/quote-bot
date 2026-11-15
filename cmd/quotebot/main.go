@@ -130,6 +130,7 @@ func cmdRender(args []string) error {
 	fs := flag.NewFlagSet("render", flag.ExitOnError)
 	id := fs.String("id", "", "post id from posts.json (default: a random unposted one)")
 	asReel := fs.Bool("reel", false, "make a vertical video instead of a carousel")
+	series := fs.String("series", "", "only pick from these series, e.g. \"ROAST,DEADPAN\"")
 	fs.Parse(args)
 
 	q, err := load()
@@ -143,7 +144,17 @@ func cmdRender(args []string) error {
 	rng := rand.New(rand.NewSource(now.UnixNano()))
 	out := pending{}
 
-	post, ok := content.Next(q.posts, q.posted, *id, *asReel, rng)
+	var only []string
+	for _, s := range strings.Split(*series, ",") {
+		if s = strings.ToUpper(strings.TrimSpace(s)); s != "" {
+			only = append(only, s)
+		}
+	}
+	exclude := q.cfg.SeparateSeries // these have a workflow of their own
+	if len(only) > 0 {
+		exclude = nil
+	}
+	post, ok := content.NextIn(q.posts, q.posted, *id, only, exclude, *asReel, rng)
 	switch {
 	case *id != "" && !ok:
 		return fmt.Errorf("no post with id %q in posts.json", *id)
@@ -189,6 +200,8 @@ func cmdRender(args []string) error {
 		}
 	case *asReel:
 		return errors.New("no unposted multi-slide post left to turn into a Reel")
+	case len(only) > 0:
+		return fmt.Errorf("no unposted posts left in %s; add more to posts.json", strings.Join(only, ", "))
 	default: // the queue is empty: fall back to a quote card so the account stays alive
 		quote, ok := content.NextQuote(q.quotes, q.posted, rng)
 		if !ok {

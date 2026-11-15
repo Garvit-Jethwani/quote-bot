@@ -9,6 +9,23 @@ import "math/rand"
 // multiSlide restricts the choice to posts with at least two text slides,
 // which is what a Reel needs. It returns false when nothing is left.
 func Next(posts []Post, posted []Entry, wanted string, multiSlide bool, rng *rand.Rand) (Post, bool) {
+	return NextIn(posts, posted, wanted, nil, nil, multiSlide, rng)
+}
+
+// NextIn is Next limited to some series. only, when not empty, lists the
+// labels to choose from; exclude lists labels to leave out.
+func NextIn(posts []Post, posted []Entry, wanted string, only, exclude []string, multiSlide bool, rng *rand.Rand) (Post, bool) {
+	if len(only) > 0 || len(exclude) > 0 {
+		var kept []Post
+		for _, p := range posts {
+			if (len(only) == 0 || contains(only, p.Label)) && !contains(exclude, p.Label) {
+				kept = append(kept, p)
+			}
+		}
+		if wanted == "" {
+			posts = kept
+		}
+	}
 	if wanted != "" {
 		for _, p := range posts {
 			if p.ID == wanted {

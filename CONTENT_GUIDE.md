@@ -63,9 +63,14 @@ Multi-slide posts also need `hook`, `year` and a maker.
 | One-Liner | `comedy` | `ONE-LINER` | `quote`; `title` is the comedian | none |
 | Hot Take | `take` | `HOT TAKE` | `quote`; `title` is `Hot take` | none |
 | Random Thought | `thought` | `RANDOM THOUGHT` | `quote`; `title` is `Random thought` | none |
+| Deadpan | `bit` | `DEADPAN` | `hook`; `title` is a dry subtitle | 3 to 6 pages |
+| Roast | `bit` | `ROAST` | `hook`; `title` is where the target is from | 3 to 6 pages |
+| Short Story | `bit` | `SHORT STORY` | `hook`; `title` is `A very short story` | 3 to 6 pages |
 
 A slide is either `{"k": "SMALL LABEL", "h": "Heading", "b": "Body text"}` or a
 quotation `{"q": "The line", "by": "Plain words saying where it is from"}`.
+The three humour series use plain pages instead: `{"t": "One beat of the joke
+or story"}`, up to 48 words each. They need no `year` or maker.
 Posts with no text slides use `"slides": []`.
 
 Notes on each:
@@ -87,6 +92,19 @@ Notes on each:
 - **Hot Take** and **Random Thought**: the account's own voice, one or two
   sentences, written to be argued with or sent to a friend. The caption backs
   it up or makes it worse.
+
+- **Deadpan**: an original long joke told flat, in the first person, one beat
+  per page. The setup is ordinary, the delivery is patient, and the last page
+  undercuts everything before it. Think of a man telling a story at a bar who
+  does not know it is funny. Blunt, a little dark, swearing allowed.
+- **Roast**: insult comedy aimed at a fictional character, one burn per page,
+  affectionate underneath. Never roast a real person. Every burn must be based
+  on something the character actually does on screen.
+- **Short Story**: a complete absurd story in three to six pages. One strange
+  premise, played completely straight, with an ending that lands. The hook is
+  the first sentence of the story.
+- These three post through their own workflow (**Post comedy**) and are kept
+  out of the main rotation by `separate_series` in `config.json`.
 
 Look at existing entries in `posts.json` for examples of each series.
 

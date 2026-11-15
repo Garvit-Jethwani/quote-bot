@@ -27,7 +27,7 @@ const (
 func Durations(p content.Post, total int) []float64 {
 	out := []float64{3.0} // the cover
 	for _, s := range p.Slides {
-		words := len(strings.Fields(s.Head + " " + s.Body + " " + s.Quote))
+		words := len(strings.Fields(s.Head + " " + s.Body + " " + s.Quote + " " + s.Text))
 		d := float64(words)/3.0 + 1.0
 		if d < 4 {
 			d = 4
