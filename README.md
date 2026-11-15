@@ -82,6 +82,11 @@ In the repository's **Actions** tab:
 - **Post a Reel**: posts a video, or only makes the file.
 - **Checks**: runs the tests and validates `posts.json`. It runs by itself on
   every change.
+- **Check setup**: tests the secrets, the connection to Instagram and TMDB, and
+  the queue, and says in plain words what is wrong. Run this first when a post
+  fails.
+- **Collect stats**: saves likes and comments per post to `stats.json`. It runs
+  by itself every Saturday.
 - **Post (old Python bot)**: an emergency fallback. See below.
 
 ## Secrets
@@ -93,6 +98,15 @@ Set under **Settings → Secrets and variables → Actions**.
 | `IG_TOKEN` | Yes | Instagram access token from the Meta developer dashboard |
 | `IG_USER_ID` | Yes, for tokens starting `EAA` | The Instagram account ID shown on that dashboard |
 | `TMDB_KEY` | No | A free TMDB API key. Without it film posts use posters instead of stills |
+
+## The feedback loop
+
+Every Saturday **Collect stats** records how each published post did and
+averages the numbers per series in `stats.json`. An hour and a half later the
+weekly writing task reads that file and writes more of what people responded
+to, while keeping the mix varied. Likes and comments are the only numbers the
+current token can read; reach, saves and sends would need the
+`instagram_manage_insights` permission added on the Meta dashboard.
 
 ## Adding posts
 
@@ -135,6 +149,7 @@ go run ./cmd/quotebot status
 | `posts.json` | The queue |
 | `quotes.json` | Plain quote cards, used only if the queue ever runs dry |
 | `posted.json` | What has been published. Written by the bot; do not edit |
+| `stats.json` | Likes and comments per post and per series. Written by the bot |
 | `config.json` | Handle, hashtags, closing lines |
 | `out/` | Drawn files from the last two weeks |
 

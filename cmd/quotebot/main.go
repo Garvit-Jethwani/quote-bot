@@ -6,6 +6,8 @@
 //	quotebot preview [-id ID]          draw posts into preview/ for a look
 //	quotebot validate                  check posts.json; non-zero exit on problems
 //	quotebot status                    show what is left in the queue
+//	quotebot stats                     save likes and comments per post to stats.json
+//	quotebot doctor                    check the secrets and the connection to Instagram
 //
 // Secrets come from the environment: IG_TOKEN (required to publish),
 // IG_USER_ID and TMDB_KEY (optional). NO_IMAGES=1 draws text-only slides.
@@ -65,6 +67,10 @@ func main() {
 		err = cmdValidate(args)
 	case "status":
 		err = cmdStatus(args)
+	case "stats":
+		err = cmdStats(args)
+	case "doctor":
+		err = cmdDoctor(args)
 	default:
 		usage()
 	}
@@ -75,7 +81,7 @@ func main() {
 }
 
 func usage() {
-	fmt.Fprintln(os.Stderr, "usage: quotebot render [-id ID] [-reel] | publish | preview [-id ID] | validate | status")
+	fmt.Fprintln(os.Stderr, "usage: quotebot render [-id ID] [-reel] | publish | preview [-id ID] | validate | status | stats | doctor")
 	os.Exit(2)
 }
 
@@ -335,6 +341,7 @@ func cmdPublish(_ []string) error {
 	if err != nil {
 		return err
 	}
+	p.Entry.Media = media
 	if err := content.SavePosted("posted.json", append(posted, p.Entry)); err != nil {
 		return err
 	}

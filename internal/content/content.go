@@ -121,6 +121,8 @@ type Entry struct {
 	ID   string `json:"id"`
 	Type string `json:"type"`
 	Date string `json:"date"`
+	// Media is Instagram's ID for the published post, used to look up its likes and comments.
+	Media string `json:"media,omitempty"`
 }
 
 func readJSON(path string, v any) error {

@@ -1,0 +1,36 @@
+name: Collect stats
+
+# Saves likes and comments for every published post to stats.json, so the
+# weekly writing task can see which series people respond to.
+on:
+  schedule:
+    - cron: "11 20 * * 6"   # Saturdays, before the weekly writing task
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram-post
+  cancel-in-progress: false
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: go run ./cmd/quotebot stats
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      - name: Save the numbers
+        run: |
+          git config user.name "quote-bot"
+          git config user.email "quote-bot@users.noreply.github.com"
+          git add stats.json
+          git commit -m "Update stats" || echo "No change"
+          git pull --rebase
+          git push

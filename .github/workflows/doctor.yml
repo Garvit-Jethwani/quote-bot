@@ -1,0 +1,20 @@
+name: Check setup
+
+# Run by hand when something is not working. It checks the secrets, the
+# connection to Instagram and TMDB, and the post queue, and says what is wrong.
+on:
+  workflow_dispatch:
+
+jobs:
+  doctor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: go run ./cmd/quotebot doctor
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          TMDB_KEY: ${{ secrets.TMDB_KEY }}

@@ -53,6 +53,15 @@ func workspace(t *testing.T) (dir string, igCalls *[]string, fail *bool) {
 			json.NewEncoder(w).Encode(map[string]any{"id": "C" + string(rune('0'+n))})
 		case r.Method == "POST":
 			json.NewEncoder(w).Encode(map[string]any{"id": "M1"})
+		case r.URL.Path == "/1789/media":
+			json.NewEncoder(w).Encode(map[string]any{"data": []map[string]any{
+				{"id": "M1", "like_count": 12, "comments_count": 3, "media_type": "CAROUSEL_ALBUM", "permalink": "https://example.test/p/1"},
+				{"id": "other", "like_count": 99, "comments_count": 9, "media_type": "IMAGE"},
+			}})
+		case r.URL.Path == "/1789":
+			json.NewEncoder(w).Encode(map[string]any{"username": "test", "followers_count": 40, "media_count": 2})
+		case r.URL.Path == "/1789/content_publishing_limit":
+			json.NewEncoder(w).Encode(map[string]any{"data": []map[string]any{{"quota_usage": 2}}})
 		default:
 			json.NewEncoder(w).Encode(map[string]any{"status_code": "FINISHED"})
 		}
@@ -187,5 +196,44 @@ func TestValidateCommand(t *testing.T) {
 	os.WriteFile(filepath.Join(dir, "posts.json"), []byte(strings.Replace(testPosts, "a caption", "a — caption", 1)), 0o644)
 	if err := cmdValidate(nil); err == nil {
 		t.Error("a dash in a caption should fail validation")
+	}
+}
+
+func TestStatsJoinsPublishedPostsToTheirCounters(t *testing.T) {
+	workspace(t)
+	if err := cmdRender([]string{"-id", "deck"}); err != nil {
+		t.Fatal(err)
+	}
+	if err := cmdPublish(nil); err != nil {
+		t.Fatal(err)
+	}
+	entries, _ := content.LoadPosted("posted.json")
+	if entries[0].Media != "M1" {
+		t.Fatalf("publish should record Instagram's media id, got %q", entries[0].Media)
+	}
+	if err := cmdStats(nil); err != nil {
+		t.Fatal(err)
+	}
+	var got statsFile
+	data, _ := os.ReadFile("stats.json")
+	if err := json.Unmarshal(data, &got); err != nil {
+		t.Fatal(err)
+	}
+	if len(got.Posts) != 1 || got.Posts[0].Likes != 12 || got.Posts[0].Format != "carousel" || got.Followers != 40 {
+		t.Fatalf("posts: %+v, followers %d", got.Posts, got.Followers)
+	}
+	if len(got.Series) != 1 || got.Series[0].Series != "SCENE STUDY" || got.Series[0].Score != 21 {
+		t.Fatalf("series: %+v", got.Series)
+	}
+}
+
+func TestDoctor(t *testing.T) {
+	workspace(t)
+	if err := cmdDoctor(nil); err != nil {
+		t.Fatalf("a healthy setup should pass: %v", err)
+	}
+	t.Setenv("IG_TOKEN", "")
+	if err := cmdDoctor(nil); err == nil {
+		t.Error("a missing token should fail the check")
 	}
 }
