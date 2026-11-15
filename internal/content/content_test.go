@@ -93,6 +93,29 @@ func TestNextNeverRepeatsAndVariesSeries(t *testing.T) {
 	}
 }
 
+func TestALargeSeriesDoesNotDominate(t *testing.T) {
+	var posts []Post
+	for i := 0; i < 90; i++ {
+		posts = append(posts, Post{ID: "joke" + string(rune('a'+i%26)) + string(rune('a'+i/26)), Label: "ONE-LINER"})
+	}
+	for _, l := range []string{"SCENE STUDY", "WHAT IF", "LINER NOTES"} {
+		for i := 0; i < 10; i++ {
+			posts = append(posts, Post{ID: l + string(rune('a'+i)), Label: l})
+		}
+	}
+	rng := rand.New(rand.NewSource(7))
+	jokes := 0
+	for i := 0; i < 400; i++ {
+		if p, _ := Next(posts, nil, "", false, rng); p.Label == "ONE-LINER" {
+			jokes++
+		}
+	}
+	// 75% of the queue is jokes, but they should come up about one time in four.
+	if jokes > 140 {
+		t.Errorf("the largest series was picked %d times out of 400", jokes)
+	}
+}
+
 func TestNextOptions(t *testing.T) {
 	posts := []Post{
 		{ID: "card", Label: "ONE-LINER"},

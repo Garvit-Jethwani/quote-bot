@@ -3,8 +3,9 @@ package content
 import "math/rand"
 
 // Next picks the post to publish. With wanted set it returns that post.
-// Otherwise it picks at random among unposted posts, avoiding the series
-// (label) of the last two published posts so the feed never repeats itself.
+// Otherwise it picks a series at random, then an unposted post within it,
+// avoiding the series (label) of the last two published posts so the feed
+// never repeats itself and no series crowds out the others.
 // multiSlide restricts the choice to posts with at least two text slides,
 // which is what a Reel needs. It returns false when nothing is left.
 func Next(posts []Post, posted []Entry, wanted string, multiSlide bool, rng *rand.Rand) (Post, bool) {
@@ -46,7 +47,18 @@ func Next(posts []Post, posted []Entry, wanted string, multiSlide bool, rng *ran
 	if len(varied) == 0 {
 		varied = fresh
 	}
-	return varied[rng.Intn(len(varied))], true
+	// Choose a series first, then a post within it. Picking a post directly
+	// would let whichever series has the most entries dominate the feed.
+	bySeries := map[string][]Post{}
+	var labels []string
+	for _, p := range varied {
+		if _, ok := bySeries[p.Label]; !ok {
+			labels = append(labels, p.Label)
+		}
+		bySeries[p.Label] = append(bySeries[p.Label], p)
+	}
+	pool := bySeries[labels[rng.Intn(len(labels))]]
+	return pool[rng.Intn(len(pool))], true
 }
 
 // Remaining counts unposted posts.
