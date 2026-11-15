@@ -33,7 +33,6 @@ ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "out"
 PENDING = ROOT / "pending.json"
 POSTED = ROOT / "posted.json"
-API = os.environ.get("IG_API_BASE", "https://graph.instagram.com").rstrip("/")
 TMDB_API = os.environ.get("TMDB_API_BASE", "https://api.themoviedb.org/3").rstrip("/")
 TMDB_IMG = os.environ.get("TMDB_IMG_BASE", "https://image.tmdb.org/t/p/w1280").rstrip("/")
 AIC_API = os.environ.get("AIC_API_BASE", "https://api.artic.edu/api/v1").rstrip("/")
@@ -98,6 +97,17 @@ def pick_quote(posted):
     return random.choice(fresh)
 
 
+def hashtags(cfg, *groups):
+    """Specific tags first, then broad ones; no repeats; capped (Instagram favours a few precise tags)."""
+    seen, out = set(), []
+    for tag in " ".join(g for g in groups if g).split():
+        tag = tag if tag.startswith("#") else f"#{tag}"
+        if tag.lower() not in seen:
+            seen.add(tag.lower())
+            out.append(tag)
+    return " ".join(out[: cfg.get("max_hashtags", 5)])
+
+
 def post_caption(p, cfg, image_credit):
     parts = [p["caption"]]
     pairs = [f"{x['label'].capitalize()}: {x['title']} — {x['by']}" for x in p.get("pairs", [])]
@@ -111,14 +121,15 @@ def post_caption(p, cfg, image_credit):
         parts.append(f"{credit} {image_credit}".strip())
     if p["kind"] in ("book", "music") and image_credit:
         parts.append(image_credit)
-    parts.append(" ".join(t for t in (p.get("tags", ""), cfg["hashtags"].get(p["kind"], "")) if t))
+    parts.append(cfg.get("caption_footer", ""))
+    parts.append(hashtags(cfg, p.get("tags", ""), cfg["hashtags"].get(p["kind"], "")))
     return "\n\n".join(x for x in parts if x)[:2200]
 
 
 def quote_caption(q, cfg):
     credit = f"— {q['source']} ({q['by']})" if q["type"] == "movie" else f"— {q['by']}, {q['source']}"
     text = q["text"] if q["text"].startswith("“") else f"“{q['text']}”"
-    parts = [text, credit, cfg.get("caption_footer", ""), cfg["hashtags"].get(q["type"], "")]
+    parts = [text, credit, cfg.get("caption_footer", ""), hashtags(cfg, cfg["hashtags"].get("book_quote" if q["type"] == "book" else q["type"], ""))]
     return "\n\n".join(x for x in parts if x)[:2200]
 
 
@@ -640,11 +651,39 @@ def cmd_render(args):
     print(f"Drew {what}")
 
 
+def facebook_token():
+    """Tokens from Meta's 'Unified login' / Facebook login start with EAA and use graph.facebook.com."""
+    return os.environ.get("IG_TOKEN", "").strip().startswith("EAA")
+
+
+def api_base():
+    if os.environ.get("IG_API_BASE"):
+        return os.environ["IG_API_BASE"].rstrip("/")
+    return "https://graph.facebook.com" if facebook_token() else "https://graph.instagram.com"
+
+
+def ig_user():
+    if os.environ.get("IG_USER_ID"):
+        return os.environ["IG_USER_ID"].strip()
+    if not facebook_token():
+        return api("GET", "me", fields="user_id")["user_id"]
+    try:                                        # look for an Instagram account linked to a Page
+        pages = api("GET", "me/accounts", fields="instagram_business_account").get("data", [])
+        ids = [p["instagram_business_account"]["id"] for p in pages if p.get("instagram_business_account")]
+        if ids:
+            return ids[0]
+    except SystemExit:
+        pass
+    sys.exit("Could not work out the Instagram account ID from this token.\n"
+             "Add a repository secret named IG_USER_ID with the Instagram account ID\n"
+             "shown next to your account on the Meta developer dashboard.")
+
+
 def api(method, path, **params):
     import requests
-    params["access_token"] = os.environ["IG_TOKEN"]
+    params["access_token"] = os.environ["IG_TOKEN"].strip()
     kw = {"params": params} if method == "GET" else {"data": params}
-    r = requests.request(method, f"{API}/{path}", timeout=60, **kw)
+    r = requests.request(method, f"{api_base()}/{path}", timeout=60, **kw)
     try:
         body = r.json()
     except ValueError:
@@ -696,7 +735,7 @@ def cmd_publish(args):
         sys.exit(f"Images are not publicly reachable, e.g. {urls[0]}\n"
                  "Is the repository public and were the images pushed?")
 
-    user = os.environ.get("IG_USER_ID") or api("GET", "me", fields="user_id")["user_id"]
+    user = ig_user()
     if len(urls) == 1:
         container = api("POST", f"{user}/media", image_url=urls[0], caption=pending["caption"])["id"]
     else:
@@ -725,6 +764,9 @@ def cmd_preview(args):
 
 def cmd_refresh(args):
     old = os.environ.get("IG_TOKEN") or sys.exit("IG_TOKEN is not set.")
+    if facebook_token():
+        print("This kind of token is managed on the Meta dashboard and is not refreshed here. Nothing to do.")
+        return
     body = api("GET", "refresh_access_token", grant_type="ig_refresh_token")
     new = body["access_token"]
     print(f"::add-mask::{new}")

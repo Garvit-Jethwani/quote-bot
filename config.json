@@ -1,5 +1,5 @@
 {
-  "handle": "@yourhandle",
+  "handle": "@cinemaroundhay_1888",
   "swipe_hint": "SWIPE",
   "closing_line": "Save this for a slow evening.",
   "labels": {
@@ -7,11 +7,13 @@
     "movie": "FROM THE SCREEN"
   },
   "hashtags": {
-    "film": "#filmstagram #cinephile #scenestudy #worldcinema",
-    "music": "#linernotes #albumoftheday #musicdiscovery",
-    "book": "#bookquotes #booklover #bookstagram #literature",
-    "movie": "#moviequotes #filmquotes #cinema #movielover",
-    "art": "#paintingoftheday #lookcloser #museumlover"
+    "film": "#cinephile #filmstagram #worldcinema",
+    "music": "#musicdiscovery #albumoftheday",
+    "book": "#bookstagram #literature",
+    "movie": "#moviequotes #cinephile #filmstagram #cinema #movielover",
+    "art": "#arthistory #paintingoftheday",
+    "book_quote": "#bookquotes #bookstagram #literature #booklover #quoteoftheday"
   },
-  "caption_footer": ""
+  "caption_footer": "a new one every day → @cinemaroundhay_1888",
+  "max_hashtags": 5
 }
