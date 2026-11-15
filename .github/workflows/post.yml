@@ -2,13 +2,13 @@ name: Post to Instagram
 
 on:
   schedule:
-    # Times are in UTC. Two posts a day, taken in order from posts.json.
-    - cron: "7 4 * * *"
-    - cron: "7 14 * * *"
+    # Times are in UTC, chosen so each region gets a post in its evening.
+    - cron: "7 13 * * *"   # 18:37 India, 13:07 UK, 08:07 US East
+    - cron: "7 1 * * *"    # 20:07 US East, 17:07 US West, 06:37 India
   workflow_dispatch:
     inputs:
       id:
-        description: "Post id from posts.json (leave empty for the next one)"
+        description: "Post id from posts.json (leave empty for a random unposted one)"
         required: false
 
 permissions:
@@ -24,28 +24,39 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-go@v5
         with:
-          python-version: "3.12"
+          go-version-file: go.mod
 
-      - run: pip install -r requirements.txt
+      - name: Build the bot
+        run: go build -o "$RUNNER_TEMP/quotebot" ./cmd/quotebot
 
-      - name: Pick the next post and draw its slides
-        run: python bot.py render ${POST_ID:+--id "$POST_ID"}
+      - name: Pick a post and draw its slides
+        run: |
+          "$RUNNER_TEMP/quotebot" render ${POST_ID:+-id "$POST_ID"}
         env:
           POST_ID: ${{ inputs.id }}
           TMDB_KEY: ${{ secrets.TMDB_KEY }}
 
-      - name: Push the card so Instagram can download it
+      - name: Push the slides so Instagram can download them
         run: |
           git config user.name "quote-bot"
           git config user.email "quote-bot@users.noreply.github.com"
-          git add -A out posted.json
-          git commit -m "Add slides"
+          git add -A out
+          git commit -m "Add slides" || echo "Nothing new to commit"
+          git pull --rebase
           git push
 
       - name: Publish to Instagram
-        run: python bot.py publish
+        run: |
+          "$RUNNER_TEMP/quotebot" publish
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+
+      - name: Record the post so it is never repeated
+        run: |
+          git add posted.json
+          git commit -m "Record post"
+          git pull --rebase
+          git push

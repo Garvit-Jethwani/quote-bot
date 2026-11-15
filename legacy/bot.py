@@ -30,7 +30,8 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent     # data lives at the repository root
+FONTS = Path(__file__).resolve().parent / "fonts"
 OUT = ROOT / "out"
 PENDING = ROOT / "pending.json"
 POSTED = ROOT / "posted.json"
@@ -399,7 +400,7 @@ def accent_from(img, fallback):
 # ---------------------------------------------------------------- drawing helpers
 
 def font(name, size, weight=None):
-    f = ImageFont.truetype(str(ROOT / "fonts" / f"{name}.ttf"), size)
+    f = ImageFont.truetype(str(FONTS / f"{name}.ttf"), size)
     if weight is not None:
         axes = []
         for a in f.get_variation_axes():

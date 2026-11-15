@@ -1,0 +1,26 @@
+name: Checks
+
+# Runs on every change that is not the bot's own bookkeeping. If the queue or
+# the code is broken, this fails before the next scheduled post does.
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["out/**", "posted.json"]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Formatting
+        run: test -z "$(gofmt -l .)" || (gofmt -l . && exit 1)
+      - run: go vet ./...
+      - name: Install the video encoder if it is missing
+        run: command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+      - run: go test ./...
+      - name: Check the post queue
+        run: go run ./cmd/quotebot validate

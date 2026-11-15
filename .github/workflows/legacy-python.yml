@@ -1,0 +1,36 @@
+name: Post (old Python bot)
+
+# Emergency fallback only. Run by hand if the Go bot is failing.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r legacy/requirements.txt
+      - run: python legacy/bot.py render
+        env:
+          TMDB_KEY: ${{ secrets.TMDB_KEY }}
+      - run: |
+          git config user.name "quote-bot"
+          git config user.email "quote-bot@users.noreply.github.com"
+          git add -A out posted.json
+          git commit -m "Add slides"
+          git pull --rebase
+          git push
+      - run: python legacy/bot.py publish
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
