@@ -20,14 +20,15 @@ func theme(bg, fg, accent, muted string) Theme {
 
 // Themes maps a post kind to its colours.
 var Themes = map[string]Theme{
-	"film":   theme("#0F0F11", "#EFEAE0", "#E0A458", "#8D8A84"),
-	"series": theme("#0E1014", "#ECEAE4", "#8FB3E8", "#868B96"),
-	"book":   theme("#F1EADB", "#1E1B17", "#A8472A", "#7B7266"),
-	"music":  theme("#15171C", "#ECE9E2", "#7FB8A4", "#8A8F9C"),
-	"art":    theme("#F5F3EE", "#17171A", "#2F4E7A", "#807C74"),
-	"comedy": theme("#F2C230", "#1A1712", "#A3271B", "#6E5A14"),
-	"take":   theme("#B3261E", "#FFF6E9", "#FFD166", "#F0B8AE"),
-	"quote":  theme("#14213D", "#F7F3E9", "#FCA311", "#9AA5BD"),
+	"film":    theme("#0F0F11", "#EFEAE0", "#E0A458", "#8D8A84"),
+	"series":  theme("#0E1014", "#ECEAE4", "#8FB3E8", "#868B96"),
+	"book":    theme("#F1EADB", "#1E1B17", "#A8472A", "#7B7266"),
+	"music":   theme("#15171C", "#ECE9E2", "#7FB8A4", "#8A8F9C"),
+	"art":     theme("#F5F3EE", "#17171A", "#2F4E7A", "#807C74"),
+	"comedy":  theme("#F2C230", "#1A1712", "#A3271B", "#6E5A14"),
+	"take":    theme("#B3261E", "#FFF6E9", "#FFD166", "#F0B8AE"),
+	"thought": theme("#1F1535", "#F4EEFF", "#C6A6FF", "#8E7FB0"),
+	"quote":   theme("#14213D", "#F7F3E9", "#FCA311", "#9AA5BD"),
 }
 
 // ThemeFor returns the theme for a kind, defaulting to the film theme.
@@ -194,7 +195,11 @@ func QuoteSlide(label string, th Theme, quote, by string, n, total int, cfg cont
 func Post(p content.Post, cfg content.Config, stills []image.Image) []image.Image {
 	th := ThemeFor(p.Kind)
 	if p.Quote != "" { // a one-liner: a single card
-		return []image.Image{QuoteSlide(p.Label, th, p.Quote, p.Title, 1, 1, cfg)}
+		by := p.Title // a comedian's name; the account's own takes are unsigned
+		if p.Kind != "comedy" {
+			by = ""
+		}
+		return []image.Image{QuoteSlide(p.Label, th, p.Quote, by, 1, 1, cfg)}
 	}
 	if len(stills) > 0 {
 		switch p.Kind {

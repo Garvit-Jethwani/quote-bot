@@ -93,7 +93,10 @@ func join(parts []string) string {
 // AltText describes the post for screen readers and search.
 func AltText(p Post, slide int) string {
 	if p.Quote != "" {
-		return clip(fmt.Sprintf("Quote by %s: %s", p.Title, p.Quote))
+		if p.Kind == "comedy" {
+			return clip(fmt.Sprintf("Quote by %s: %s", p.Title, p.Quote))
+		}
+		return clip(p.Quote)
 	}
 	if slide == 0 {
 		return clip(strings.TrimSpace(fmt.Sprintf("%s %s %s", p.Hook, p.Title, Credit(p))))

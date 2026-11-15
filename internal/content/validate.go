@@ -20,6 +20,7 @@ var Series = map[string]struct {
 	"LINER NOTES":    {[]string{"music"}, 3, 5},
 	"ONE-LINER":      {[]string{"comedy"}, 0, 0},
 	"HOT TAKE":       {[]string{"take"}, 0, 0},
+	"RANDOM THOUGHT": {[]string{"thought"}, 0, 0},
 }
 
 const (
@@ -67,7 +68,7 @@ func Validate(posts []Post) []string {
 			add(p, "%s needs %d to %d slides, has %d", p.Label, series.Min, series.Max, n)
 		}
 
-		quoteCard := p.Kind == "comedy" || p.Kind == "take"
+		quoteCard := p.Kind == "comedy" || p.Kind == "take" || p.Kind == "thought"
 		if quoteCard {
 			if p.Quote == "" {
 				add(p, "missing quote")

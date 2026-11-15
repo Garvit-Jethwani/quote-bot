@@ -2435,5 +2435,738 @@
     "slides": [],
     "caption": "he's just reporting the facts.",
     "tags": "#demetrimartin"
+  },
+  {
+    "id": "notice-the-shining",
+    "kind": "film",
+    "label": "DID YOU NOTICE",
+    "title": "The Shining",
+    "year": 1980,
+    "director": "Stanley Kubrick",
+    "hook": "The hotel in this film is impossible, and it was built that way on purpose.",
+    "slides": [
+      {
+        "k": "THE WINDOW",
+        "h": "An office with a view it can't have",
+        "b": "The manager's office has a bright window behind the desk. Walk the corridors around it, as the camera does, and that room sits in the middle of the building. There's nowhere for daylight to come from."
+      },
+      {
+        "k": "THE CARPET",
+        "h": "It turns round under him",
+        "b": "Danny plays with his cars on that famous orange and brown carpet. A ball rolls in. In the next shot the pattern beneath him points the other way. Kubrick shot scenes dozens of times. He didn't miss a carpet."
+      },
+      {
+        "k": "THE TYPEWRITER",
+        "h": "It changes colour",
+        "b": "Jack's typewriter is pale at the start of the film and dark grey later. Nobody mentions it. Like the chairs that vanish between cuts behind him, it's one more small thing that's wrong in a way you feel before you spot it."
+      },
+      {
+        "k": "THE POINT",
+        "h": "You're lost before he is",
+        "b": "None of this reads as a mistake once you've seen three of them. The film makes the building itself unreliable, so your sense of where you are goes at the same speed as Jack's mind. The horror is in the floor plan."
+      }
+    ],
+    "caption": "people have drawn actual maps of the Overlook trying to make it work. it doesn't. corridors lead into rooms that can't be there.\n\nKubrick made a haunted house where the ghost is the architecture.",
+    "tags": "#theshining #stanleykubrick #moviedetails"
+  },
+  {
+    "id": "notice-fight-club",
+    "kind": "film",
+    "label": "DID YOU NOTICE",
+    "title": "Fight Club",
+    "year": 1999,
+    "director": "David Fincher",
+    "hook": "Tyler Durden is on screen four times before the film introduces him.",
+    "slides": [
+      {
+        "k": "THE FLASHES",
+        "h": "One frame at a time",
+        "b": "Before the plane, Tyler appears for a single frame at the photocopier, in the doctor's corridor, at the support group and in an alley. It's the same trick he later describes doing as a projectionist, done to you first."
+      },
+      {
+        "k": "THE PHONE",
+        "h": "No incoming calls",
+        "b": "After his flat explodes, the narrator rings Tyler from a payphone. No answer. He hangs up and the phone rings back. Look at the label on it: no incoming calls allowed. The film told you in writing."
+      },
+      {
+        "k": "THE COFFEE",
+        "h": "A cup in nearly every scene",
+        "b": "David Fincher has said there's a Starbucks cup somewhere in almost every scene. A film about a man trying to escape branded life, and the brand is sitting on every desk, in every car, in every bin."
+      },
+      {
+        "k": "THE REWATCH",
+        "h": "Nobody ever answers Tyler",
+        "b": "Go back and watch the other characters. They look at the narrator. They reply to the narrator. In the car, the two men in the back only respond when he speaks. It was never hidden. You just weren't looking at the right person."
+      }
+    ],
+    "caption": "the payphone one got me. it's printed right there on the phone and I'd seen this film maybe six times.\n\nyes I'm talking about it. I know the first rule.",
+    "tags": "#fightclub #davidfincher #moviedetails"
+  },
+  {
+    "id": "notice-the-godfather",
+    "kind": "film",
+    "label": "DID YOU NOTICE",
+    "title": "The Godfather",
+    "year": 1972,
+    "director": "Francis Ford Coppola",
+    "hook": "When you see an orange in this film, someone is about to get hurt.",
+    "slides": [
+      {
+        "k": "THE ORANGES",
+        "h": "Fruit as a warning",
+        "b": "Vito is buying oranges when he's shot in the street. There are oranges on the table when the heads of the families meet. He dies with a piece of orange peel in his mouth, playing with his grandson. The designer said he just wanted colour in dark rooms. Nobody believes him."
+      },
+      {
+        "k": "THE CAT",
+        "h": "It wasn't in the script",
+        "b": "The cat on Brando's lap in the opening scene was a stray that Coppola found wandering the studio lot and handed to him. It purred so loudly that some of his lines had to be redone."
+      },
+      {
+        "k": "THE NERVES",
+        "h": "Luca Brasi really was terrified",
+        "b": "Luca was played by a former wrestler, not an actor, and he kept fluffing his speech in front of Brando. Coppola kept the take and added a scene of Luca rehearsing it beforehand, so the stumbling became the character."
+      },
+      {
+        "k": "THE HORSE",
+        "h": "That was not a prop",
+        "b": "The head in the bed was real. It came from a company that made dog food. The actor had rehearsed with a fake one, so the scream in the film is closer to genuine than anyone planned."
+      }
+    ],
+    "caption": "once you know about the oranges you can't stop. you'll be shouting at the screen like it's a horror film. don't buy the fruit, Vito.\n\nfifty years old and still the best-made film there is.",
+    "tags": "#thegodfather #francisfordcoppola #moviedetails"
+  },
+  {
+    "id": "notice-get-out",
+    "kind": "film",
+    "label": "DID YOU NOTICE",
+    "title": "Get Out",
+    "year": 2017,
+    "director": "Jordan Peele",
+    "hook": "Every odd little thing Rose does is a clue. Watch it again.",
+    "slides": [
+      {
+        "k": "THE POLICEMAN",
+        "h": "She isn't defending him",
+        "b": "When the officer asks for Chris's ID after the deer, Rose kicks off about it. First time, it plays as her standing up for him. Second time you realise she doesn't want any record that he was ever in that car with her."
+      },
+      {
+        "k": "THE CEREAL",
+        "h": "Kept apart",
+        "b": "Late on, she sits on her bed eating dry coloured cereal from a bowl and sipping white milk through a straw from a glass. She won't let them mix. It's a three-second shot and it's the whole family in one image."
+      },
+      {
+        "k": "THE COTTON",
+        "h": "How he gets out",
+        "b": "Strapped to the chair, Chris claws at the leather arm until the stuffing comes out, and uses it to plug his ears against the hypnosis. A Black man saves his own life by picking cotton. Peele put that in knowing exactly what it was."
+      },
+      {
+        "k": "THE PARTY",
+        "h": "It's an auction",
+        "b": "The garden party guests all find a reason to touch him or ask what his body can do. Then, while he's off walking with Rose, they hold up bingo cards in silence next to his photograph. They aren't playing bingo."
+      }
+    ],
+    "caption": "this is the best rewatch in modern film. every line her family says means two things and the second one is always worse.\n\n\"I would have voted for Obama a third time.\" sir.",
+    "tags": "#getout #jordanpeele #moviedetails"
+  },
+  {
+    "id": "notice-toy-story",
+    "kind": "film",
+    "label": "DID YOU NOTICE",
+    "title": "Toy Story",
+    "year": 1995,
+    "director": "John Lasseter",
+    "hook": "Pixar has been hiding the same three things in its films for thirty years.",
+    "slides": [
+      {
+        "k": "THE TRUCK",
+        "h": "Pizza Planet delivers everywhere",
+        "b": "The battered yellow pizza truck that Woody and Buzz hitch a ride on turns up in nearly every Pixar film since. It's in a trailer park in A Bug's Life, on a bridge in Ratatouille, and carved in wood in medieval Scotland in Brave."
+      },
+      {
+        "k": "THE NUMBER",
+        "h": "A113",
+        "b": "It's on a number plate here, on a camera in Finding Nemo, on a door in Monsters University. A113 was the classroom at CalArts where a generation of animators learned the job. It's a wave to everyone who sat in that room."
+      },
+      {
+        "k": "THE CARPET",
+        "h": "Sid's house has a familiar floor",
+        "b": "Look at the upstairs hallway in the house of the kid next door who tortures toys. The carpet has the same pattern as the Overlook Hotel in The Shining. In a children's film. In 1995."
+      },
+      {
+        "k": "WHY THEY DO IT",
+        "h": "A studio signing its work",
+        "b": "None of it matters to the plot. It's the people who make these films leaving a mark that says a human was here and was having a good time. It's also why adults pause Pixar films more than children do."
+      }
+    ],
+    "caption": "the Shining carpet in Sid's house is my favourite thing in any animated film. somebody at Pixar thought, this child is a horror villain, and went and did the research.\n\nfind the truck next time. it's always there.",
+    "tags": "#toystory #pixar #eastereggs #moviedetails"
+  },
+  {
+    "id": "notice-breaking-bad",
+    "kind": "series",
+    "label": "DID YOU NOTICE",
+    "title": "Breaking Bad",
+    "year": 2009,
+    "first_aired": 2008,
+    "creator": "Vince Gilligan",
+    "hook": "Four episode titles in season two spell out the ending. They told us.",
+    "slides": [
+      {
+        "k": "THE TITLES",
+        "h": "737 Down Over ABQ",
+        "b": "The episodes that open with the burnt pink teddy bear in the pool are called Seven Thirty-Seven, Down, Over and ABQ. Read them in order. The season's final disaster was written on the episode list the whole time."
+      },
+      {
+        "k": "THE HABITS",
+        "h": "Walt keeps what he kills",
+        "b": "After his first killing he starts cutting the crusts off his sandwiches, as that man did. Later he lays a towel on the floor before kneeling, exactly like Gus. He orders his drink the way Mike took his. He collects them."
+      },
+      {
+        "k": "THE NAMES",
+        "h": "White, Pinkman, Gray",
+        "b": "Walter White. Jesse Pinkman. The company Walt walked away from is Gray Matter, named for its founders: Schwartz, which means black, and White. Mix them. The show is colour-coded down to the surnames."
+      },
+      {
+        "k": "THE WARDROBE",
+        "h": "Watch what Walt wears",
+        "b": "He starts the series in beige and pale green, almost the colour of his walls. As Heisenberg takes over, the clothes go darker, season by season, until he's in black. Marie, meanwhile, wears purple in nearly every scene and nobody has ever explained why."
+      }
+    ],
+    "caption": "the sandwich crusts are what did it for me. it's such a small, creepy thing to keep from someone.\n\nthis show planned further ahead than I've planned my own life.",
+    "tags": "#breakingbad #walterwhite #vincegilligan #tvdetails"
+  },
+  {
+    "id": "whatif-jurassic-park",
+    "kind": "film",
+    "label": "WHAT IF",
+    "title": "Jurassic Park",
+    "year": 1993,
+    "director": "Steven Spielberg",
+    "hook": "What if they'd just paid the IT guy properly?",
+    "slides": [
+      {
+        "k": "THE BOAST",
+        "h": "Spared no expense",
+        "b": "John Hammond says it again and again. The best scientists, the best ice cream, a narrator for the tour. He cloned extinct animals and built an island resort around them. Money was no object."
+      },
+      {
+        "k": "THE EXCEPTION",
+        "h": "One programmer",
+        "b": "The entire park, every fence and door and camera, runs on software written and maintained by a single man. Dennis Nedry tells Hammond he's underpaid and gets a lecture about his money problems being his own fault."
+      },
+      {
+        "k": "THE PRICE",
+        "h": "A shaving foam can",
+        "b": "So Nedry takes a rival's offer: a million and a half dollars to smuggle out embryos in a fake can of shaving cream. To do it he switches off security for eighteen minutes, during a storm. Everything that follows is that one decision."
+      },
+      {
+        "k": "THE LESSON",
+        "h": "It was never the dinosaurs",
+        "b": "Pay him fairly, or hire a second person, and it's a nice weekend with some goats. The film is usually read as a warning about playing God. It's just as much a warning about treating the one person who holds it all together as a cost."
+      }
+    ],
+    "ask": "Dinosaurs or bad management: what actually killed the park?",
+    "caption": "every workplace has a Nedry. one person who knows how it all works, who's been asking for a raise for two years.\n\npay your Nedry. it's cheaper than the raptors.",
+    "tags": "#jurassicpark #stevenspielberg #moviedebate"
+  },
+  {
+    "id": "whatif-lotr-eagles",
+    "kind": "film",
+    "label": "WHAT IF",
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "year": 2001,
+    "director": "Peter Jackson",
+    "hook": "What if the eagles had just flown the Ring to Mordor?",
+    "slides": [
+      {
+        "k": "THE COMPLAINT",
+        "h": "Nine hours, solved in an afternoon",
+        "b": "The eagles rescue Gandalf from a tower and carry Frodo off a volcano. So why does anyone walk? It's the most famous plot hole in fantasy and people have been smug about it for decades."
+      },
+      {
+        "k": "THE SKY",
+        "h": "Mordor has an air force",
+        "b": "The whole plan depends on Sauron not knowing where the Ring is. He has a giant eye on a tower and nine riders on flying beasts. A flock of enormous birds heading straight for his mountain is the opposite of sneaking."
+      },
+      {
+        "k": "THE BIRDS",
+        "h": "They aren't a taxi",
+        "b": "In the books the eagles are proud, ancient creatures who answer to powers above anyone in the Fellowship. They help when they choose to. And the Ring corrupts whoever is strong. Now picture what it does to something that size."
+      },
+      {
+        "k": "THE AUTHOR",
+        "h": "Tolkien knew",
+        "b": "When a screenwriter in the 1950s tried to use the eagles more, Tolkien objected. He called them a dangerous machine and said he had used them sparingly on purpose. He'd spotted the problem before any of us and kept them out of reach."
+      }
+    ],
+    "ask": "Plot hole or not? Pick a side.",
+    "caption": "it isn't a plot hole. it's a quiet walk past a dragon versus flying a marching band over his house.\n\nalso the story is about small people doing a hard thing slowly. that's the point of it.",
+    "tags": "#lordoftherings #tolkien #peterjackson #moviedebate"
+  },
+  {
+    "id": "whatif-infinity-war",
+    "kind": "film",
+    "label": "WHAT IF",
+    "title": "Avengers: Infinity War",
+    "year": 2018,
+    "director": "Anthony and Joe Russo",
+    "hook": "What if Star-Lord hadn't thrown that punch?",
+    "slides": [
+      {
+        "k": "THE MOMENT",
+        "h": "They nearly had it",
+        "b": "On Titan, the plan is working. Thanos is held down and dazed, and the gauntlet is sliding off his hand. Then Quill learns that Gamora is dead, loses his head and hits him. The trance breaks. Half the universe goes."
+      },
+      {
+        "k": "THE BLAME",
+        "h": "The internet never forgave him",
+        "b": "For a year, Star-Lord was the most hated man in the franchise. One man's temper, one punch, and trillions die. It looks like the single worst decision anyone makes in twenty-odd films."
+      },
+      {
+        "k": "THE NUMBER",
+        "h": "14,000,605",
+        "b": "Except Doctor Strange has already looked at that many possible futures and found exactly one where they win. He's standing right there. He doesn't stop the punch. Then he hands over the Time Stone and says there was no other way."
+      },
+      {
+        "k": "THE READING",
+        "h": "The punch was the plan",
+        "b": "If only one future works, and Strange is steering towards it, then Quill losing it is part of the winning version. Get the gauntlet off on Titan and maybe that's one of the fourteen million where they lose later. The idiot was necessary."
+      }
+    ],
+    "ask": "Was Quill to blame? Defend your answer.",
+    "caption": "I was furious at him in the cinema. everyone was. somebody near me said \"oh you absolute tool\" out loud.\n\nand then you think about Strange just watching it happen.",
+    "tags": "#infinitywar #marvel #starlord #moviedebate"
+  },
+  {
+    "id": "whatif-ned-stark",
+    "kind": "series",
+    "label": "WHAT IF",
+    "title": "Game of Thrones",
+    "year": 2011,
+    "first_aired": 2011,
+    "creator": "David Benioff and D. B. Weiss",
+    "episode": [
+      1,
+      7
+    ],
+    "hook": "What if Ned Stark had kept his mouth shut?",
+    "slides": [
+      {
+        "k": "THE WARNING",
+        "h": "He tells her first",
+        "b": "Ned works out that the queen's children aren't the king's. He has the biggest secret in the kingdom. And the first thing he does with it is go to Cersei, in a garden, and tell her, so she has time to take her children and run."
+      },
+      {
+        "k": "THE OFFERS",
+        "h": "He turns down two ways to win",
+        "b": "That same night the king's brother offers him a hundred swords to seize the children while the castle sleeps. He says no, it isn't honourable. Then Littlefinger offers a scheme. He says no to that too, and trusts him with the city guard instead."
+      },
+      {
+        "k": "THE PAPER",
+        "h": "A letter against a room of knives",
+        "b": "He walks into the throne room holding the dead king's will, as if a document settles it. Cersei tears it in half. The guards he paid for turn on his men. The whole thing takes under two minutes."
+      },
+      {
+        "k": "THE POINT",
+        "h": "The show told us the rules",
+        "b": "In that garden she says it plainly: when you play the game of thrones, you win or you die. Ned plays as though decency is a move. Say nothing for one more day and he's regent. The series killed its hero to prove it meant it."
+      }
+    ],
+    "ask": "One day of silence and he lives. Would you have told her?",
+    "caption": "the rest of the show is eight seasons of people learning from this one mistake. or not learning from it, depending on the season.\n\nhe was a good man. it was the wrong job for one.",
+    "tags": "#gameofthrones #nedstark #hbo #tvdebate"
+  },
+  {
+    "id": "whatif-home-alone",
+    "kind": "film",
+    "label": "WHAT IF",
+    "title": "Home Alone",
+    "year": 1990,
+    "director": "Chris Columbus",
+    "hook": "It takes four separate accidents to forget this child.",
+    "slides": [
+      {
+        "k": "ONE",
+        "h": "The power cut",
+        "b": "A storm knocks out the electricity overnight and resets every alarm clock in the house. Fifteen people wake up late with forty-five minutes to reach the airport. Nobody is thinking clearly from this point on."
+      },
+      {
+        "k": "TWO",
+        "h": "The ticket",
+        "b": "The night before, Kevin starts a fight at dinner and milk goes everywhere. In the clean-up, his father sweeps a pile of soggy napkins into the bin. Kevin's boarding pass is in it. At the gate, nobody is holding a spare ticket to wonder about."
+      },
+      {
+        "k": "THREE",
+        "h": "The head count",
+        "b": "Outside by the vans, a nosy boy from across the road wanders over. The older sister counts heads. He's standing with his back to her, same height, same hat. She counts him. The number comes out right."
+      },
+      {
+        "k": "FOUR",
+        "h": "The phones",
+        "b": "The same storm took the phone lines down. So when his mother sits bolt upright over the Atlantic, she can't just ring the house. Fix any one of the four and there's no film. It's far better engineered than a Christmas comedy needs to be."
+      }
+    ],
+    "ask": "Bad parents or bad luck? Be honest.",
+    "caption": "people say the parents are monsters. the film actually goes to a lot of trouble to make it not their fault. four things have to go wrong in a row.\n\nthe neighbour kid, though. he knows what he did.",
+    "tags": "#homealone #christmasmovies #moviedebate"
+  },
+  {
+    "id": "whatif-friends-break",
+    "kind": "series",
+    "label": "WHAT IF",
+    "title": "Friends",
+    "year": 1997,
+    "first_aired": 1994,
+    "creator": "David Crane and Marta Kauffman",
+    "episode": [
+      3,
+      15
+    ],
+    "hook": "Were they on a break? Let's settle it.",
+    "slides": [
+      {
+        "k": "THE WORDS",
+        "h": "She says it first",
+        "b": "It's their anniversary. He turns up at her office, there's a fire in a basket, they fight at home. Rachel says maybe they should take a break. Ross says fine, let's get some frozen yoghurt. She says no. A break from us. He walks out."
+      },
+      {
+        "k": "THE NIGHT",
+        "h": "About three hours",
+        "b": "He goes to a bar. He rings her, hears a man's voice in her flat, and hangs up. Then the girl from the copy shop asks him to dance. By morning he's done it. The gap between the break starting and that is one evening."
+      },
+      {
+        "k": "THE CASE FOR ROSS",
+        "h": "On the letter of it, he's right",
+        "b": "She ended it. Those were her words. He was single for several hours and acted like it. You can't be unfaithful to someone who has just walked you out of the relationship."
+      },
+      {
+        "k": "THE VERDICT",
+        "h": "Right, and still wrong",
+        "b": "The show knows the technicality is true, which is why it lasts seven years as a joke. But she never asks whether it was allowed. She asks how he could. He answers a question about rules. She was asking one about him."
+      }
+    ],
+    "ask": "On a break: yes or no. No essays.",
+    "caption": "they were on a break. he's still the one in the wrong. both things are true and that's why it's the best argument in sitcom history.\n\nthe comments are open. be civil. you won't be.",
+    "tags": "#friends #rossandrachel #wewereonabreak #tvdebate"
+  },
+  {
+    "id": "take-godfather-2",
+    "kind": "take",
+    "label": "HOT TAKE",
+    "title": "Hot take",
+    "quote": "The Godfather Part II is not better than the first one. People just enjoy saying it.",
+    "slides": [],
+    "caption": "it's a great film. it's also half a great film and half a very long flashback. the first one doesn't waste a frame.\n\ncome at me.",
+    "tags": "#thegodfather #filmdebate"
+  },
+  {
+    "id": "take-three-hours",
+    "kind": "take",
+    "label": "HOT TAKE",
+    "title": "Hot take",
+    "quote": "A film being three hours long is not a personality. Edit your shit.",
+    "slides": [],
+    "caption": "some films need the time. most of them need a braver editor and a producer who can say no.\n\nninety minutes is a gift.",
+    "tags": "#filmdebate #cinema"
+  },
+  {
+    "id": "take-book-better",
+    "kind": "take",
+    "label": "HOT TAKE",
+    "title": "Hot take",
+    "quote": "The book is not always better. Jaws, The Godfather and Fight Club all say hello.",
+    "slides": [],
+    "caption": "the Jaws novel has a mafia subplot and an affair in it. Spielberg threw both in the sea and made a masterpiece.\n\nsometimes the film fixes it.",
+    "tags": "#bookvsmovie #filmdebate"
+  },
+  {
+    "id": "take-subtitles",
+    "kind": "take",
+    "label": "HOT TAKE",
+    "title": "Hot take",
+    "quote": "Subtitles on, always. If you can't read and watch at the same time, that's a you problem.",
+    "slides": [],
+    "caption": "you are missing half the best films ever made because of one inch of text at the bottom of the screen.\n\nBong Joon-ho said it nicer. I'm saying it like this.",
+    "tags": "#worldcinema #subtitles #filmdebate"
+  },
+  {
+    "id": "take-tenet",
+    "kind": "take",
+    "label": "HOT TAKE",
+    "title": "Hot take",
+    "quote": "Nobody enjoyed Tenet. Some people enjoyed pretending to understand Tenet.",
+    "slides": [],
+    "caption": "I've seen it three times. I can describe what happens. I can't tell you what anyone said, because you can't hear a fucking word.\n\nlooks incredible though.",
+    "tags": "#tenet #christophernolan #filmdebate"
+  },
+  {
+    "id": "take-the-office",
+    "kind": "take",
+    "label": "HOT TAKE",
+    "title": "Hot take",
+    "quote": "The Office got bad after Michael left, and everyone who says otherwise is fucking lying.",
+    "slides": [],
+    "caption": "two more seasons of everyone standing around the space where a main character used to be.\n\nthe goodbye at the airport is perfect. should have rolled credits on the whole show.",
+    "tags": "#theoffice #michaelscott #tvdebate"
+  },
+  {
+    "id": "take-shuffle",
+    "kind": "take",
+    "label": "HOT TAKE",
+    "title": "Hot take",
+    "quote": "Shuffling an album is disrespectful. Someone chose that order. Sit down and listen.",
+    "slides": [],
+    "caption": "the track after the sad one is there to catch you. that's not an accident. that's somebody's job.\n\nplaylists are fine. albums are sentences.",
+    "tags": "#albums #musicdebate #vinylcommunity"
+  },
+  {
+    "id": "take-paddington",
+    "kind": "take",
+    "label": "HOT TAKE",
+    "title": "Hot take",
+    "quote": "Paddington 2 is a better film than Citizen Kane, and I've watched both this year.",
+    "slides": [],
+    "caption": "one of them changed cinema. the other one has Hugh Grant doing a tap number in prison and made me cry about marmalade.\n\nI know which I'm putting on tonight.",
+    "tags": "#paddington2 #filmdebate"
+  },
+  {
+    "id": "take-credits",
+    "kind": "take",
+    "label": "HOT TAKE",
+    "title": "Hot take",
+    "quote": "Skipping the intro is fine. Talking through the end credits song is a crime.",
+    "slides": [],
+    "caption": "the film just ended. it picked a song to send you out with. give it ninety seconds before you ask what's for dinner.",
+    "tags": "#cinema #filmdebate"
+  },
+  {
+    "id": "take-rewatch",
+    "kind": "take",
+    "label": "HOT TAKE",
+    "title": "Hot take",
+    "quote": "If you've only seen it once, you don't have a favourite film. You have a good memory of an evening.",
+    "slides": [],
+    "caption": "the second watch is where you find out if it was the film or the mood you were in.\n\nmy actual favourites are the ones I've seen too many times to count.",
+    "tags": "#filmdebate #cinephile"
+  },
+  {
+    "id": "thought-horror",
+    "kind": "thought",
+    "label": "RANDOM THOUGHT",
+    "title": "Random thought",
+    "quote": "Nobody in a horror film has ever seen a horror film.",
+    "slides": [],
+    "caption": "the basement light doesn't work and there's a noise down there. you've got a phone. you've got legs. leave.",
+    "tags": "#horrormovies #showerthoughts"
+  },
+  {
+    "id": "thought-heist",
+    "kind": "thought",
+    "label": "RANDOM THOUGHT",
+    "title": "Random thought",
+    "quote": "Every heist film is a group project where everyone actually does their bit. That's the fantasy.",
+    "slides": [],
+    "caption": "eleven people, all on time, all prepared, nobody saying \"sorry, which part was mine again?\"\n\nforget the money. I'd watch it for that alone.",
+    "tags": "#heistmovies #showerthoughts"
+  },
+  {
+    "id": "thought-bond",
+    "kind": "thought",
+    "label": "RANDOM THOUGHT",
+    "title": "Random thought",
+    "quote": "James Bond is a secret agent who tells everyone he meets his full real name. Twice.",
+    "slides": [],
+    "caption": "surname first, then the whole thing again in case they missed it. to villains. in their own casinos.\n\nworst spy alive. great suits.",
+    "tags": "#jamesbond #showerthoughts"
+  },
+  {
+    "id": "thought-phone",
+    "kind": "thought",
+    "label": "RANDOM THOUGHT",
+    "title": "Random thought",
+    "quote": "People in films never say goodbye before hanging up the phone, and it's why I can't trust any of them.",
+    "slides": [],
+    "caption": "\"meet me at the docks.\" click. no bye. no see you there. absolute psychopaths.",
+    "tags": "#movies #showerthoughts"
+  },
+  {
+    "id": "thought-inception-pitch",
+    "kind": "thought",
+    "label": "RANDOM THOUGHT",
+    "title": "Random thought",
+    "quote": "Somebody had to explain Inception out loud, in a meeting, to people in suits. And they said yes.",
+    "slides": [],
+    "caption": "\"so it's a dream. inside a dream. inside another one. and there's a van falling off a bridge for an hour.\"\n\n\"here's 160 million dollars.\"",
+    "tags": "#inception #showerthoughts"
+  },
+  {
+    "id": "thought-romcom",
+    "kind": "thought",
+    "label": "RANDOM THOUGHT",
+    "title": "Random thought",
+    "quote": "The real victim of every romcom is the perfectly nice fiancé who gets dumped at the altar.",
+    "slides": [],
+    "caption": "he booked the venue. he's got a good job. his only crime was not being the lead.\n\njustice for every man called Greg in a wedding film.",
+    "tags": "#romcom #showerthoughts"
+  },
+  {
+    "id": "thought-wall-e",
+    "kind": "thought",
+    "label": "RANDOM THOUGHT",
+    "title": "Random thought",
+    "quote": "WALL-E doesn't speak for half an hour and still says more than most people I know.",
+    "slides": [],
+    "caption": "a bin with eyes holding his own hands because he saw it in a musical. I'm not okay.",
+    "tags": "#walle #pixar #showerthoughts"
+  },
+  {
+    "id": "thought-vinyl",
+    "kind": "thought",
+    "label": "RANDOM THOUGHT",
+    "title": "Random thought",
+    "quote": "Vinyl people will tell you it sounds warmer. It sounds like a fucking campfire, mate. That's the crackle.",
+    "slides": [],
+    "caption": "I say this as someone with two hundred records and no intention of stopping.\n\nit's not about the sound. it's about having to get up and turn it over.",
+    "tags": "#vinylcommunity #showerthoughts"
+  },
+  {
+    "id": "thought-shrek",
+    "kind": "thought",
+    "label": "RANDOM THOUGHT",
+    "title": "Random thought",
+    "quote": "Shrek has a better soundtrack than most films that have won Best Picture.",
+    "slides": [],
+    "caption": "it opens with a fairy tale book being used as toilet paper while All Star plays. no Best Picture winner has had the nerve.",
+    "tags": "#shrek #showerthoughts"
+  },
+  {
+    "id": "thought-sad-major",
+    "kind": "thought",
+    "label": "RANDOM THOUGHT",
+    "title": "Random thought",
+    "quote": "A sad song in a happy key is emotional fraud, and it's my favourite kind of music.",
+    "slides": [],
+    "caption": "you're tapping your foot and then you actually hear the words and have to go and sit down.\n\nHey Ya is a break-up song. sorry.",
+    "tags": "#music #showerthoughts"
+  },
+  {
+    "id": "norm-macdonald-1",
+    "kind": "comedy",
+    "label": "ONE-LINER",
+    "title": "Norm Macdonald",
+    "quote": "I'm pretty sure, if you die, the cancer dies at the same time. That's not a loss. That's a draw.",
+    "slides": [],
+    "caption": "he had cancer for nine years and told almost nobody. he just went on stage and did this bit.\n\nthe bravest joke anyone has ever told.",
+    "tags": "#normmacdonald"
+  },
+  {
+    "id": "george-carlin-2",
+    "kind": "comedy",
+    "label": "ONE-LINER",
+    "title": "George Carlin",
+    "quote": "Think of how stupid the average person is, and realise half of them are stupider than that.",
+    "slides": [],
+    "caption": "statistically sound. emotionally devastating.",
+    "tags": "#georgecarlin"
+  },
+  {
+    "id": "bill-hicks-1",
+    "kind": "comedy",
+    "label": "ONE-LINER",
+    "title": "Bill Hicks",
+    "quote": "They say pot makes you unmotivated. That's a lie. When you're high you can do everything you normally do just as well. You just realise it's not worth the fucking effort.",
+    "slides": [],
+    "caption": "he died at 32 and comedians still talk about him like he's in the next room.",
+    "tags": "#billhicks"
+  },
+  {
+    "id": "joan-rivers-2",
+    "kind": "comedy",
+    "label": "ONE-LINER",
+    "title": "Joan Rivers",
+    "quote": "I've had so much plastic surgery, when I die they'll donate my body to Tupperware.",
+    "slides": [],
+    "caption": "nobody could say anything about her that she hadn't already said, funnier, about herself. that was the armour.",
+    "tags": "#joanrivers"
+  },
+  {
+    "id": "rodney-dangerfield-3",
+    "kind": "comedy",
+    "label": "ONE-LINER",
+    "title": "Rodney Dangerfield",
+    "quote": "I came from a real tough neighbourhood. Once a guy pulled a knife on me. I knew he wasn't a professional. The knife had butter on it.",
+    "slides": [],
+    "caption": "the butter. three words and you can see the whole kitchen.",
+    "tags": "#rodneydangerfield"
+  },
+  {
+    "id": "phyllis-diller-1",
+    "kind": "comedy",
+    "label": "ONE-LINER",
+    "title": "Phyllis Diller",
+    "quote": "Housework can't kill you, but why take a chance?",
+    "slides": [],
+    "caption": "she started stand-up at 37 with five kids at home. this is field research.",
+    "tags": "#phyllisdiller"
+  },
+  {
+    "id": "groucho-marx-2",
+    "kind": "comedy",
+    "label": "ONE-LINER",
+    "title": "Groucho Marx",
+    "quote": "I've had a perfectly wonderful evening. But this wasn't it.",
+    "slides": [],
+    "caption": "keep this one ready. you'll need it at least once a year.",
+    "tags": "#grouchomarx"
+  },
+  {
+    "id": "steven-wright-3",
+    "kind": "comedy",
+    "label": "ONE-LINER",
+    "title": "Steven Wright",
+    "quote": "If at first you don't succeed, then skydiving definitely isn't for you.",
+    "slides": [],
+    "caption": "motivational poster for realists.",
+    "tags": "#stevenwright"
+  },
+  {
+    "id": "mitch-hedberg-5",
+    "kind": "comedy",
+    "label": "ONE-LINER",
+    "title": "Mitch Hedberg",
+    "quote": "I haven't slept for ten days, because that would be too long.",
+    "slides": [],
+    "caption": "it takes a second. then it takes you out.",
+    "tags": "#mitchhedberg"
+  },
+  {
+    "id": "jimmy-carr-2",
+    "kind": "comedy",
+    "label": "ONE-LINER",
+    "title": "Jimmy Carr",
+    "quote": "I worry about my nan. If she's alone and falls, does she make a noise? I'm joking. She's dead.",
+    "slides": [],
+    "caption": "three jokes in four sentences and each one is worse than the last. it's a magic trick with a body count.",
+    "tags": "#jimmycarr #darkhumour"
+  },
+  {
+    "id": "anthony-jeselnik-1",
+    "kind": "comedy",
+    "label": "ONE-LINER",
+    "title": "Anthony Jeselnik",
+    "quote": "I've spent the past two years looking for my ex-girlfriend's killer. But no one will do it.",
+    "slides": [],
+    "caption": "the pause before the last five words is the whole act. he lets you feel sorry for him first.",
+    "tags": "#anthonyjeselnik #darkhumour"
+  },
+  {
+    "id": "billy-connolly-1",
+    "kind": "comedy",
+    "label": "ONE-LINER",
+    "title": "Billy Connolly",
+    "quote": "Never trust a man who, when left alone in a room with a tea cosy, doesn't try it on.",
+    "slides": [],
+    "caption": "the only character test you'll ever need.",
+    "tags": "#billyconnolly"
   }
 ]
