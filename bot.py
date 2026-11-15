@@ -2,6 +2,7 @@
 """Daily carousel bot for Instagram: scene studies, shelf notes, liner notes.
 
   python bot.py render [--id POST_ID]     pick the next post and draw its slides
+  python bot.py render --reel             same, but as a vertical video (needs ffmpeg)
   python bot.py publish                   publish what `render` drew
   python bot.py preview [--id POST_ID]    draw every post into preview/
   python bot.py refresh-token             extend the Instagram token
@@ -52,6 +53,7 @@ THEMES = {  # background, text, accent, muted
     "music": ("#15171C", "#ECE9E2", "#7FB8A4", "#8A8F9C"),
     "art":   ("#F5F3EE", "#17171A", "#2F4E7A", "#807C74"),
     "series": ("#0E1014", "#ECEAE4", "#8FB3E8", "#868B96"),
+    "comedy": ("#F2C230", "#1A1712", "#A3271B", "#6E5A14"),
 }
 QUOTE_PALETTES = [
     ("#14213D", "#F7F3E9", "#FCA311", "#9AA5BD"),
@@ -75,13 +77,13 @@ def quote_id(q):
     return hashlib.sha1(q["text"].encode("utf-8")).hexdigest()[:10]
 
 
-def next_post(posted, wanted=None):
+def next_post(posted, wanted=None, multi_slide=False):
     posts = load_json(ROOT / "posts.json", [])
     if wanted:
         match = [p for p in posts if p["id"] == wanted]
         return match[0] if match else sys.exit(f"No post with id {wanted!r} in posts.json")
     used = {p["id"] for p in posted}
-    fresh = [p for p in posts if p["id"] not in used]
+    fresh = [p for p in posts if p["id"] not in used and (len(p.get("slides", [])) >= 2 or not multi_slide)]
     if not fresh:
         return None
     by_id = {p["id"]: p for p in posts}        # random order, but never the same series twice running
@@ -612,6 +614,9 @@ def slide_pairs(p, th, n, total, cfg):
 
 def render_post(p, cfg, folder, stem):
     th = list(THEMES[p["kind"]])
+    if p.get("quote"):                          # a one-liner: single card
+        card = slide_quote(p, th, {"q": p["quote"], "by": p["title"]}, 1, 1, cfg)
+        return [save(card, folder / f"{stem}-01.jpg")], ""
     stills, credit = fetch_images(p)
     if stills and p["kind"] == "art" and stills[0].width >= 1200:
         stills.append(detail_of(stills[0], p.get("detail", (0.5, 0.5)), W, 420))   # close-up for slide 2
@@ -630,6 +635,43 @@ def render_post(p, cfg, folder, stem):
         images.append(slide_pairs(p, th, total, total, cfg))
     paths = [save(im, folder / f"{stem}-{i:02d}.jpg") for i, im in enumerate(images, start=1)]
     return paths, credit
+
+
+# ---------------------------------------------------------------- reels
+
+def make_reel(slide_paths, post, out_path):
+    """Turn a post's slides into a vertical 1080x1920 video with crossfades. Needs ffmpeg."""
+    import tempfile
+    bg = THEMES[post["kind"]][0]
+    tmp = Path(tempfile.mkdtemp())
+    texts = [None] + list(post["slides"]) + ([None] if post.get("pairs") else [])
+    frames, secs = [], []
+    for i, path in enumerate(slide_paths):
+        slide = Image.open(path)
+        frame = Image.new("RGB", (1080, 1920), bg)          # same background, so no visible bars
+        frame.paste(slide, (0, (1920 - slide.height) // 2))
+        frame.save(tmp / f"{i:02d}.png")
+        frames.append(tmp / f"{i:02d}.png")
+        s = texts[i] if i < len(texts) else None
+        words = len(" ".join([s.get("h", ""), s.get("b", ""), s.get("q", "")]).split()) if s else 0
+        secs.append(3.0 if i == 0 else min(9.0, max(4.0, words / 3.0 + 1.0)))   # time to read it
+    fade = 0.4
+    cmd = ["ffmpeg", "-y", "-loglevel", "error"]
+    for frame, d in zip(frames, secs):
+        cmd += ["-loop", "1", "-t", f"{d + fade:.2f}", "-r", "30", "-i", str(frame)]
+    cmd += ["-f", "lavfi", "-t", f"{sum(secs) + fade:.2f}", "-i", "anullsrc=r=44100:cl=stereo"]
+    chain, last, offset = [], "[0:v]", 0.0
+    for i in range(1, len(frames)):
+        offset += secs[i - 1]
+        chain.append(f"{last}[{i}:v]xfade=transition=fade:duration={fade}:offset={offset:.2f}[v{i}]")
+        last = f"[v{i}]"
+    chain.append(f"{last}format=yuv420p[v]")
+    cmd += ["-filter_complex", ";".join(chain), "-map", "[v]", "-map", f"{len(frames)}:a",
+            "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-r", "30",
+            "-c:a", "aac", "-b:a", "128k", "-shortest", "-movflags", "+faststart", str(out_path)]
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run(cmd, check=True)
+    return out_path, sum(secs)
 
 
 # ---------------------------------------------------------------- single quote card
@@ -660,9 +702,21 @@ def cmd_render(args):
     cfg = load_json(ROOT / "config.json")
     posted = load_json(POSTED, [])
     now = dt.datetime.now(dt.timezone.utc)
-    post = next_post(posted, args.id)
+    post = next_post(posted, args.id, multi_slide=args.reel)
+    video = None
+    if args.reel:
+        cfg = dict(cfg, swipe_hint="")          # nothing to swipe in a video
+    if args.reel and not post:
+        sys.exit("No unposted multi-slide post left to turn into a Reel.")
     if post:
         paths, credit = render_post(post, cfg, OUT, f"{now:%Y%m%d-%H%M}-{post['id']}")
+        if args.reel:
+            if len(paths) < 2:
+                sys.exit(f"{post['id']} has a single slide; a Reel needs at least two.")
+            video, seconds = make_reel(paths, post, OUT / f"{now:%Y%m%d-%H%M}-{post['id']}-reel.mp4")
+            for p in paths:                     # the slides were only needed to build the video
+                p.unlink()
+            paths = []
         entry = {"id": post["id"], "type": "post", "date": f"{now:%Y-%m-%d}"}
         caption, what = post_caption(post, cfg, credit), f"{post['title']} ({len(paths)} slides)"
         left = sum(1 for p in load_json(ROOT / "posts.json", []) if p["id"] not in {x["id"] for x in posted}) - 1
@@ -675,15 +729,17 @@ def cmd_render(args):
         caption, what = quote_caption(q, cfg), f"quote from {q['source']}"
 
     cutoff = f"{now - dt.timedelta(days=KEEP_IMAGES_DAYS):%Y%m%d}"
-    for old in OUT.glob("*.jpg"):               # drop old slides so the repo stays small
+    for old in list(OUT.glob("*.jpg")) + list(OUT.glob("*.mp4")):   # drop old files so the repo stays small
         if old.name[:8] < cutoff:
             old.unlink()
 
     posted.append(entry)
     POSTED.write_text(json.dumps(posted, indent=0) + "\n", encoding="utf-8")
-    PENDING.write_text(json.dumps(
-        {"images": [p.relative_to(ROOT).as_posix() for p in paths], "caption": caption},
-        ensure_ascii=False, indent=2), encoding="utf-8")
+    pending = {"images": [p.relative_to(ROOT).as_posix() for p in paths], "caption": caption}
+    if video:
+        pending["video"] = video.relative_to(ROOT).as_posix()
+        what = f"{post['title']} as a {seconds:.0f} second Reel"
+    PENDING.write_text(json.dumps(pending, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Drew {what}")
 
 
@@ -740,15 +796,50 @@ def public_url(rel_path):
     return f"https://raw.githubusercontent.com/{repo}/{sha}/{rel_path}"
 
 
-def wait_ready(container):
-    for _ in range(40):                         # Instagram downloads and processes the image
+def video_urls(rel_path):
+    """Places Instagram can download the video from. The CDN copy is sent with a proper video type."""
+    if os.environ.get("IMAGE_BASE_URL"):
+        return [f"{os.environ['IMAGE_BASE_URL'].rstrip('/')}/{rel_path}"]
+    repo = os.environ.get("GITHUB_REPOSITORY") or sys.exit("Set GITHUB_REPOSITORY (owner/repo) or IMAGE_BASE_URL.")
+    sha = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    return [f"https://cdn.jsdelivr.net/gh/{repo}@{sha}/{rel_path}",
+            f"https://raw.githubusercontent.com/{repo}/{sha}/{rel_path}"]
+
+
+def publish_reel(pending):
+    import requests
+    url = None
+    for _ in range(30):                         # wait until the pushed video is public
+        for candidate in video_urls(pending["video"]):
+            try:
+                if requests.head(candidate, timeout=20, allow_redirects=True).status_code == 200:
+                    url = candidate
+                    break
+            except requests.RequestException:
+                pass
+        if url:
+            break
+        time.sleep(4)
+    else:
+        sys.exit("The video is not publicly reachable. Is the repository public and was it pushed?")
+    user = ig_user()
+    container = api("POST", f"{user}/media", media_type="REELS", video_url=url,
+                    caption=pending["caption"], share_to_feed="true")["id"]
+    wait_ready(container, tries=100)            # video processing can take a few minutes
+    media = api("POST", f"{user}/media_publish", creation_id=container)
+    PENDING.unlink()
+    print(f"Published a Reel. Media id: {media['id']}")
+
+
+def wait_ready(container, tries=40):
+    for _ in range(tries):                      # Instagram downloads and processes the file
         status = api("GET", container, fields="status_code").get("status_code")
         if status == "FINISHED":
             return
         if status in ("ERROR", "EXPIRED"):
             sys.exit(f"Instagram could not process an image (status {status}).")
         time.sleep(3)
-    sys.exit("Instagram took too long to process an image.")
+    sys.exit("Instagram took too long to process the upload.")
 
 
 def cmd_publish(args):
@@ -758,6 +849,8 @@ def cmd_publish(args):
     pending = load_json(PENDING)
     if not pending:
         sys.exit("Nothing to publish: run `python bot.py render` first.")
+    if pending.get("video"):
+        return publish_reel(pending)
     urls = [public_url(p) for p in pending["images"]]
 
     for _ in range(30):                         # wait until the pushed images are public
@@ -823,6 +916,7 @@ def main():
     sub = p.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("render")
     r.add_argument("--id", help="post id from posts.json (default: next unposted)")
+    r.add_argument("--reel", action="store_true", help="make a vertical video from the slides instead of a carousel")
     r.set_defaults(fn=cmd_render)
     sub.add_parser("publish").set_defaults(fn=cmd_publish)
     v = sub.add_parser("preview")

@@ -13,6 +13,17 @@ twice in a row:
 - **Look Closer**: a painting, shown whole and then in close-up.
 - **Shelf Notes**: a book or a poem.
 - **Liner Notes**: a record.
+- **One-Liner**: a single stand-up joke on a card.
+
+## Reels
+
+**Actions → Post a Reel → Run workflow** turns a multi-slide post into a
+vertical video: each slide stays on screen long enough to read, with a fade
+between them. The Reel is silent, because Instagram's API cannot attach music.
+
+To post one with music instead: run it with **publish** set to **no**, download
+the video from the run's **Artifacts** section, and upload it from the
+Instagram app with the song you want.
 
 Every post ends with a pairing slide ("play this with it", "read this after")
 and has a hand-written caption.
