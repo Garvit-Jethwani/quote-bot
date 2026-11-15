@@ -157,7 +157,7 @@ func cmdRender(args []string) error {
 			}
 			th := render.ThemeFor(post.Kind)
 			out.Video = stem + "-reel.mp4"
-			secs, err := reel.Build(slides, reel.Durations(post), th.BG, th.Accent, out.Video)
+			secs, err := reel.Build(slides, reel.Durations(post, len(slides)), th.BG, th.Accent, out.Video)
 			if err != nil {
 				return err
 			}

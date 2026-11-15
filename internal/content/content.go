@@ -51,6 +51,8 @@ type Post struct {
 	Wiki       string    `json:"wiki,omitempty"`
 	CoverTitle string    `json:"cover_title,omitempty"`
 	SkipStills int       `json:"skip_stills,omitempty"`
+	// Ask replaces the series' usual closing line with one written for this post.
+	Ask string `json:"ask,omitempty"`
 }
 
 // Maker returns whoever made the work: director, author, artist or creator.
@@ -71,12 +73,28 @@ func (p Post) SearchTitle() string {
 	return p.Title
 }
 
+// Outro is the line on the closing slide: a prompt to send, save or reply,
+// which are the actions Instagram weighs most. Single-image posts have none.
+func (p Post) Outro(cfg Config) string {
+	if p.Quote != "" || len(p.Slides) == 0 {
+		return ""
+	}
+	if p.Ask != "" {
+		return p.Ask
+	}
+	return cfg.Outro[p.Label]
+}
+
 // SlideCount is the number of images the post produces.
-func (p Post) SlideCount() int {
+func (p Post) SlideCount(cfg Config) int {
 	if p.Quote != "" {
 		return 1
 	}
-	return 1 + len(p.Slides)
+	n := 1 + len(p.Slides)
+	if p.Outro(cfg) != "" {
+		n++
+	}
+	return n
 }
 
 // Quote is one entry in quotes.json, the fallback used when the queue is empty.
@@ -94,6 +112,7 @@ type Config struct {
 	Hashtags             map[string]string `json:"hashtags"`
 	MaxHashtags          int               `json:"max_hashtags"`
 	CaptionFooter        string            `json:"caption_footer"`
+	Outro                map[string]string `json:"outro"` // closing line per series label
 	ImageCreditInCaption bool              `json:"image_credit_in_caption"`
 }
 

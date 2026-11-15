@@ -98,7 +98,7 @@ func AltText(p Post, slide int) string {
 	if slide == 0 {
 		return clip(strings.TrimSpace(fmt.Sprintf("%s %s %s", p.Hook, p.Title, Credit(p))))
 	}
-	if slide-1 < len(p.Slides) {
+	if slide > 0 && slide-1 < len(p.Slides) {
 		s := p.Slides[slide-1]
 		if s.IsQuote() {
 			return clip(s.Quote + " " + s.By)

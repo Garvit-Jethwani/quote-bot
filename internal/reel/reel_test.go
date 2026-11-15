@@ -17,8 +17,8 @@ func TestDurations(t *testing.T) {
 		{Head: "Short", Body: "A few words."},
 		{Head: "Long", Body: strings.Repeat("word ", 200)},
 	}}
-	d := Durations(p)
-	if len(d) != 3 || d[0] != 3 || d[1] != 4 || d[2] != 9 {
+	d := Durations(p, 4)
+	if len(d) != 4 || d[0] != 3 || d[1] != 4 || d[2] != 9 || d[3] != 3.5 {
 		t.Errorf("got %v", d)
 	}
 }

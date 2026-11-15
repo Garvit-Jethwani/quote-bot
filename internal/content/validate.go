@@ -121,7 +121,7 @@ func Validate(posts []Post) []string {
 }
 
 func (p Post) texts() []string {
-	out := []string{p.Hook, p.Quote, p.Caption, p.Title, p.Tags}
+	out := []string{p.Hook, p.Quote, p.Caption, p.Title, p.Tags, p.Ask}
 	for _, s := range p.Slides {
 		out = append(out, s.Kicker, s.Head, s.Body, s.Quote, s.By)
 	}

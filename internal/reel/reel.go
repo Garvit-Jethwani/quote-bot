@@ -24,7 +24,7 @@ const (
 
 // Durations returns how long each slide stays on screen: long enough to read
 // it at an unhurried pace.
-func Durations(p content.Post) []float64 {
+func Durations(p content.Post, total int) []float64 {
 	out := []float64{3.0} // the cover
 	for _, s := range p.Slides {
 		words := len(strings.Fields(s.Head + " " + s.Body + " " + s.Quote))
@@ -36,6 +36,9 @@ func Durations(p content.Post) []float64 {
 			d = 9
 		}
 		out = append(out, d)
+	}
+	for len(out) < total { // the closing slide
+		out = append(out, 3.5)
 	}
 	return out
 }

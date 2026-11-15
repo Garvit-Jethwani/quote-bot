@@ -213,7 +213,7 @@ func Post(p content.Post, cfg content.Config, stills []image.Image) []image.Imag
 			}
 		}
 	}
-	total := 1 + len(p.Slides)
+	total := p.SlideCount(cfg)
 	var first image.Image
 	if len(stills) > 0 {
 		first = stills[0]
@@ -231,7 +231,27 @@ func Post(p content.Post, cfg content.Config, stills []image.Image) []image.Imag
 		}
 		out = append(out, Body(p, th, s, n, total, cfg, band))
 	}
+	if line := p.Outro(cfg); line != "" {
+		out = append(out, Outro(p, th, line, total, cfg))
+	}
 	return out
+}
+
+// Outro draws the closing slide: one line asking for a send, a save or a reply.
+func Outro(p content.Post, th Theme, line string, total int, cfg content.Config) image.Image {
+	dc := canvas(th)
+	fy := chrome(dc, th, p.Label, total, total, cfg.Handle, "")
+	width := float64(W - 2*M)
+	top, bottom := 190.0, fy-60
+	f, lines, lh := fit(Serif, line, width, bottom-top-160, 92, 48, 1.18)
+	block := float64(len(lines))*lh + 56 + 34
+	y := top + math.Floor((bottom-top-block)/2)
+	y = para(dc, f, lines, M, y, lh, th.FG) + 56
+	hline(dc, M, M+84, y-20, 3, th.Accent)
+	if cfg.Handle != "" {
+		tracked(dc, face(SansBold, 24), strings.ToUpper("More like this: "+cfg.Handle), M, y+16, 5, th.Muted)
+	}
+	return dc.Image()
 }
 
 // quotePalettes are the colour sets for fallback quote cards.

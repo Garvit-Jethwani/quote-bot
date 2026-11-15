@@ -141,7 +141,7 @@ func TestCaptionsFollowTheHouseRules(t *testing.T) {
 		if len([]rune(c)) > maxCaption {
 			t.Errorf("%s: caption too long", p.ID)
 		}
-		for i := 0; i < p.SlideCount(); i++ {
+		for i := 0; i < p.SlideCount(cfg); i++ {
 			if AltText(p, i) == "" {
 				t.Errorf("%s: slide %d has no alt text", p.ID, i+1)
 			}

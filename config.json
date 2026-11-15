@@ -1,11 +1,6 @@
 {
   "handle": "@cinemaroundhay_1888",
   "swipe_hint": "SWIPE",
-  "closing_line": "Save this for a slow evening.",
-  "labels": {
-    "book": "FROM THE PAGE",
-    "movie": "FROM THE SCREEN"
-  },
   "hashtags": {
     "film": "#cinephile #filmstagram #worldcinema",
     "music": "#musicdiscovery #albumoftheday",
@@ -14,10 +9,19 @@
     "art": "#arthistory #paintingoftheday",
     "book_quote": "#bookquotes #bookstagram #literature #booklover #quoteoftheday",
     "series": "#tvseries #television #scenestudy",
-    "comedy": "#standupcomedy #oneliners #comedy #funny"
+    "comedy": "#standupcomedy #oneliners #comedy #funny",
+    "take": "#hottake #filmtwitter #unpopularopinion"
   },
   "caption_footer": "",
   "max_hashtags": 5,
-  "recommendations_in_caption": false,
-  "image_credit_in_caption": false
+  "image_credit_in_caption": false,
+  "outro": {
+    "SCENE STUDY": "Send this to the person you'd rewatch it with.",
+    "WHAT IF": "Which version do you believe? Tell me I'm wrong.",
+    "EPISODE STUDY": "Send this to whoever you watched it with.",
+    "DID YOU NOTICE": "Send this to someone who thinks they've seen it properly.",
+    "LOOK CLOSER": "Save this for your next museum visit.",
+    "SHELF NOTES": "Send this to the friend who still owes you a book.",
+    "LINER NOTES": "Send this to someone who needs a new record."
+  }
 }

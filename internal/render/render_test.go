@@ -24,8 +24,8 @@ func TestEveryPostInTheQueueDraws(t *testing.T) {
 	cfg, _ := content.LoadConfig("../../config.json")
 	for _, p := range posts {
 		slides := Post(p, cfg, nil)
-		if len(slides) != p.SlideCount() {
-			t.Errorf("%s: drew %d slides, want %d", p.ID, len(slides), p.SlideCount())
+		if len(slides) != p.SlideCount(cfg) {
+			t.Errorf("%s: drew %d slides, want %d", p.ID, len(slides), p.SlideCount(cfg))
 		}
 		for _, s := range slides {
 			if b := s.Bounds(); b.Dx() != W || b.Dy() != H {
