@@ -3,9 +3,13 @@
 Posts two multi-slide carousels a day to your Instagram account. It runs for
 free on GitHub Actions, so there is no server to look after.
 
-Each post is one of four series:
+Posts come from seven series, picked in random order, never the same series
+twice in a row:
 
 - **Scene Study**: a film, with real stills, and what makes one scene work.
+- **Episode Study**: the same for one episode of a TV series.
+- **What If**: rewind a famous scene, change one thing, follow what happens.
+- **One Frame**: a single image with one fact about how it was made.
 - **Look Closer**: a painting, shown whole and then in close-up.
 - **Shelf Notes**: a book or a poem.
 - **Liner Notes**: a record.
@@ -102,8 +106,8 @@ looked at them in advance. If a post gets a frame you don't like, add
 
 ## Adding posts
 
-The bot ships with 39 carousels, which is about 19 days at two a day. It posts them
-in the order they appear in `posts.json`. When five or fewer are left, the
+The bot ships with 67 posts, which is about a month at two a day. It picks them
+at random from `posts.json`. When five or fewer are left, the
 workflow run shows a warning. When they run out, it falls back to the single
 quote cards in `quotes.json` so the account never goes quiet.
 
@@ -112,7 +116,7 @@ To add a post, copy an existing entry in `posts.json` and change it:
 | Field | Meaning |
 |---|---|
 | `id` | Any unique name, lower-case with dashes. |
-| `kind` | `film`, `art`, `book` or `music`. Sets the colours and where images come from. |
+| `kind` | `film`, `series`, `art`, `book` or `music`. Sets the colours and where images come from. |
 | `wiki` | Optional. The exact Wikipedia page title, for when the plain title is ambiguous (a film named after a town, say). |
 | `cover_title` | Optional. Search for a cover under a different name, e.g. the collection a poem comes from. |
 | `image`, `detail` | Art posts only. `{"aic": "Exact title"}` finds the painting at the Art Institute of Chicago; it must be public domain there. `detail` is the point the close-up centres on, as fractions across and down, e.g. `[0.7, 0.4]`. |

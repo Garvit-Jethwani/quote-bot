@@ -51,6 +51,7 @@ THEMES = {  # background, text, accent, muted
     "book":  ("#F1EADB", "#1E1B17", "#A8472A", "#7B7266"),
     "music": ("#15171C", "#ECE9E2", "#7FB8A4", "#8A8F9C"),
     "art":   ("#F5F3EE", "#17171A", "#2F4E7A", "#807C74"),
+    "series": ("#0E1014", "#ECEAE4", "#8FB3E8", "#868B96"),
 }
 QUOTE_PALETTES = [
     ("#14213D", "#F7F3E9", "#FCA311", "#9AA5BD"),
@@ -80,7 +81,12 @@ def next_post(posted, wanted=None):
         match = [p for p in posts if p["id"] == wanted]
         return match[0] if match else sys.exit(f"No post with id {wanted!r} in posts.json")
     used = {p["id"] for p in posted}
-    return next((p for p in posts if p["id"] not in used), None)
+    fresh = [p for p in posts if p["id"] not in used]
+    if not fresh:
+        return None
+    by_id = {p["id"]: p for p in posts}        # random order, but never the same series twice running
+    recent = {by_id[x["id"]]["label"] for x in posted[-2:] if x["id"] in by_id}
+    return random.choice([p for p in fresh if p["label"] not in recent] or fresh)
 
 
 def pick_quote(posted):
@@ -119,6 +125,9 @@ def post_caption(p, cfg, image_credit):
     if p["kind"] == "film":
         credit = f"{p['title']} ({p['year']}), dir. {p['director']}."
         parts.append(f"{credit} {image_credit}".strip())
+    if p["kind"] == "series":
+        where = "season {} episode {}".format(*p["episode"]) if p.get("episode") else str(p["year"])
+        parts.append(f"{p['title']}, {where}. {image_credit}".strip())
     if p["kind"] == "art":
         credit = f"{p['artist']}, {p['title']} ({p['year']})."
         parts.append(f"{credit} {image_credit}".strip())
@@ -166,7 +175,7 @@ def http_image(url, min_side=200):
 
 
 def creator(post):
-    return post.get("director") or post.get("author") or post.get("artist") or ""
+    return post.get("director") or post.get("author") or post.get("artist") or post.get("creator") or ""
 
 
 def same(a, b):
@@ -187,12 +196,19 @@ def tmdb_get(path, **params):
 
 
 def tmdb_movie(post):
+    """Find the film, or the show for a series post, on TMDB."""
     if post["id"] not in _tmdb_cache:
-        found = tmdb_get("search/movie", query=post["title"], year=post["year"]).get("results", [])
+        if post["kind"] == "series":
+            path, year_key, names = "search/tv", "first_air_date_year", ("name", "original_name")
+            year = post.get("first_aired", post["year"])
+        else:
+            path, year_key, names = "search/movie", "year", ("title", "original_title")
+            year = post["year"]
+        found = tmdb_get(path, query=post["title"], **{year_key: year}).get("results", [])
         if not found:
-            found = tmdb_get("search/movie", query=post["title"]).get("results", [])
+            found = tmdb_get(path, query=post["title"]).get("results", [])
         want = post["title"].lower()
-        exact = [m for m in found if want in (m.get("title", "").lower(), m.get("original_title", "").lower())]
+        exact = [m for m in found if want in [(m.get(n) or "").lower() for n in names]]
         _tmdb_cache[post["id"]] = (exact or found or [None])[0]
     return _tmdb_cache[post["id"]]
 
@@ -203,7 +219,18 @@ def src_tmdb_stills(post):
     movie = tmdb_movie(post)
     if not movie:
         return [], ""
-    shots = tmdb_get(f"movie/{movie['id']}/images", include_image_language="null").get("backdrops", [])
+    shots = []
+    if post["kind"] == "series":
+        if post.get("episode"):                # frames from the exact episode, when TMDB has them
+            season, ep = post["episode"]
+            try:
+                shots = tmdb_get(f"tv/{movie['id']}/season/{season}/episode/{ep}/images").get("stills", [])
+            except RuntimeError:
+                shots = []
+        if not shots:
+            shots = tmdb_get(f"tv/{movie['id']}/images", include_image_language="null").get("backdrops", [])
+    else:
+        shots = tmdb_get(f"movie/{movie['id']}/images", include_image_language="null").get("backdrops", [])
     shots = [x for x in shots if x.get("iso_639_1") in (None, "xx") and x.get("width", 0) >= 1280]
     shots.sort(key=lambda x: (x.get("vote_average", 0), x.get("vote_count", 0)), reverse=True)
     skip = post.get("skip_stills", 0)          # set in posts.json to pick different frames
@@ -276,7 +303,7 @@ def src_aic(post):
     return [], ""
 
 
-WIKI_WORDS = {"film": ("film",), "music": ("album",), "art": ("painting", "print", "woodblock"),
+WIKI_WORDS = {"film": ("film",), "series": ("series", "sitcom", "drama", "show"), "music": ("album",), "art": ("painting", "print", "woodblock"),
               "book": ("novel", "book", "poem", "letters", "collection", "work by", "novella")}
 
 
@@ -285,6 +312,7 @@ def src_wikipedia(post):
     t, y = post["title"], post["year"]
     names = [post["wiki"]] if post.get("wiki") else {
         "film": [f"{t} ({y} film)", f"{t} (film)", t],
+        "series": [f"{t} (TV series)", t],
         "music": [f"{t} ({creator(post)} album)", f"{t} (album)", t],
         "book": [f"{t} (novel)", f"{t} (book)", t, post.get("cover_title", t)],
         "art": [f"{t} (painting)", t, (post.get("image") or {}).get("wiki", t)],
@@ -306,6 +334,7 @@ def src_wikipedia(post):
 
 SOURCES = {
     "film": [src_tmdb_stills, src_tmdb_poster, src_apple_movie, src_wikipedia],
+    "series": [src_tmdb_stills, src_tmdb_poster, src_wikipedia],
     "art": [src_aic, src_wikipedia],
     "music": [src_apple_album, src_wikipedia],
     "book": [src_openlibrary, src_wikipedia],
@@ -438,10 +467,14 @@ def chrome(d, th, label, n, total, handle, hint=""):
     bg, fg, accent, muted = th
     f = font("Inter", 24, 600)
     end = tracked(d, (M, 78), label, f, accent, 6)
-    count = f"{n:02d} / {total:02d}"
-    cw = tracked_w(d, count, f, 3)
-    tracked(d, (W - M - cw, 78), count, f, muted, 3)
-    d.line([(end + 22, 93), (W - M - cw - 22, 93)], fill=muted, width=1)
+    if total > 1:
+        count = f"{n:02d} / {total:02d}"
+        cw = tracked_w(d, count, f, 3)
+        tracked(d, (W - M - cw, 78), count, f, muted, 3)
+        d.line([(end + 22, 93), (W - M - cw - 22, 93)], fill=muted, width=1)
+    else:                                       # a single image: no page count, no swipe hint
+        hint = ""
+        d.line([(end + 22, 93), (W - M, 93)], fill=muted, width=1)
     fy = H - 104
     if hint:
         e = tracked(d, (M, fy), hint, f, accent, 6)
@@ -464,7 +497,7 @@ def save(img, path):
 # ---------------------------------------------------------------- carousel slides
 
 def byline(p):
-    who = p.get("director") or p.get("author") or p.get("artist") or ""  # artist: music and art
+    who = creator(p)
     return f"{who} · {p['year']}".upper() if who else str(p["year"])
 
 
@@ -582,7 +615,7 @@ def render_post(p, cfg, folder, stem):
     stills, credit = fetch_images(p)
     if stills and p["kind"] == "art" and stills[0].width >= 1200:
         stills.append(detail_of(stills[0], p.get("detail", (0.5, 0.5)), W, 420))   # close-up for slide 2
-    if stills and p["kind"] == "film":
+    if stills and p["kind"] in ("film", "series"):
         th[2] = accent_from(stills[0], th[2])
         if len(stills) > 1 and stills[1].width / stills[1].height < 1.5:
             stills = stills[:1]

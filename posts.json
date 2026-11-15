@@ -1528,5 +1528,712 @@
     "caption": "she would have been incredible at this app.\n\n\"a lover who fusses over his hat while leaving\" has been living in my head for years.",
     "tags": "#seishonagon #thepillowbook #japaneseliterature #classicliterature",
     "wiki": "The Pillow Book"
+  },
+  {
+    "id": "whatif-titanic",
+    "kind": "film",
+    "label": "WHAT IF",
+    "title": "Titanic",
+    "year": 1997,
+    "director": "James Cameron",
+    "hook": "What if Jack had climbed onto the door?",
+    "slides": [
+      {
+        "k": "FIRST",
+        "h": "It isn't a door",
+        "b": "It's a piece of carved oak panelling from above the first-class lounge entrance. The prop sold at auction in 2024 for over 700,000 dollars, which tells you how long people have been angry about it."
+      },
+      {
+        "k": "THE TEST",
+        "h": "Cameron actually tried it",
+        "b": "In 2023 he put two stunt performers in cold water with a replica and a hypothermia expert. Both on the panel: it sinks low and they freeze. But with her life jacket on him and their upper bodies out of the water, he might have lasted until the boat came back."
+      },
+      {
+        "k": "THE ANSWER",
+        "h": "Page 147",
+        "b": "So yes, maybe. Cameron's own reply for twenty years was simpler: the script says on page 147 that Jack dies. The film is built so that she lives a whole life because he didn't. Save him and you have a romance. Lose him and you have the reason she's telling the story."
+      }
+    ],
+    "caption": "every few years someone proves he could have fit and every time it misses the point. he was never getting out of that water. the film needed a ghost.\n\nstill would have tried to squeeze on though.",
+    "tags": "#titanic #jamescameron #moviedebate"
+  },
+  {
+    "id": "whatif-whiplash",
+    "kind": "film",
+    "label": "WHAT IF",
+    "title": "Whiplash",
+    "year": 2014,
+    "director": "Damien Chazelle",
+    "hook": "What if Andrew had kept walking?",
+    "slides": [
+      {
+        "k": "THE FORK",
+        "h": "He does leave, for ten seconds",
+        "b": "Humiliated on stage, Andrew walks off into the wings and into his father's arms. That hug is the exit. A normal life is right there. Then he turns round, goes back to the kit and starts playing before Fletcher can stop him."
+      },
+      {
+        "k": "THE FATHER",
+        "h": "Watch the face in the doorway",
+        "b": "During the solo the film cuts to his dad watching through a gap in the door. He isn't proud. He looks like a man watching his son get taken. It's shot like a horror film because for him it is one."
+      },
+      {
+        "k": "THE REAL ENDING",
+        "h": "The director doesn't think it ends well",
+        "b": "Chazelle has said that in his head Andrew grows into a sad, empty shell of a person and dies young. So the triumphant last shot is the what if. The version where he kept walking is the happy one, and the film never shows it."
+      }
+    ],
+    "caption": "people leave this film pumped up and I always want to ask what they think happens the next morning.\n\nthat final smile between them is the scariest thing in it.",
+    "tags": "#whiplash #damienchazelle #milesteller"
+  },
+  {
+    "id": "whatif-la-la-land",
+    "kind": "film",
+    "label": "WHAT IF",
+    "title": "La La Land",
+    "year": 2016,
+    "director": "Damien Chazelle",
+    "hook": "This film contains its own what if, and it lasts seven minutes.",
+    "slides": [
+      {
+        "k": "THE SET-UP",
+        "h": "Five years later",
+        "b": "Mia is a star, married to someone else. She walks into a jazz club by accident and sees the name on the sign. Sebastian sits at the piano, sees her, and plays their song."
+      },
+      {
+        "k": "THE FANTASY",
+        "h": "He kisses her at the bar",
+        "b": "The film rewinds to the night they met and this time he doesn't brush past her. Everything goes right. He follows her to Paris, the one-woman show is packed, they have the child, they walk into this same club as a couple. All of it in bright painted sets, like the musicals they loved."
+      },
+      {
+        "k": "THE CATCH",
+        "h": "In that version, he has no club",
+        "b": "Look at what's missing from the fantasy: his dream. In the life where they stay together he's in the audience, not on the stage. The film is honest enough to say they both got what they wanted, and that it cost each other. Then one nod, and she goes."
+      }
+    ],
+    "caption": "the nod at the end. no words, just a small nod that means thank you and I know and goodbye.\n\nI've never forgiven this film and I've seen it six times.",
+    "tags": "#lalaland #damienchazelle #emmastone #ryangosling"
+  },
+  {
+    "id": "whatif-parasite",
+    "kind": "film",
+    "label": "WHAT IF",
+    "title": "Parasite",
+    "year": 2019,
+    "director": "Bong Joon-ho",
+    "hook": "What if it hadn't rained that night?",
+    "slides": [
+      {
+        "k": "THE RAIN",
+        "h": "The whole plot turns on weather",
+        "b": "The Parks go camping. The Kims take over the house and get drunk. Then the storm hits, the camping trip is cancelled, and the family is eight minutes from home with the Kims hiding under a coffee table. No rain, no phone call, no scramble."
+      },
+      {
+        "k": "DOWNHILL",
+        "h": "Follow the water",
+        "b": "When they escape, the Kims run home, and the camera follows them down. Staircase after staircase, the rain running with them, until they reach a street already under sewage. The same storm that spoiled a camping trip up the hill drowned a neighbourhood at the bottom of it."
+      },
+      {
+        "k": "THE MORNING AFTER",
+        "h": "Thanks to all that rain",
+        "b": "Next day Mrs. Park says on the phone how blue the sky is, how the rain washed the pollution away. Mr. Kim is driving, having slept on a gym floor. Without the rain he never hears that. Without hearing that, the garden party ends differently."
+      }
+    ],
+    "caption": "it's one rainstorm, seen from two heights. that's the entire film in a single piece of weather.\n\nBong storyboards every shot himself and you can tell.",
+    "tags": "#parasite #bongjoonho #koreancinema"
+  },
+  {
+    "id": "whatif-lost-in-translation",
+    "kind": "film",
+    "label": "WHAT IF",
+    "title": "Lost in Translation",
+    "year": 2003,
+    "director": "Sofia Coppola",
+    "hook": "What if we could hear the whisper?",
+    "slides": [
+      {
+        "k": "THE SCENE",
+        "h": "A crowded street in Tokyo",
+        "b": "Bob spots Charlotte from his taxi, gets out, catches her in the crowd and says something into her ear. She cries and nods. He walks backwards to the car smiling. The microphone picks up almost none of it."
+      },
+      {
+        "k": "THE TRUTH",
+        "h": "It wasn't written",
+        "b": "Sofia Coppola has said the line was never scripted. Bill Murray improvised it on the day, and she meant to decide later what it should be and add it in. She never did. People have run the audio through filters for twenty years and still argue about the result."
+      },
+      {
+        "k": "IF WE KNEW",
+        "h": "It would be a smaller film",
+        "b": "Any actual sentence would be a let-down. A promise would turn it into a romance. A goodbye would turn it into a sad one. Because you can't hear it, it stays the one thing in the film that belongs only to them, which is what the whole film was about."
+      }
+    ],
+    "caption": "do not look up what he says. people claim to know. you don't want it.\n\nbest ending of the 2000s and it's a sentence nobody heard.",
+    "tags": "#lostintranslation #sofiacoppola #billmurray"
+  },
+  {
+    "id": "whatif-inception",
+    "kind": "film",
+    "label": "WHAT IF",
+    "title": "Inception",
+    "year": 2010,
+    "director": "Christopher Nolan",
+    "hook": "What if the top had fallen over?",
+    "slides": [
+      {
+        "k": "THE CUT",
+        "h": "It wobbles",
+        "b": "Cobb spins the top on the table and walks away to his children. The camera stays on it. It spins, it gives the smallest wobble, and the film cuts to black before it decides. Cinemas in 2010 groaned out loud."
+      },
+      {
+        "k": "THE CLUES",
+        "h": "People have theories",
+        "b": "Fans noticed he wears a wedding ring only in the dream scenes and not at the end. Michael Caine has said Nolan told him that any scene he appears in is real, and he's in the last one. And the top was never Cobb's totem anyway. It was his wife's."
+      },
+      {
+        "k": "THE POINT",
+        "h": "He isn't looking",
+        "b": "Nolan's own answer is that the important thing is Cobb doesn't stay to watch. For the whole film he has checked. This time he doesn't care. If the top had fallen you'd get a fact. Cutting away gives you a man who has stopped needing one."
+      }
+    ],
+    "caption": "it wobbles. I'm certain it wobbles. I've been certain since 2010.\n\nbut Nolan's right, the answer is his back as he walks away.",
+    "tags": "#inception #christophernolan #movieendings"
+  },
+  {
+    "id": "whatif-eternal-sunshine",
+    "kind": "film",
+    "label": "WHAT IF",
+    "title": "Eternal Sunshine of the Spotless Mind",
+    "year": 2004,
+    "director": "Michel Gondry",
+    "hook": "What if they erased each other again?",
+    "slides": [
+      {
+        "k": "THE ENDING WE GOT",
+        "h": "Okay. Okay.",
+        "b": "Joel and Clementine have just heard tapes of themselves listing everything they came to hate about each other. She says she'll get bored and feel trapped. He says okay. She says okay. They laugh. That's it. Two people choosing the thing with full knowledge of how it goes."
+      },
+      {
+        "k": "THE ENDING THAT WAS WRITTEN",
+        "h": "Fifty years on",
+        "b": "Charlie Kaufman's earlier draft didn't stop there. It jumped decades ahead to an old Clementine coming in to have Joel erased, and the file showing she had done it many times before. A loop, for life."
+      },
+      {
+        "k": "WHY THEY CUT IT",
+        "h": "Hope is the braver ending",
+        "b": "The loop version is clever and it's a trap: nobody learns, nothing matters. The film stops earlier, on the corridor, and lets you believe that this time knowing might be enough. The title is from Alexander Pope, about the bliss of forgetting. The film ends up arguing against its own title."
+      }
+    ],
+    "caption": "\"okay\" is the most romantic word in any screenplay and I will be taking that to my grave.\n\nmeet me in Montauk.",
+    "tags": "#eternalsunshineofthespotlessmind #charliekaufman #michelgondry"
+  },
+  {
+    "id": "whatif-before-sunset",
+    "kind": "film",
+    "label": "WHAT IF",
+    "title": "Before Sunset",
+    "year": 2004,
+    "director": "Richard Linklater",
+    "hook": "What if he had caught the plane?",
+    "slides": [
+      {
+        "k": "THE CLOCK",
+        "h": "Eighty minutes, in real time",
+        "b": "Nine years after one night in Vienna, Jesse has an hour in Paris before his flight home to a wife and a son. The film runs almost exactly as long as the hour does. Every time they turn a corner you're doing the maths."
+      },
+      {
+        "k": "THE FLAT",
+        "h": "Nina Simone",
+        "b": "He walks her to her door. Then up the stairs. Then she's making tea and putting on a Nina Simone record and doing an impression of her on stage, swaying. She says: baby, you are going to miss that plane. He says: I know. And it fades out."
+      },
+      {
+        "k": "IF HE'D GONE",
+        "h": "Then it's a sad film about manners",
+        "b": "Catch the flight and this is a story about two people being sensible, twice. The fade to black leaves it open, but his grin doesn't. Hawke and Delpy wrote their own halves with Linklater, which is why it sounds like people and not like a script. It took nine more years to find out what he did."
+      }
+    ],
+    "caption": "\"I know.\" two words, then black. I sat in the dark for a full minute.\n\nthe best sequel ever made and nothing happens in it except a walk.",
+    "tags": "#beforesunset #richardlinklater #beforetrilogy #juliedelpy"
+  },
+  {
+    "id": "whatif-breaking-bad",
+    "kind": "series",
+    "label": "WHAT IF",
+    "title": "Breaking Bad",
+    "year": 2008,
+    "first_aired": 2008,
+    "creator": "Vince Gilligan",
+    "episode": [
+      1,
+      5
+    ],
+    "hook": "What if Walt had just taken the money?",
+    "slides": [
+      {
+        "k": "THE OFFER",
+        "h": "Episode five. It's all solved.",
+        "b": "At a birthday party, Walt's old business partner offers him a job with full health cover. When Walt turns that down, he offers to simply pay for the cancer treatment. No strings. The entire reason for cooking is gone, five episodes in."
+      },
+      {
+        "k": "THE REFUSAL",
+        "h": "He says no",
+        "b": "Walt once sold his share in their company for five thousand dollars. It's now worth billions. He would rather build a drug empire than accept a cheque from the people who got rich on his work. He goes home and tells his wife they're paying."
+      },
+      {
+        "k": "THE CONFESSION",
+        "h": "It was never for the family",
+        "b": "The show spends five seasons letting him say he did it for them. In the last episode he finally tells the truth: I did it for me. I liked it. I was good at it. Episode five is where the audience was told, and most of us didn't want to hear it either."
+      }
+    ],
+    "caption": "everyone remembers the big moments. the whole show is decided at a birthday party in season one when a man is too proud to say thank you.\n\nrewatch that episode knowing how it ends.",
+    "tags": "#breakingbad #walterwhite #vincegilligan"
+  },
+  {
+    "id": "series-the-bear-review",
+    "kind": "series",
+    "label": "EPISODE STUDY",
+    "title": "The Bear",
+    "year": 2022,
+    "first_aired": 2022,
+    "creator": "Christopher Storer",
+    "episode": [
+      1,
+      7
+    ],
+    "hook": "Eighteen minutes. One take. No way out of the kitchen.",
+    "slides": [
+      {
+        "k": "THE EPISODE",
+        "h": "It's called Review",
+        "b": "A good newspaper review lands on the morning the restaurant has left online pre-orders switched on by mistake. The ticket machine starts printing and doesn't stop. From there the camera never cuts until the episode is over."
+      },
+      {
+        "k": "THE SOUND",
+        "h": "One song underneath",
+        "b": "A live Wilco track, Spiders (Kidsmoke), grinds along under nearly the whole thing, the same two chords getting louder. You stop noticing it as music. It's just what panic sounds like in that building."
+      },
+      {
+        "k": "WHY ONE TAKE",
+        "h": "You can't look away, so they can't either",
+        "b": "A cut is a breath. Take it away and the audience is trapped at the pass with them while two people quit and someone gets stabbed by accident. Most long takes are a director showing off. This one is the only honest way to show a bad service."
+      }
+    ],
+    "caption": "anyone who has worked in a kitchen says this is the most accurate twenty minutes of television ever made and that they had to pause it.\n\nyes chef.",
+    "tags": "#thebear #thebearfx #jeremyallenwhite #tvanalysis"
+  },
+  {
+    "id": "series-mad-men-carousel",
+    "kind": "series",
+    "label": "EPISODE STUDY",
+    "title": "Mad Men",
+    "year": 2007,
+    "first_aired": 2007,
+    "creator": "Matthew Weiner",
+    "episode": [
+      1,
+      13
+    ],
+    "hook": "The best sales pitch ever filmed is a man lying to himself.",
+    "slides": [
+      {
+        "k": "THE PITCH",
+        "h": "It's not a wheel",
+        "b": "Kodak have a new slide projector and want it sold as technology. Don dims the lights and loads it with photographs of his own wife and children. He says it isn't a spaceship, it's a time machine. He renames it the Carousel. A colleague leaves the room in tears."
+      },
+      {
+        "k": "THE WORD",
+        "h": "Nostalgia",
+        "b": "He tells them that in Greek, nostalgia means the pain from an old wound. That's a loose translation at best. The real roots are closer to the ache of going home. Either way, he is selling a family man's longing while his own marriage falls apart."
+      },
+      {
+        "k": "THE CUT",
+        "h": "Then he goes home",
+        "b": "He wins the account. On the train he imagines walking in to find his family waiting and joining them for the holiday. What actually happens: the house is dark, they've gone without him, and he sits down on the stairs alone. He believed his own advert for about an hour."
+      }
+    ],
+    "caption": "I've seen people use this scene in actual marketing courses, which means they stopped watching before the staircase.\n\nseason one finale. television didn't get better than this for years.",
+    "tags": "#madmen #dondraper #jonhamm #tvanalysis"
+  },
+  {
+    "id": "series-fleabag-priest",
+    "kind": "series",
+    "label": "EPISODE STUDY",
+    "title": "Fleabag",
+    "year": 2019,
+    "first_aired": 2016,
+    "creator": "Phoebe Waller-Bridge",
+    "episode": [
+      2,
+      3
+    ],
+    "hook": "For two seasons she talks to us. Then somebody notices.",
+    "slides": [
+      {
+        "k": "THE DEVICE",
+        "h": "We're her hiding place",
+        "b": "Fleabag turns to the camera mid-sentence, mid-argument, mid-everything, to make a joke only we can hear. It began as a one-woman stage show, and the looks to camera are what's left of that audience. They're also how she avoids being in the room."
+      },
+      {
+        "k": "THE MOMENT",
+        "h": "Where did you just go?",
+        "b": "In season two she's talking with the Priest, glances at us for half a second, and he stops. He asks where she just went. Nobody in the show has ever seen it before. She looks at the camera again, properly frightened, and he follows her eyes and looks straight down the lens."
+      },
+      {
+        "k": "THE ENDING",
+        "h": "She leaves us at the bus stop",
+        "b": "Being seen by him is what makes the trick stop working. In the final shot she walks away from the camera, turns, gives a small shake of the head that says don't follow, and waves. A comedy about a woman who needed an audience ends with her not needing one."
+      }
+    ],
+    "caption": "\"it'll pass.\" two words at a bus stop and half the country was on the floor.\n\nthe wave at the end is for us. we were the bad habit.",
+    "tags": "#fleabag #phoebewallerbridge #hotpriest #tvanalysis"
+  },
+  {
+    "id": "series-bojack-free-churro",
+    "kind": "series",
+    "label": "EPISODE STUDY",
+    "title": "BoJack Horseman",
+    "year": 2018,
+    "first_aired": 2014,
+    "creator": "Raphael Bob-Waksberg",
+    "episode": [
+      5,
+      6
+    ],
+    "hook": "One character talks for twenty minutes. That's the whole episode.",
+    "slides": [
+      {
+        "k": "THE FORM",
+        "h": "A eulogy, uninterrupted",
+        "b": "After a short opening, BoJack stands at a lectern next to his mother's coffin and speaks. No cutaways, no other voices, no plot. A cartoon about a talking horse hands an entire episode to a single monologue and trusts you to stay."
+      },
+      {
+        "k": "THE TITLE",
+        "h": "A stranger was kind",
+        "b": "He opens with a story: at a fast-food counter he mentioned his mother had died and the girl gave him a free churro. He points out that a stranger showed him more warmth in one moment than his mother did in her life. It's a joke, and then it isn't."
+      },
+      {
+        "k": "THE LAST LINE",
+        "h": "Wrong room",
+        "b": "He spends twenty minutes trying to find one thing she ever said that meant I see you, and decides she was only reading a hospital sign. Then he opens the coffin, looks at the mourners properly, and realises he's been at the wrong funeral the whole time."
+      }
+    ],
+    "caption": "\"my mother is dead and everything is worse now.\" from a show with an animated horse in a jumper.\n\nWill Arnett recorded most of this more or less in one go. give it twenty minutes and it'll ruin your evening in a good way.",
+    "tags": "#bojackhorseman #freechurro #willarnett #tvanalysis"
+  },
+  {
+    "id": "series-succession-connors-wedding",
+    "kind": "series",
+    "label": "EPISODE STUDY",
+    "title": "Succession",
+    "year": 2023,
+    "first_aired": 2018,
+    "creator": "Jesse Armstrong",
+    "episode": [
+      4,
+      3
+    ],
+    "hook": "The most important death in the show happens off camera, on a phone.",
+    "slides": [
+      {
+        "k": "THE CHOICE",
+        "h": "We never see him",
+        "b": "Logan Roy collapses on a plane. The show stays on a boat in New York harbour with his children, who get the news through a mobile held to his ear by someone else. You see what they see, which is nothing. A carpet, a shoulder, a voice saying they're doing compressions."
+      },
+      {
+        "k": "THE SHOOT",
+        "h": "Nearly half an hour without stopping",
+        "b": "The director ran the central stretch as one long continuous performance, with several film cameras handing over to each other as they ran out, so the actors never knew when they were off. The stumbling and talking over each other is three people who can't stop the scene."
+      },
+      {
+        "k": "WHY IT HURTS",
+        "h": "Nobody gets a speech",
+        "b": "Television deaths come with last words. Here each child gets a few seconds to say something to a man who may already be gone, and all three fumble it. One says I can't forgive you, and then, but it's okay. It's the most accurate account of that phone call I've seen."
+      }
+    ],
+    "caption": "they aired it as episode three of ten, with no warning. everybody assumed the father would die in the finale. the show just did it on a tuesday afternoon, like it happens.",
+    "tags": "#succession #connorswedding #hbo #tvanalysis"
+  },
+  {
+    "id": "series-atlanta-teddy-perkins",
+    "kind": "series",
+    "label": "EPISODE STUDY",
+    "title": "Atlanta",
+    "year": 2018,
+    "first_aired": 2016,
+    "creator": "Donald Glover",
+    "episode": [
+      2,
+      6
+    ],
+    "hook": "A comedy stopped for 41 minutes to air a horror film with no adverts.",
+    "slides": [
+      {
+        "k": "THE SET-UP",
+        "h": "A free piano",
+        "b": "Darius drives out to a mansion to collect a piano with coloured keys that someone is giving away. The owner is a pale, soft-spoken man called Teddy, who eats a soft-boiled ostrich egg with his fingers and says his brother, a great pianist, is upstairs."
+      },
+      {
+        "k": "THE MAN",
+        "h": "Teddy Perkins as himself",
+        "b": "Teddy is Donald Glover under heavy prosthetics, and reportedly he stayed in character on set so that some of the crew weren't sure who was under there. The credits list the part as played by Teddy Perkins. At the Emmys that year, someone turned up in the seats dressed as him."
+      },
+      {
+        "k": "THE SUBJECT",
+        "h": "What great art costs",
+        "b": "Under the scares it's about fathers who beat talent into their children and the idea that pain is the price of genius. Darius says no: not all great things come from great pain. The network aired it without a single break, because where would you put one."
+      }
+    ],
+    "caption": "I watched this alone at night knowing nothing and I'd like to formally warn you not to do that.\n\nstill the strangest thing to ever air on a comedy.",
+    "tags": "#atlantafx #teddyperkins #donaldglover #tvanalysis"
+  },
+  {
+    "id": "god-save-the-animals",
+    "kind": "music",
+    "label": "LINER NOTES",
+    "title": "God Save the Animals",
+    "year": 2022,
+    "artist": "Alex G",
+    "hook": "Your favourite musician's favourite musician records in his flat.",
+    "slides": [
+      {
+        "k": "THE START",
+        "h": "A teenager on Bandcamp",
+        "b": "Alex Giannascoli grew up outside Philadelphia and put out album after album online from his bedroom, playing nearly everything himself. By the time a label signed him he already had a small religion of fans trading the old ones."
+      },
+      {
+        "k": "THE REACH",
+        "h": "You've heard him without knowing",
+        "b": "That's his guitar on parts of Frank Ocean's Endless and Blonde. He also wrote the scores for the films We're All Going to the World's Fair and I Saw the TV Glow. For someone who rarely gives a straight answer in interviews, he's in a lot of rooms."
+      },
+      {
+        "k": "THE RECORD",
+        "h": "Faith, sort of",
+        "b": "This is the album where he left the bedroom for proper studios, and where words like God and forgiveness start turning up. His voice is pitched up, down and sideways from track to track, as if several people are singing. He won't say what he believes. The songs sound like someone working it out."
+      },
+      {
+        "q": "I like people who I can open up to\nWho don't judge for what I say\nbut judge me for what I do",
+        "by": "From the song Runner"
+      }
+    ],
+    "caption": "Runner is one of the best songs of the decade and it sounds like it's playing from a car in 1997.\n\nstart there, then go backwards through everything.",
+    "tags": "#alexg #godsavetheanimals #indierock #bedroompop"
+  },
+  {
+    "id": "bury-me-at-makeout-creek",
+    "kind": "music",
+    "label": "LINER NOTES",
+    "title": "Bury Me at Makeout Creek",
+    "year": 2014,
+    "artist": "Mitski",
+    "hook": "The title is a line from The Simpsons.",
+    "slides": [
+      {
+        "k": "THE TITLE",
+        "h": "Milhouse said it",
+        "b": "In one episode Milhouse is hit by a truck, lies in the road and says: bury me at Makeout Creek. Mitski took a throwaway joke about a boy who never got kissed and put it on the front of an album about wanting things that badly."
+      },
+      {
+        "k": "THE SWITCH",
+        "h": "From orchestra to distortion",
+        "b": "Her first two records were made as a music student, with piano and a full orchestra of classmates. For this one she picked up a guitar she was still learning, and recorded in friends' houses. The limits are the sound: loud, cracked, close."
+      },
+      {
+        "k": "THE SONG",
+        "h": "Francis Forever",
+        "b": "Two minutes about being fine as long as someone is watching. A year later a cartoon vampire sang it on Adventure Time and a whole new audience of teenagers found her through a children's show."
+      },
+      {
+        "q": "I don't think I could stand to be\nwhere you don't see me",
+        "by": "From the song Francis Forever"
+      }
+    ],
+    "caption": "before the arenas and the tiktok sounds there was this, thirty minutes long, recorded in someone's basement.\n\nit still sounds like it was made last night.",
+    "tags": "#mitski #burymeatmakeoutcreek #indierock #francisforever"
+  },
+  {
+    "id": "psychopomp",
+    "kind": "music",
+    "label": "LINER NOTES",
+    "title": "Psychopomp",
+    "year": 2016,
+    "artist": "Japanese Breakfast",
+    "hook": "The woman on the cover is her mother.",
+    "slides": [
+      {
+        "k": "THE REASON",
+        "h": "Written in the months after",
+        "b": "Michelle Zauner moved home to Oregon to care for her mother, who died of cancer in 2014. She stayed, and wrote these songs in the house. She has said she thought it would be the last music she made before getting a normal job."
+      },
+      {
+        "k": "THE COVER",
+        "h": "A photograph from Seoul",
+        "b": "It's an old snapshot of her mother as a young woman, reaching towards the camera with a friend beside her. A psychopomp is a guide who walks souls to the other side. The record sounds brighter than its subject, which is part of why it lands."
+      },
+      {
+        "k": "THE NAME",
+        "h": "Nothing to do with Japan",
+        "b": "She's Korean American. The band name came from scrolling through pictures of Japanese breakfasts online late at night. A few years on she wrote an essay called Crying in H Mart, about grief and Korean supermarkets, which became a bestselling memoir."
+      },
+      {
+        "q": "Oh do you believe in heaven\nlike you believed in me?",
+        "by": "From the song In Heaven"
+      }
+    ],
+    "caption": "twenty-five minutes long. she thought it was a goodbye to music and it turned out to be the start.\n\nread the book after. bring tissues and snacks.",
+    "tags": "#japanesebreakfast #psychopomp #michellezauner #indiepop"
+  },
+  {
+    "id": "the-universe-smiles-upon-you",
+    "kind": "music",
+    "label": "LINER NOTES",
+    "title": "The Universe Smiles Upon You",
+    "year": 2015,
+    "artist": "Khruangbin",
+    "hook": "A band from Texas that learned its sound from Thai cassette tapes.",
+    "slides": [
+      {
+        "k": "THE NAME",
+        "h": "It means aeroplane",
+        "b": "Khruangbin is Thai, roughly engine fly. The bassist was learning the language when they needed a name for their first show and picked her favourite word. They've said they would have chosen something easier to spell if they'd known anyone would care."
+      },
+      {
+        "k": "THE SOURCE",
+        "h": "Thai funk from the sixties and seventies",
+        "b": "On long drives they listened to old Thai pop and funk collected by cassette bloggers: surf guitar, heavy bass, lots of space. The guitarist and drummer had met years earlier playing in a church band in Houston, which is where the patience comes from."
+      },
+      {
+        "k": "THE BARN",
+        "h": "Recorded with the cows outside",
+        "b": "They record in a barn in the Texas countryside, mostly live, mostly instrumental, with the room left in. On stage two of them wear matching black wigs, so that off stage they can walk about without being recognised."
+      }
+    ],
+    "caption": "almost no words on the whole thing and it says more than most records with lyrics.\n\nput it on while cooking. the evening gets about twenty per cent better.",
+    "tags": "#khruangbin #theuniversesmilesuponyou #psychedelicfunk #instrumental"
+  },
+  {
+    "id": "stranger-in-the-alps",
+    "kind": "music",
+    "label": "LINER NOTES",
+    "title": "Stranger in the Alps",
+    "year": 2017,
+    "artist": "Phoebe Bridgers",
+    "hook": "This album is named after a censored line from a movie.",
+    "slides": [
+      {
+        "k": "THE TITLE",
+        "h": "The Big Lebowski, on television",
+        "b": "In the cinema cut, Walter smashes up a car while shouting something unprintable. For the TV edit it was dubbed, with no attempt at sense, into: this is what happens when you find a stranger in the Alps. She named her first album after the dub."
+      },
+      {
+        "k": "THE SOUND",
+        "h": "Jokes inside sad songs",
+        "b": "That's the trick of the whole record. The songs are quiet and bleak, and then a line turns up about a hypnotherapist or a bad tattoo. Smoke Signals alone gets through the deaths of Bowie and Lemmy and a Smiths song in under six minutes."
+      },
+      {
+        "k": "THE SONG",
+        "h": "Funeral",
+        "b": "It was written about singing at the funeral of someone only a little older than she was. It doesn't build to anything. It just tells you how the week went and what her dad said in the car, and that's worse."
+      },
+      {
+        "q": "Jesus Christ, I'm so blue all the time\nAnd that's just how I feel\nAlways have and I always will",
+        "by": "From the song Funeral"
+      }
+    ],
+    "caption": "the funniest sad album there is. she'll break your heart and then make a joke about it before you've sat down.\n\nScott Street at 1am. that's the instruction.",
+    "tags": "#phoebebridgers #strangerinthealps #indiefolk #sadgirlmusic"
+  },
+  {
+    "id": "frame-days-of-heaven",
+    "kind": "film",
+    "label": "ONE FRAME",
+    "title": "Days of Heaven",
+    "year": 1978,
+    "director": "Terrence Malick",
+    "hook": "Most of this film was shot in the twenty minutes after sunset.",
+    "slides": [],
+    "caption": "they'd rehearse all day, then shoot like mad for twenty minutes when the sun went down and the sky was still lit. it took forever. look at it though.\n\nNéstor Almendros was going blind while he shot this.",
+    "tags": "#daysofheaven #terrencemalick #cinematography #magichour"
+  },
+  {
+    "id": "frame-barry-lyndon",
+    "kind": "film",
+    "label": "ONE FRAME",
+    "title": "Barry Lyndon",
+    "year": 1975,
+    "director": "Stanley Kubrick",
+    "hook": "Lit by candles. Real ones. The lens was built for NASA.",
+    "slides": [],
+    "caption": "Kubrick wanted the 18th century to look the way it did to people in it, so no electric light in these scenes. he tracked down lenses made for photographing the dark side of the moon.\n\nevery frame looks like it should be hanging in a gallery.",
+    "tags": "#barrylyndon #stanleykubrick #cinematography"
+  },
+  {
+    "id": "frame-grand-budapest",
+    "kind": "film",
+    "label": "ONE FRAME",
+    "title": "The Grand Budapest Hotel",
+    "year": 2014,
+    "director": "Wes Anderson",
+    "hook": "Three time periods. Three different screen shapes.",
+    "slides": [],
+    "caption": "the 1930s scenes are nearly square, like films from then. the 60s are wide. the 80s are in between. the frame changes shape and most people never notice, they just feel which era they're in.\n\nthe pink hotel is a miniature about nine feet tall.",
+    "tags": "#thegrandbudapesthotel #wesanderson #cinematography"
+  },
+  {
+    "id": "frame-stalker",
+    "kind": "film",
+    "label": "ONE FRAME",
+    "title": "Stalker",
+    "year": 1979,
+    "director": "Andrei Tarkovsky",
+    "hook": "He shot the whole film, lost it in the lab, and shot it again.",
+    "slides": [],
+    "caption": "a year of footage came back from processing ruined. Tarkovsky started over with a different cameraman and half the budget. what you're watching is the second attempt.\n\nthree men walk into a field for two and a half hours and it's the most tense thing you'll ever see.",
+    "tags": "#stalker #tarkovsky #sovietcinema #cinematography"
+  },
+  {
+    "id": "frame-moonlight",
+    "kind": "film",
+    "label": "ONE FRAME",
+    "title": "Moonlight",
+    "year": 2016,
+    "director": "Barry Jenkins",
+    "hook": "Shot in 25 days, with colours borrowed from Wong Kar-wai.",
+    "slides": [],
+    "caption": "Barry Jenkins has said he wanted Miami to glow the way Hong Kong does in those films. skin lit with blues and pinks, oil on the actors so the light would catch.\n\n\"in moonlight, black boys look blue.\"",
+    "tags": "#moonlight #barryjenkins #a24 #cinematography"
+  },
+  {
+    "id": "frame-her",
+    "kind": "film",
+    "label": "ONE FRAME",
+    "title": "Her",
+    "year": 2013,
+    "director": "Spike Jonze",
+    "hook": "Try to find the colour blue in this film.",
+    "slides": [],
+    "caption": "the designers took blue out of almost everything. no blue shirts, no blue screens, no blue skies if they could help it. the future is all red, peach and warm wood, so a film about a computer feels like a hug.\n\nonce you know, you can't stop looking for it.",
+    "tags": "#hermovie #spikejonze #joaquinphoenix #cinematography"
+  },
+  {
+    "id": "frame-fury-road",
+    "kind": "film",
+    "label": "ONE FRAME",
+    "title": "Mad Max: Fury Road",
+    "year": 2015,
+    "director": "George Miller",
+    "hook": "This film was drawn before it was written. 3,500 panels.",
+    "slides": [],
+    "caption": "there was barely a script. George Miller worked it out as storyboards, thousands of them, pinned around a room. it's why you could watch it with the sound off and miss nothing.\n\nalso, look where your eye lands. the action is almost always dead centre so the fast cuts don't lose you.",
+    "tags": "#madmaxfuryroad #georgemiller #cinematography #actionfilm"
+  },
+  {
+    "id": "frame-roma",
+    "kind": "film",
+    "label": "ONE FRAME",
+    "title": "Roma",
+    "year": 2018,
+    "director": "Alfonso Cuarón",
+    "hook": "The director was also the cameraman, and this is his childhood.",
+    "slides": [],
+    "caption": "Cuarón rebuilt the house he grew up in, down to the furniture, some of it borrowed back from relatives. then he shot it himself in black and white, in long slow pans, like someone looking around a room they remember.\n\nit's a film about the woman who raised him.",
+    "tags": "#romafilm #alfonsocuaron #mexicancinema #cinematography"
   }
 ]
