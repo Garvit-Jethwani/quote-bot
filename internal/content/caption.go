@@ -56,7 +56,11 @@ func Caption(p Post, cfg Config, imageCredit string) string {
 	if cfg.ImageCreditInCaption && imageCredit != "" {
 		credit = strings.TrimSpace(credit + " " + imageCredit)
 	}
-	parts := []string{p.Caption, credit, cfg.CaptionFooter,
+	text := p.Caption
+	if p.Kind == "take" || p.Kind == "thought" { // say what it is before anything else
+		text = fmt.Sprintf("%s no. %d.\n\n%s", strings.ToLower(p.Label), p.Number, text)
+	}
+	parts := []string{text, credit, cfg.CaptionFooter,
 		Hashtags(cfg.MaxHashtags, p.Tags, cfg.Hashtags[p.Kind])}
 	return join(parts)
 }

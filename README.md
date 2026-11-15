@@ -2,8 +2,8 @@
 
 An Instagram account that runs itself. A Go program picks a post from a
 hand-written queue, draws it as slides or a video, and publishes it through
-Instagram's official API. GitHub Actions runs it three times a day, and there
-is no server to look after.
+Instagram's official API. GitHub Actions runs it twice a day, and there is no
+server to look after.
 
 ## What it posts
 
@@ -35,8 +35,9 @@ its evening.
 | Time (UTC) | What | Evening for |
 |---|---|---|
 | 13:07 | Post | India |
-| 17:37 | Reel | Europe |
 | 01:07 | Post | The Americas |
+
+Reels are not scheduled. They can be made by hand from the Actions tab.
 
 Change the `cron` lines in `.github/workflows/post.yml` and `reel.yml` to move
 them.

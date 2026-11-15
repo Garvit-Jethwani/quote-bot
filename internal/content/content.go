@@ -53,6 +53,10 @@ type Post struct {
 	SkipStills int       `json:"skip_stills,omitempty"`
 	// Ask replaces the series' usual closing line with one written for this post.
 	Ask string `json:"ask,omitempty"`
+	// Number is the post's position within its series, counted from 1. It is
+	// worked out when the queue is loaded and shown on Hot Take and Random
+	// Thought cards ("a random thought, no. 7").
+	Number int `json:"-"`
 }
 
 // Maker returns whoever made the work: director, author, artist or creator.
@@ -139,7 +143,15 @@ func readJSON(path string, v any) error {
 // LoadPosts reads posts.json.
 func LoadPosts(path string) ([]Post, error) {
 	var posts []Post
-	return posts, readJSON(path, &posts)
+	if err := readJSON(path, &posts); err != nil {
+		return nil, err
+	}
+	seen := map[string]int{}
+	for i := range posts {
+		seen[posts[i].Label]++
+		posts[i].Number = seen[posts[i].Label]
+	}
+	return posts, nil
 }
 
 // LoadQuotes reads quotes.json. A missing file is not an error.

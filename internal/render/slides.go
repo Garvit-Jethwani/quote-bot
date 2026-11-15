@@ -205,7 +205,7 @@ func Post(p content.Post, cfg content.Config, stills []image.Image) []image.Imag
 		if p.Kind == "comedy" {
 			return []image.Image{quoteSlide(p.Label, th, p.Quote, p.Title, 1, 1, cfg, SerifItalic, 92)}
 		}
-		return []image.Image{quoteSlide(p.Label, th, p.Quote, "", 1, 1, cfg, Serif, 108)}
+		return []image.Image{Announce(p, th, cfg)}
 	}
 	if len(stills) > 0 {
 		switch p.Kind {
@@ -262,6 +262,26 @@ func Outro(p content.Post, th Theme, line string, total int, cfg content.Config)
 	if cfg.Handle != "" {
 		tracked(dc, face(SansBold, 24), strings.ToUpper("More like this: "+cfg.Handle), M, y+16, 5, th.Muted)
 	}
+	return dc.Image()
+}
+
+// Announce draws a Hot Take or Random Thought card. These are the account's
+// own words, so the card says what it is in large letters ("a random
+// thought", with its number) before the text, and uses no quotation marks.
+func Announce(p content.Post, th Theme, cfg content.Config) image.Image {
+	dc := canvas(th)
+	fy := chrome(dc, th, fmt.Sprintf("NO. %02d", p.Number), 1, 1, cfg.Handle, "")
+	width := float64(W - 2*M)
+	titleF := face(SerifItalic, 84)
+	top, bottom := 190.0, fy-60
+	const titleH, gap = 104.0, 64.0
+	f, lines, lh := fit(Serif, p.Quote, width, bottom-top-titleH-gap-40, 96, 44, 1.2)
+	block := titleH + gap + float64(len(lines))*lh
+	y := top + math.Floor((bottom-top-block)/2)
+	text(dc, titleF, "a "+strings.ToLower(p.Label), M, y, th.Accent)
+	y += titleH + gap/2
+	hline(dc, M, W-M, y, 2, th.Muted)
+	para(dc, f, lines, M, y+gap/2, lh, th.FG)
 	return dc.Image()
 }
 

@@ -2,8 +2,7 @@ name: Post a Reel
 
 # Turns a multi-slide post into a vertical video.
 on:
-  schedule:
-    - cron: "37 17 * * *"  # 18:37 Central Europe, 12:37 US East, 23:07 India
+  # No schedule: Reels are made only when started by hand (or by a commit, below).
   # Committing a post id (or the word "next") into .github/run-reel starts a run.
   # This lets a Claude session, which can push but cannot press buttons, reel on request.
   push:
