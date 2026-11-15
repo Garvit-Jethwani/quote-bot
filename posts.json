@@ -25,7 +25,7 @@
       },
       {
         "q": "He remembers those vanished years. As though looking through a dusty window pane, the past is something he could see, but not touch.",
-        "by": "Closing title card"
+        "by": "The last words on screen"
       }
     ],
     "pairs": [
@@ -168,7 +168,7 @@
       },
       {
         "q": "Now we rise\nAnd we are everywhere",
-        "by": "From the Morning. Also carved on his headstone."
+        "by": "From the song From the Morning. Also carved on his headstone."
       }
     ],
     "pairs": [
@@ -256,7 +256,7 @@
       },
       {
         "q": "Who has not asked himself at some time or other: am I a monster or is this what it means to be a person?",
-        "by": "tr. Giovanni Pontiero"
+        "by": "Clarice Lispector, translated by Giovanni Pontiero"
       }
     ],
     "pairs": [
@@ -440,7 +440,7 @@
       },
       {
         "q": "I'm watching out of my ear.",
-        "by": "Let's See"
+        "by": "From the song Let's See"
       }
     ],
     "pairs": [
@@ -486,7 +486,7 @@
       },
       {
         "q": "We have plenty of matches in our house.\nWe keep them on hand always.",
-        "by": "Ron Padgett, Love Poem"
+        "by": "Ron Padgett, from Love Poem"
       }
     ],
     "pairs": [
@@ -532,7 +532,7 @@
       },
       {
         "q": "My past is everything I failed to be.",
-        "by": "tr. Richard Zenith"
+        "by": "Fernando Pessoa, translated by Richard Zenith"
       }
     ],
     "pairs": [
@@ -720,7 +720,7 @@
       },
       {
         "q": "I'm in love with the world\nthrough the eyes of a girl\nwho's still around the morning after",
-        "by": "Say Yes"
+        "by": "From the song Say Yes"
       }
     ],
     "pairs": [
@@ -993,7 +993,7 @@
       },
       {
         "q": "I don't wanna talk about anything\nI wanna kiss, kiss your eyes again",
-        "by": "anything"
+        "by": "From the song anything"
       }
     ],
     "pairs": [
@@ -1040,7 +1040,7 @@
       },
       {
         "q": "Sometimes the wrong train will get you to the right station.",
-        "by": "Shaikh"
+        "by": "Shaikh, in the film"
       }
     ],
     "pairs": [
@@ -1086,7 +1086,7 @@
       },
       {
         "q": "Be patient toward all that is unsolved in your heart and try to love the questions themselves.",
-        "by": "Letter four, tr. M.D. Herter Norton"
+        "by": "Rilke, letter four, translated by M.D. Herter Norton"
       }
     ],
     "pairs": [
@@ -1133,7 +1133,7 @@
       },
       {
         "q": "If my memory of her has an expiration date, let it be ten thousand years.",
-        "by": "Cop 223"
+        "by": "Cop 223, in the film"
       }
     ],
     "pairs": [
@@ -1199,7 +1199,7 @@
       },
       {
         "label": "LOOK AT THIS NEXT",
-        "title": "Woman Bathing (1890–91)",
+        "title": "Woman Bathing (1891)",
         "by": "Mary Cassatt",
         "note": "One of the colour prints she made straight after that exhibition. Degas was jealous of the line."
       }
@@ -1244,7 +1244,8 @@
         "label": "READ WHAT THEY READ",
         "title": "Georges Bataille & Klaus Kinski",
         "by": "On the train, before they speak",
-        "note": "She has Bataille. He has Kinski's memoir. Make of that what you will."
+        "note": "She has Bataille. He has Kinski's memoir. Make of that what you will.",
+        "caption": false
       }
     ],
     "caption": "everyone talks about the talking in these films. the listening booth has no dialogue at all and it's the bit I'd save from a fire.",
@@ -1276,7 +1277,7 @@
       },
       {
         "q": "Just another diamond day\nJust a blade of grass\nJust another bale of hay\nAnd the horses pass",
-        "by": "Diamond Day"
+        "by": "From the song Diamond Day"
       }
     ],
     "pairs": [
@@ -1500,7 +1501,7 @@
       },
       {
         "q": "Tonight when I came home from work\nthere he, unforeseen, sat in my kitchen",
-        "by": "Tonight"
+        "by": "From the song Tonight"
       }
     ],
     "pairs": [
@@ -1677,7 +1678,7 @@
       },
       {
         "q": "I want to tell people things they don't know. Show them stuff they haven't seen.",
-        "by": "Yang-Yang"
+        "by": "Yang-Yang, aged eight"
       }
     ],
     "pairs": [
@@ -1765,7 +1766,7 @@
       },
       {
         "q": "Things that make one's heart beat faster: sparrows feeding their young. To pass a place where babies are playing.",
-        "by": "tr. Ivan Morris"
+        "by": "Sei Shōnagon, translated by Ivan Morris"
       }
     ],
     "pairs": [

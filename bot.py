@@ -110,7 +110,8 @@ def hashtags(cfg, *groups):
 
 def post_caption(p, cfg, image_credit):
     parts = [p["caption"]]
-    pairs = [f"{x['label'].capitalize()}: {x['title']} — {x['by']}" for x in p.get("pairs", [])]
+    pairs = [f"{x['label'].lower()}: {x['title']} by {x['by']}"
+             for x in p.get("pairs", []) if x.get("caption", True)]
     if pairs:
         parts.append("\n".join(pairs))
     if p["kind"] == "film":
@@ -127,7 +128,7 @@ def post_caption(p, cfg, image_credit):
 
 
 def quote_caption(q, cfg):
-    credit = f"— {q['source']} ({q['by']})" if q["type"] == "movie" else f"— {q['by']}, {q['source']}"
+    credit = f"{q['source']} ({q['by']})" if q["type"] == "movie" else f"{q['by']}, {q['source']}"
     text = q["text"] if q["text"].startswith("“") else f"“{q['text']}”"
     parts = [text, credit, cfg.get("caption_footer", ""), hashtags(cfg, cfg["hashtags"].get("book_quote" if q["type"] == "book" else q["type"], ""))]
     return "\n\n".join(x for x in parts if x)[:2200]
