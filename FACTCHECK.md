@@ -5,6 +5,18 @@ Verdicts: **confirmed** (sources agree), **corrected** (the post was changed),
 **softened** (kept, with a hedge, because sources were thin or mixed),
 **unconfirmed** (no source found either way; left as written unless noted).
 
+## Summary
+
+107 posts checked. 75 confirmed, 12 corrected, 10 softened, 6 left unconfirmed, 4 removed.
+
+"Confirmed" means the post's main claims matched what web sources say. It does
+not mean every sentence was verified word for word: where a detail was not
+covered by the search, the note says so. Most sources were secondary (reviews,
+interviews, encyclopedias, quote collections), not primary documents.
+
+Not checked: the four posts already published before this pass, and the Hot
+Take and Random Thought cards, which are opinions.
+
 | Post | Verdict | Notes |
 |---|---|---|
 | `the-fall` | corrected | Hook said 'twenty-odd countries'; sources give 18 to 28, so it now says 'more than twenty locations'. Lee Pace's pretence, the four-year shoot and Yo Ho Ho confirmed. Self-funding is widely reported; the film was later 'presented by' Fincher and Jonze. Added a slide on filming through the curtains. |
@@ -82,3 +94,35 @@ Verdicts: **confirmed** (sources agree), **corrected** (the post was changed),
 | `frame-her` | confirmed | Blue removed from the palette in favour of reds and warm tones confirmed by the production designer's own account. |
 | `frame-fury-road` | corrected | About 3,500 storyboards made before the script, and centre framing to keep fast cuts readable, confirmed. Miller has denied there was no script, so 'barely a script' was replaced. |
 | `frame-roma` | confirmed | The replica of his childhood home, about 70 per cent of the original furniture gathered from relatives, and the film's basis in the woman who helped raise him confirmed. |
+| `steven-wright-3` | removed | Widely circulated online under his name, but no reliable source; his own entry warns that many jokes attributed to him are of doubtful origin. |
+| `groucho-marx-2` | removed | Quote researchers trace this line to several other people and treat the Groucho attribution as doubtful. |
+| `jimmy-carr-2` | removed | No source found tying this joke to him. |
+| `tommy-cooper-1` | removed | The joke is a much older one usually credited to Henny Youngman; no evidence Cooper performed it. |
+| `groucho-marx-1` | softened | Widely attributed to him since 1949, as a resignation from a club, but accounts differ on which club and on the exact words. The caption now says 'the story is'. |
+| `phyllis-diller-1` | confirmed | The line and her professional debut at 37 confirmed. The number of children was not in the results, so the caption no longer gives one. |
+| `mitch-hedberg-1` | confirmed | Attributed to him across many collections; wording varies slightly between them. |
+| `mitch-hedberg-2` | confirmed | Attributed to him across many collections; wording varies slightly between them. |
+| `mitch-hedberg-3` | confirmed | Attributed to him across many collections; wording varies slightly between them. |
+| `mitch-hedberg-4` | confirmed | Attributed to him across many collections; wording varies slightly between them. |
+| `mitch-hedberg-5` | confirmed | Attributed to him across many collections; wording varies slightly between them. |
+| `steven-wright-1` | confirmed | The seashell joke appears under his name in several collections. |
+| `steven-wright-2` | unconfirmed | Commonly attributed to him, but not found in these results. Left as written. |
+| `rodney-dangerfield-1` | confirmed | Sourced to a 2005 comedy anthology. |
+| `rodney-dangerfield-2` | confirmed | Sourced to his own 2004 memoir. |
+| `rodney-dangerfield-3` | unconfirmed | A well-known joke of his, but not found in these results. Left as written. |
+| `tim-vine-1` | confirmed | Voted joke of the Edinburgh Fringe in 2010; his record of 499 jokes in an hour (2004) also confirmed. |
+| `george-carlin-1` | confirmed | Widely attributed; one collection places it on his 2001 album. |
+| `george-carlin-2` | confirmed | Traced by quote researchers to his 1990 HBO special. |
+| `jerry-seinfeld-1` | confirmed | Confirmed in substance; wording varies between tellings. |
+| `joan-rivers-1` | confirmed | Sourced to a 1984 anthology; an earlier version from 1966 says 'two weeks' in place of 'six months'. |
+| `joan-rivers-2` | confirmed | Sourced to a 1987 quotation collection. |
+| `jack-handey-1` | confirmed | From his Deep Thoughts; the post uses the most common published wording. |
+| `emo-philips-1` | confirmed | Attributed to him in many places; wording varies. The post's version is the most common. |
+| `jimmy-carr-1` | unconfirmed | A well-known joke of his, but not found in these results. Left as written. |
+| `bob-monkhouse-1` | confirmed | Quoted in his 2003 obituaries and attributed to his memoir; wording varies slightly. |
+| `zach-galifianakis-1` | unconfirmed | Not covered by the search. Left as written. |
+| `demetri-martin-1` | unconfirmed | Not covered by the search. Left as written. |
+| `norm-macdonald-1` | corrected | The joke is from his 2011 special; he was diagnosed about a year later and kept it private for nine years. The caption originally implied he wrote it while ill. |
+| `bill-hicks-1` | confirmed | Wording matches published versions; his death at 32 confirmed. |
+| `anthony-jeselnik-1` | confirmed | Matches the transcript of his 2013 special and a 2011 tweet. |
+| `billy-connolly-1` | confirmed | Attributed to him in several collections, including a Scottish newspaper's list. |
