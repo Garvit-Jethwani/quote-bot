@@ -1,0 +1,51 @@
+name: Post to Instagram
+
+on:
+  schedule:
+    # Times are in UTC. Two posts a day, taken in order from posts.json.
+    - cron: "7 4 * * *"
+    - cron: "7 14 * * *"
+  workflow_dispatch:
+    inputs:
+      id:
+        description: "Post id from posts.json (leave empty for the next one)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Pick the next post and draw its slides
+        run: python bot.py render ${POST_ID:+--id "$POST_ID"}
+        env:
+          POST_ID: ${{ inputs.id }}
+          TMDB_KEY: ${{ secrets.TMDB_KEY }}
+
+      - name: Push the card so Instagram can download it
+        run: |
+          git config user.name "quote-bot"
+          git config user.email "quote-bot@users.noreply.github.com"
+          git add -A out posted.json
+          git commit -m "Add slides"
+          git push
+
+      - name: Publish to Instagram
+        run: python bot.py publish
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
