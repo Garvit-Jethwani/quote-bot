@@ -89,6 +89,19 @@ In the repository's **Actions** tab:
   by itself every Saturday.
 - **Post (old Python bot)**: an emergency fallback. See below.
 
+### Starting a run with a commit
+
+Committing a post's `id` into `.github/run-post` (or `.github/run-reel`) starts
+a run for that post, and the word `next` picks a random one. This exists so a
+Claude session, which can push commits but cannot press buttons on GitHub, can
+post on request.
+
+### When a run fails
+
+The bot saves the last lines of its output to `last-error.log` in the
+repository, and removes the file after the next successful run. GitHub also
+emails the repository owner about the failed run.
+
 ## Secrets
 
 Set under **Settings → Secrets and variables → Actions**.
