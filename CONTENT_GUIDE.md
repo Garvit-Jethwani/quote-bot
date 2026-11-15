@@ -5,70 +5,102 @@ How to write new posts for this account. Every post is one entry in
 
 ## Voice
 
-The account reads like one person with wide taste and strong opinions: films,
-series, paintings, books, records, stand-up. Specific and a little dry. Never
-generic praise, never a list of facts with no point of view.
+The account reads like one person with wide taste and strong opinions: arthouse
+and mainstream films, series, paintings, books, indie records, stand-up, and
+whatever else is on their mind. Specific, dry, sometimes rude. Never generic
+praise, never a list of facts with no point of view. Variety is the point: a
+Tarkovsky frame can sit next to a joke about Shrek.
 
-- **Slides** are in normal sentence case. Each body slide makes one point,
-  with a concrete detail (a number, a name, what is in the frame) and says why
-  it matters. Under 55 words per body.
+- **Slides** are in normal sentence case. Each body slide makes one point with
+  a concrete detail (a number, a name, what is in the frame) and says why it
+  matters. Under 60 words per body.
 - **Captions** are lowercase, first person, short, like a text to a friend.
   One or two short paragraphs. A personal reaction, not a summary.
-- **Hooks** (the big line on slide one) state something surprising or pose
-  the question. Under 14 words.
+- **Hooks** (the big line on slide one) state something surprising or pose the
+  question. Under 16 words. The hook decides whether anyone swipes.
+- **Swearing is fine** where it is funny or the original joke has it. Use it
+  like seasoning. Nothing sexual, hateful, or cruel to real people.
+
+## What works on Instagram
+
+- Carousels do best with real substance: write **four** text slides when the
+  material allows, not three. With the cover and the closing slide that makes
+  six.
+- The closing slide asks for a send, a save or a reply, which are the actions
+  Instagram weighs most. The bot adds it from `config.json`. For posts built
+  around a debate, set `"ask"` to a specific question instead.
+- Search reads captions. The bot appends a plain credit line (title, maker,
+  year), so the caption itself does not need to repeat it.
+- Instagram allows five hashtags. Give three or four specific ones in `tags`
+  (the work, the maker, the scene); the bot adds one or two broad ones.
 
 ## Hard rules
 
-- No em dashes or en dashes anywhere, and no arrows. Use commas, full stops
-  or colons.
+- No em dashes, en dashes or arrows anywhere. Use commas, full stops or colons.
 - No music recommendations and no `pairs` field.
-- No image credits or sources in captions (the bot handles captions' credit
-  line itself).
-- `tags`: three or four specific hashtags (the work, the maker, the scene).
-  The bot adds broad ones and caps the total at five.
-- Facts must be ones you are confident of. Hedge the rest ("reportedly",
-  "the story goes") or leave it out. Quote lines only when sure of the wording.
-- Nothing explicit, hateful or cruel. Dry and dark is fine.
+- No image credits or sources in captions.
+- Facts must be ones you are confident of. Hedge the rest ("reportedly", "the
+  story goes") or leave it out. Quote lines and jokes only when sure of the
+  wording.
 - Never reuse an `id`, and do not cover a work that already has a post in the
   same series.
 
 ## Series and their shape
 
 Every entry needs `id`, `kind`, `label`, `title`, `slides`, `caption`, `tags`.
-Multi-slide posts also need `hook` and `year`.
+Multi-slide posts also need `hook`, `year` and a maker.
 
-| Series | `kind` | `label` | Extra fields | Slides |
+| Series | `kind` | `label` | Extra fields | Text slides |
 |---|---|---|---|---|
-| Scene Study | `film` | `SCENE STUDY` | `director` | 3 or 4 |
-| What If | `film` or `series` | `WHAT IF` | `director`, or the series fields below | 3 |
-| Episode Study | `series` | `EPISODE STUDY` | `creator`, `first_aired`, `episode: [season, number]` | 3 |
-| One Frame | `film` | `ONE FRAME` | `director` | none (`"slides": []`) |
-| Look Closer | `art` | `LOOK CLOSER` | `artist`, `image: {"aic": "Exact title"}`, `detail: [x, y]` | 3 or 4 |
-| Shelf Notes | `book` | `SHELF NOTES` | `author` | 3 or 4 |
-| Liner Notes | `music` | `LINER NOTES` | `artist` | 3 or 4 |
-| One-Liner | `comedy` | `ONE-LINER` | `quote` (the joke); `title` is the comedian | none |
+| Scene Study | `film` | `SCENE STUDY` | `director` | 3 to 5 |
+| What If | `film` or `series` | `WHAT IF` | maker; `ask` recommended | 3 or 4 |
+| Episode Study | `series` | `EPISODE STUDY` | `creator`, `first_aired`, `episode` | 3 or 4 |
+| Did You Notice | `film` or `series` | `DID YOU NOTICE` | maker | 3 to 5 |
+| Look Closer | `art` | `LOOK CLOSER` | `artist`, `image`, `detail` | 3 to 5 |
+| Shelf Notes | `book` | `SHELF NOTES` | `author` | 3 to 5 |
+| Liner Notes | `music` | `LINER NOTES` | `artist` | 3 to 5 |
+| One Frame | `film` or `series` | `ONE FRAME` | maker | none |
+| One-Liner | `comedy` | `ONE-LINER` | `quote`; `title` is the comedian | none |
+| Hot Take | `take` | `HOT TAKE` | `quote`; `title` is `Hot take` | none |
+| Random Thought | `thought` | `RANDOM THOUGHT` | `quote`; `title` is `Random thought` | none |
 
-A slide is either `{"k": "SMALL LABEL", "h": "Heading", "b": "Body text"}` or
-a quotation `{"q": "The line", "by": "Plain words saying where it is from"}`.
+A slide is either `{"k": "SMALL LABEL", "h": "Heading", "b": "Body text"}` or a
+quotation `{"q": "The line", "by": "Plain words saying where it is from"}`.
+Posts with no text slides use `"slides": []`.
 
-Notes:
+Notes on each:
 
-- For `film` and `series`, `title` and `year` must match TMDB so the right
-  stills are found. For a series, `year` is the episode's year and
-  `first_aired` is the show's first year.
-- For `art`, the painting must be in the Art Institute of Chicago's
-  public-domain collection, and `image.aic` must be contained in its title
-  there. `detail` is where the close-up centres, as fractions across and down.
-- What If posts rewind a well-known scene, change one thing, and follow the
-  consequences. The last slide says what the real version understood.
-- Look at existing entries in `posts.json` for examples of each series.
+- **Film and series**: `title` and `year` must match TMDB so the right stills
+  are found. For a series, `creator` is the maker, `year` is the episode's
+  year, `first_aired` is the show's first year, and `episode` is
+  `[season, number]`.
+- **What If**: rewind a well-known scene, change one thing, follow the
+  consequences. The last slide says what the real version understood. Mix
+  arthouse and blockbuster.
+- **Did You Notice**: three to five details most viewers miss, ending on why
+  the film bothered.
+- **Look Closer**: the painting must be in the Art Institute of Chicago's
+  public-domain collection, with `image: {"aic": "Exact title"}` contained in
+  its title there. `detail` is where the close-up centres, as fractions across
+  and down, such as `[0.7, 0.4]`.
+- **One-Liner**: a real joke by a real comedian, worded as they said it.
+- **Hot Take** and **Random Thought**: the account's own voice, one or two
+  sentences, written to be argued with or sent to a friend. The caption backs
+  it up or makes it worse.
+
+Look at existing entries in `posts.json` for examples of each series.
 
 ## Checking a batch before committing
 
 ```bash
-NO_IMAGES=1 python3 bot.py preview
+go run ./cmd/quotebot validate
 ```
 
-It must finish without errors. Then delete the `preview/` folder, confirm
-`posts.json` is valid JSON with unique ids, and search the new entries for
-dashes and arrows. Do not change `posted.json` or anything in `out/`.
+It must report the queue as valid. It checks ids, required fields, slide
+counts, word limits, tag counts and the no-dash rule. Then run the tests:
+
+```bash
+go test ./...
+```
+
+Do not change `posted.json` or anything in `out/`.

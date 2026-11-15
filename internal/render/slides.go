@@ -166,6 +166,11 @@ func Body(p content.Post, th Theme, s content.Slide, n, total int, cfg content.C
 
 // QuoteSlide draws a quotation with a large quote mark and a source line.
 func QuoteSlide(label string, th Theme, quote, by string, n, total int, cfg content.Config) image.Image {
+	return quoteSlide(label, th, quote, by, n, total, cfg, SerifItalic, 78)
+}
+
+// quoteSlide is QuoteSlide with a choice of typeface and largest text size.
+func quoteSlide(label string, th Theme, quote, by string, n, total int, cfg content.Config, typeface string, hi int) image.Image {
 	dc := canvas(th)
 	fy := chrome(dc, th, label, n, total, cfg.Handle, "")
 	width := float64(W - 2*M)
@@ -176,7 +181,7 @@ func QuoteSlide(label string, th Theme, quote, by string, n, total int, cfg cont
 	}
 	top, bottom := 190.0, fy-60
 	byH := float64(len(byLines)) * 38
-	qF, lines, lh := fit(SerifItalic, quote, width, bottom-top-150-100-byH, 78, 40, 1.3)
+	qF, lines, lh := fit(typeface, quote, width, bottom-top-150-100-byH, hi, 40, 1.24)
 	block := 150 + float64(len(lines))*lh + 56 + 40 + byH
 	y := top + math.Floor((bottom-top-block)/2)
 	text(dc, face(SerifBold, 300), "“", M-8, y-70, th.Accent)
@@ -195,11 +200,12 @@ func QuoteSlide(label string, th Theme, quote, by string, n, total int, cfg cont
 func Post(p content.Post, cfg content.Config, stills []image.Image) []image.Image {
 	th := ThemeFor(p.Kind)
 	if p.Quote != "" { // a one-liner: a single card
-		by := p.Title // a comedian's name; the account's own takes are unsigned
-		if p.Kind != "comedy" {
-			by = ""
+		// A comedian's joke is set in italics and signed. The account's own
+		// takes are unsigned and set large and upright, like a poster.
+		if p.Kind == "comedy" {
+			return []image.Image{quoteSlide(p.Label, th, p.Quote, p.Title, 1, 1, cfg, SerifItalic, 92)}
 		}
-		return []image.Image{QuoteSlide(p.Label, th, p.Quote, by, 1, 1, cfg)}
+		return []image.Image{quoteSlide(p.Label, th, p.Quote, "", 1, 1, cfg, Serif, 108)}
 	}
 	if len(stills) > 0 {
 		switch p.Kind {

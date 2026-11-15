@@ -1,179 +1,165 @@
-# Carousel bot for Instagram: films, books, records
+# quote-bot
 
-Posts two multi-slide carousels a day to your Instagram account. It runs for
-free on GitHub Actions, so there is no server to look after.
+An Instagram account that runs itself. A Go program picks a post from a
+hand-written queue, draws it as slides or a video, and publishes it through
+Instagram's official API. GitHub Actions runs it three times a day, and there
+is no server to look after.
 
-Posts come from seven series, picked in random order, never the same series
-twice in a row:
+## What it posts
 
-- **Scene Study**: a film, with real stills, and what makes one scene work.
-- **Episode Study**: the same for one episode of a TV series.
-- **What If**: rewind a famous scene, change one thing, follow what happens.
-- **One Frame**: a single image with one fact about how it was made.
-- **Look Closer**: a painting, shown whole and then in close-up.
-- **Shelf Notes**: a book or a poem.
-- **Liner Notes**: a record.
-- **One-Liner**: a single stand-up joke on a card.
+Posts are picked at random from `posts.json`, never the same series twice in a
+row and never the same post twice.
 
-## Reels
+| Series | What it is | Format |
+|---|---|---|
+| Scene Study | One film scene and what makes it work | Carousel |
+| Episode Study | The same for one episode of a series | Carousel |
+| What If | A famous scene with one thing changed | Carousel |
+| Did You Notice | Details hidden in well-known films and series | Carousel |
+| Look Closer | A painting, whole and then in close-up | Carousel |
+| Shelf Notes | A book or a poem | Carousel |
+| Liner Notes | A record | Carousel |
+| One Frame | One image and one fact about how it was made | Single image |
+| One-Liner | A stand-up joke | Single card |
+| Hot Take | An opinion to argue with | Single card |
+| Random Thought | An observation about films, TV or music | Single card |
 
-**Actions → Post a Reel → Run workflow** turns a multi-slide post into a
-vertical video: each slide stays on screen long enough to read, with a fade
-between them. The Reel is silent, because Instagram's API cannot attach music.
+Any carousel can also go out as a **Reel**: a vertical video that shows each
+slide long enough to read, with a progress bar.
 
-To post one with music instead: run it with **publish** set to **no**, download
-the video from the run's **Artifacts** section, and upload it from the
-Instagram app with the song you want.
+## Schedule
 
-Every post ends with a pairing slide ("play this with it", "read this after")
-and has a hand-written caption.
+All times are UTC and chosen so that each part of the world gets one post in
+its evening.
 
-## Two things to know first
+| Time (UTC) | What | Evening for |
+|---|---|---|
+| 13:07 | Post | India |
+| 17:37 | Reel | Europe |
+| 01:07 | Post | The Americas |
 
-**Music.** Instagram's API cannot attach a song from Instagram's music library
-to a photo or carousel post. Only the app can. So each post names its song on
-the last slide and in the caption instead.
+Change the `cron` lines in `.github/workflows/post.yml` and `reel.yml` to move
+them.
 
-**Film stills.** Stills come from TMDB. They are copyrighted by the studios.
-Film accounts use them widely for commentary, and the bot credits the film and
-director in every caption, but a rights holder can still ask Instagram to
-remove a post. If you would rather not take that risk, skip the TMDB key and
-film posts go out as text-only carousels.
+## How a run works
 
-**Where images come from.** Each post tries several sources in turn and uses
-the first one that answers. If none does, the post goes out text-only.
+1. `quotebot render` picks a post, fetches an image for it, and draws the
+   slides (or the video) into `out/`.
+2. The workflow commits `out/` so the files have a public address.
+3. `quotebot publish` hands those addresses to Instagram and waits for it to
+   finish processing.
+4. Only then is the post added to `posted.json`. If Instagram refuses, nothing
+   is recorded and the next run tries again.
 
-| Series | Tried in this order |
+### Where images come from
+
+Each kind of post tries its sources in order and uses the first that answers.
+If none does, the post goes out as text only.
+
+| Kind | Sources, in order |
 |---|---|
-| Scene Study | TMDB stills → TMDB poster → Apple poster → Wikipedia |
-| Look Closer | Art Institute of Chicago (public domain) → Wikipedia |
-| Liner Notes | Apple Music album cover → Wikipedia |
-| Shelf Notes | Open Library book cover → Wikipedia |
+| Film, series | TMDB stills, TMDB poster, Apple poster, Wikipedia |
+| Painting | Art Institute of Chicago (public domain), Wikipedia |
+| Record | Apple Music cover, Wikipedia |
+| Book | Open Library cover, Wikipedia |
 
-Only TMDB needs a key. Without it, film posts use a poster instead of stills.
-Posters and covers are copyrighted like stills are; paintings from the Art
-Institute of Chicago are not. To post with no images at all, add a repository
-variable or edit the workflow to set `NO_IMAGES: 1`.
+Film stills, posters and covers are copyrighted. Accounts like this one use
+them for commentary, but a rights holder can ask Instagram to remove a post.
+Paintings from the Art Institute of Chicago are public domain.
 
-## Setup (about 30 minutes, one time)
+## Limits
 
-### 1. Instagram account
+- **No music.** Instagram's API cannot attach a song. Reels are silent. To post
+  one with music, run **Post a Reel** with *publish* set to *no*, download the
+  video from the run's **Artifacts**, and upload it from the app.
+- **No Stories, no replies, no editing** of posts already published.
 
-1. Create the account you want the bot to post to.
-2. In the Instagram app: **Settings → Account type and tools → Switch to
-   professional account**. Pick **Creator**. It is free.
+## Running it by hand
 
-### 2. Instagram access token
+In the repository's **Actions** tab:
 
-Meta renames these screens from time to time, so labels may differ slightly.
+- **Post to Instagram**: posts now. Type a post's `id` to choose which.
+- **Post a Reel**: posts a video, or only makes the file.
+- **Checks**: runs the tests and validates `posts.json`. It runs by itself on
+  every change.
+- **Post (old Python bot)**: an emergency fallback. See below.
 
-1. Go to <https://developers.facebook.com>, log in, click **My Apps → Create App**.
-2. Choose the Instagram use case (**Manage messaging & content on Instagram**).
-3. In the app dashboard open **Instagram → API setup with Instagram login**.
-4. Under **Generate access tokens**, click **Add account** and log in with the
-   Instagram account from step 1.
-5. Click **Generate token** and copy it. This is `IG_TOKEN`. Treat it like a
-   password.
+## Secrets
 
-### 3. TMDB key (for film stills)
+Set under **Settings → Secrets and variables → Actions**.
 
-1. Create a free account at <https://www.themoviedb.org>.
-2. **Settings → API → Create**, choose **Developer**, fill in the form.
-3. Copy the **API Key**. This is `TMDB_KEY`.
-
-TMDB asks you to credit them. Add this line to your Instagram bio or a pinned
-post: *"Film images from TMDB. Not endorsed or certified by TMDB."*
-
-### 4. Put the bot on GitHub
-
-1. Create a new **public** repository at <https://github.com/new>. It must be
-   public: Instagram downloads each slide from it.
-2. Upload everything in this folder, including the hidden `.github` folder.
-   If the web uploader skips `.github`, create the two files by hand with
-   **Add file → Create new file**, named `.github/workflows/post.yml` and
-   `.github/workflows/refresh-token.yml`.
-3. **Settings → Secrets and variables → Actions → New repository secret**.
-   Add `IG_TOKEN` and `TMDB_KEY`.
-
-### 5. Make it yours
-
-In `config.json`, set `handle` to your Instagram handle. It appears on every
-slide.
-
-### 6. Test it
-
-**Actions → Post to Instagram → Run workflow**. After a minute or two the
-first carousel should be on your profile. From then on it posts twice a day.
-
-## Check the first few image posts
-
-Painting close-ups are centred on a point I estimated for each picture. If one
-misses, change that post's `detail` in `posts.json`.
-
-
-The bot picks the two highest-rated stills TMDB has for each film. Nobody has
-looked at them in advance. If a post gets a frame you don't like, add
-`"skip_stills": 2` to that post in `posts.json` to use the next two instead.
+| Name | Needed | What it is |
+|---|---|---|
+| `IG_TOKEN` | Yes | Instagram access token from the Meta developer dashboard |
+| `IG_USER_ID` | Yes, for tokens starting `EAA` | The Instagram account ID shown on that dashboard |
+| `TMDB_KEY` | No | A free TMDB API key. Without it film posts use posters instead of stills |
 
 ## Adding posts
 
-The bot ships with 67 posts, which is about a month at two a day. It picks them
-at random from `posts.json`. When five or fewer are left, the
-workflow run shows a warning. When they run out, it falls back to the single
-quote cards in `quotes.json` so the account never goes quiet.
+`CONTENT_GUIDE.md` describes the voice, the rules and the exact shape of each
+series. A scheduled Claude task adds a batch every week by following it. To add
+posts yourself, append entries to `posts.json` and run:
 
-To add a post, copy an existing entry in `posts.json` and change it:
+```bash
+go run ./cmd/quotebot validate
+```
 
-| Field | Meaning |
+The Checks workflow runs the same command on every push, so a mistake in
+`posts.json` shows up as a failed check instead of a failed post.
+
+## Working on the code
+
+```bash
+go test ./...
+```
+
+```bash
+go run ./cmd/quotebot preview
+```
+
+```bash
+go run ./cmd/quotebot status
+```
+
+`preview` draws every post into `preview/` without touching Instagram. Add
+`-images` to fetch real pictures, and `-id some-post` to draw only one.
+
+| Path | What is in it |
 |---|---|
-| `id` | Any unique name, lower-case with dashes. |
-| `kind` | `film`, `series`, `art`, `book` or `music`. Sets the colours and where images come from. |
-| `wiki` | Optional. The exact Wikipedia page title, for when the plain title is ambiguous (a film named after a town, say). |
-| `cover_title` | Optional. Search for a cover under a different name, e.g. the collection a poem comes from. |
-| `image`, `detail` | Art posts only. `{"aic": "Exact title"}` finds the painting at the Art Institute of Chicago; it must be public domain there. `detail` is the point the close-up centres on, as fractions across and down, e.g. `[0.7, 0.4]`. |
-| `title`, `year` | For films these must match TMDB so the right stills are found. |
-| `director` / `author` / `artist` | Shown under the title. |
-| `hook` | The big line on the first slide. |
-| `slides` | Each is either `k` (small label), `h` (heading), `b` (body), or a quote: `q` and `by`. Keep bodies under about 55 words. |
-| `pairs` | One or two recommendations for the last slide. |
-| `caption`, `tags` | The text under the post. |
+| `cmd/quotebot` | The command-line program and the end-to-end tests |
+| `internal/content` | Queue types, validation, random selection, captions |
+| `internal/images` | Image sources and their fallback order |
+| `internal/render` | Slide drawing; fonts are embedded in the program |
+| `internal/reel` | Video building with ffmpeg |
+| `internal/instagram` | The publishing client, with retries |
+| `posts.json` | The queue |
+| `quotes.json` | Plain quote cards, used only if the queue ever runs dry |
+| `posted.json` | What has been published. Written by the bot; do not edit |
+| `config.json` | Handle, hashtags, closing lines |
+| `out/` | Drawn files from the last two weeks |
 
-To see slides before they go out: `pip install -r requirements.txt`, then
-`python bot.py preview`. They appear in `preview/`.
+Reels need `ffmpeg` on the machine. Everything else is pure Go.
 
-## Changing things
+## The old Python bot
 
-| What | Where |
+The original Python version is kept in `legacy/` and has its own workflow,
+**Post (old Python bot)**, that you can run by hand if the Go bot is failing.
+It posts one carousel. It can be deleted once the Go bot has run cleanly for a
+couple of weeks.
+
+## If a run fails
+
+Open **Actions**, click the failed run, and read the step with the red cross.
+
+| Message | Cause |
 |---|---|
-| Post times | The two `cron` lines in `.github/workflows/post.yml`, in UTC. `"7 4 * * *"` is 04:07 UTC daily. |
-| Post a specific one now | **Run workflow** and type its `id`. |
-| Colours | `THEMES` at the top of `bot.py`. |
-| Hashtags, last-slide line | `config.json`. |
-
-## Keeping the Instagram token alive
-
-Tokens expire after 60 days. The **Refresh Instagram token** workflow extends
-it twice a month. If that workflow fails with "Instagram issued a new token":
-
-1. GitHub → profile picture → **Settings → Developer settings → Personal
-   access tokens → Fine-grained tokens → Generate new token**.
-2. Give it access to this repository only, with **Secrets: Read and write**.
-3. Add it as a repository secret named `GH_PAT`.
-
-## If a post fails
-
-Open **Actions**, click the failed run, read the last step.
-
-- **"Images are not publicly reachable"**: the repository is private.
-- **"Instagram API error … OAuthException"**: the token is wrong or expired.
-- **Push rejected**: **Settings → Actions → General → Workflow permissions →
-  Read and write permissions**.
-- **"TMDB: could not fetch stills"** or **"AIC: no public-domain match"**: not
-  a failure. The post went out text-only. Check the `TMDB_KEY` secret, or the
-  painting's title in `posts.json`.
+| `is not publicly reachable` | The repository is private, or the push step failed |
+| `Instagram API error ... code 190` | The token is wrong or has been revoked |
+| `could not work out the Instagram account ID` | Add the `IG_USER_ID` secret |
+| `images: ... failed` | Not a failure. That source was skipped and the next one tried |
 
 ## Credits
 
 Fonts are Playfair Display and Inter, both under the SIL Open Font License
-(see `fonts/`). This product uses the TMDB API but is not endorsed or
-certified by TMDB.
+(see `internal/render/fonts/`). This product uses the TMDB API but is not
+endorsed or certified by TMDB.
