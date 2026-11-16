@@ -2990,16 +2990,6 @@
     "tags": "#thegodfather #filmdebate"
   },
   {
-    "id": "take-three-hours",
-    "kind": "take",
-    "label": "HOT TAKE",
-    "title": "Hot take",
-    "quote": "A film being three hours long is not a personality. Edit your shit.",
-    "slides": [],
-    "caption": "some films need the time. most of them need a braver editor and a producer who can say no.\n\nninety minutes is a gift.",
-    "tags": "#filmdebate #cinema"
-  },
-  {
     "id": "take-book-better",
     "kind": "take",
     "label": "HOT TAKE",
@@ -3010,36 +3000,6 @@
     "tags": "#bookvsmovie #filmdebate"
   },
   {
-    "id": "take-subtitles",
-    "kind": "take",
-    "label": "HOT TAKE",
-    "title": "Hot take",
-    "quote": "Subtitles on, always. If you can't read and watch at the same time, that's a you problem.",
-    "slides": [],
-    "caption": "you are missing half the best films ever made because of one inch of text at the bottom of the screen.\n\nBong Joon-ho said it nicer. I'm saying it like this.",
-    "tags": "#worldcinema #subtitles #filmdebate"
-  },
-  {
-    "id": "take-tenet",
-    "kind": "take",
-    "label": "HOT TAKE",
-    "title": "Hot take",
-    "quote": "Nobody enjoyed Tenet. Some people enjoyed pretending to understand Tenet.",
-    "slides": [],
-    "caption": "I've seen it three times. I can describe what happens. I can't tell you what anyone said, because you can't hear a fucking word.\n\nlooks incredible though.",
-    "tags": "#tenet #christophernolan #filmdebate"
-  },
-  {
-    "id": "take-the-office",
-    "kind": "take",
-    "label": "HOT TAKE",
-    "title": "Hot take",
-    "quote": "The Office got bad after Michael left, and everyone who says otherwise is fucking lying.",
-    "slides": [],
-    "caption": "two more seasons of everyone standing around the space where a main character used to be.\n\nthe goodbye at the airport is perfect. should have rolled credits on the whole show.",
-    "tags": "#theoffice #michaelscott #tvdebate"
-  },
-  {
     "id": "take-shuffle",
     "kind": "take",
     "label": "HOT TAKE",
@@ -3048,16 +3008,6 @@
     "slides": [],
     "caption": "the track after the sad one is there to catch you. that's not an accident. that's somebody's job.\n\nplaylists are fine. albums are sentences.",
     "tags": "#albums #musicdebate #vinylcommunity"
-  },
-  {
-    "id": "take-paddington",
-    "kind": "take",
-    "label": "HOT TAKE",
-    "title": "Hot take",
-    "quote": "Paddington 2 is a better film than Citizen Kane, and I've watched both this year.",
-    "slides": [],
-    "caption": "one of them changed cinema. the other one has Hugh Grant doing a tap number in prison and made me cry about marmalade.\n\nI know which I'm putting on tonight.",
-    "tags": "#paddington2 #filmdebate"
   },
   {
     "id": "take-credits",
@@ -3078,46 +3028,6 @@
     "slides": [],
     "caption": "the second watch is where you find out if it was the film or the mood you were in.\n\nmy actual favourites are the ones I've seen too many times to count.",
     "tags": "#filmdebate #cinephile"
-  },
-  {
-    "id": "thought-horror",
-    "kind": "thought",
-    "label": "RANDOM THOUGHT",
-    "title": "Random thought",
-    "quote": "Nobody in a horror film has ever seen a horror film.",
-    "slides": [],
-    "caption": "the basement light doesn't work and there's a noise down there. you've got a phone. you've got legs. leave.",
-    "tags": "#horrormovies #showerthoughts"
-  },
-  {
-    "id": "thought-heist",
-    "kind": "thought",
-    "label": "RANDOM THOUGHT",
-    "title": "Random thought",
-    "quote": "Every heist film is a group project where everyone actually does their bit. That's the fantasy.",
-    "slides": [],
-    "caption": "eleven people, all on time, all prepared, nobody saying \"sorry, which part was mine again?\"\n\nforget the money. I'd watch it for that alone.",
-    "tags": "#heistmovies #showerthoughts"
-  },
-  {
-    "id": "thought-bond",
-    "kind": "thought",
-    "label": "RANDOM THOUGHT",
-    "title": "Random thought",
-    "quote": "James Bond is a secret agent who tells everyone he meets his full real name. Twice.",
-    "slides": [],
-    "caption": "surname first, then the whole thing again in case they missed it. to villains. in their own casinos.\n\nworst spy alive. great suits.",
-    "tags": "#jamesbond #showerthoughts"
-  },
-  {
-    "id": "thought-phone",
-    "kind": "thought",
-    "label": "RANDOM THOUGHT",
-    "title": "Random thought",
-    "quote": "People in films never say goodbye before hanging up the phone, and it's why I can't trust any of them.",
-    "slides": [],
-    "caption": "\"meet me at the docks.\" click. no bye. no see you there. absolute psychopaths.",
-    "tags": "#movies #showerthoughts"
   },
   {
     "id": "thought-inception-pitch",
@@ -3144,9 +3054,9 @@
     "kind": "thought",
     "label": "RANDOM THOUGHT",
     "title": "Random thought",
-    "quote": "WALL-E doesn't speak for half an hour and still says more than most people I know.",
+    "quote": "WALL-E learned how to hold hands from an old tape of Hello, Dolly! and he's still better at it than I am.",
     "slides": [],
-    "caption": "a bin with eyes holding his own hands because he saw it in a musical. I'm not okay.",
+    "caption": "a bin with eyes, practising on his own hands because he saw it in a musical. I'm not okay.",
     "tags": "#walle #pixar #showerthoughts"
   },
   {
@@ -3318,30 +3228,6 @@
     "doodle": "fridge"
   },
   {
-    "id": "deadpan-self-help",
-    "kind": "bit",
-    "label": "DEADPAN",
-    "title": "A book review",
-    "hook": "I bought a book called How to Stop Procrastinating.",
-    "slides": [
-      {
-        "t": "Great cover. Very motivating cover. A man on a mountain. You look at that and think, he didn't put things off."
-      },
-      {
-        "t": "That was in 2019. I'm told the ending is very strong."
-      },
-      {
-        "t": "My wife asked how I was getting on with it. I said I'm waiting for the film."
-      },
-      {
-        "t": "There is a film. It came out two years ago. I've got it saved."
-      }
-    ],
-    "caption": "I've since bought the follow-up. it's called Finish What You Start. it's still in the bag.",
-    "tags": "#deadpan #longjoke #procrastination",
-    "doodle": "book"
-  },
-  {
     "id": "deadpan-parrot",
     "kind": "bit",
     "label": "DEADPAN",
@@ -3469,7 +3355,7 @@
     "hook": "James Bond, ladies and gentlemen.",
     "slides": [
       {
-        "t": "A secret agent. Introduces himself by full name to every barman in Europe. Surname first, in case they need it for the report."
+        "t": "Calls himself a secret agent. Checks into every hotel under his own name, wrecks the place, and tips so well the staff talk about him for years."
       },
       {
         "t": "Sixty years of drinking on the job and they keep handing him the car keys. I've seen people sacked for less at a car wash."
@@ -3493,7 +3379,7 @@
     "hook": "Rose from Titanic. Sweetheart.",
     "slides": [
       {
-        "t": "Eighty-four years she waited to tell this story. And she still left out the part where she could have moved over."
+        "t": "Had a first class ticket and a fiancé who owned a safe. Left both for a man who won his ticket at cards about ten minutes before the boat left."
       },
       {
         "t": "Knew the man four days. Four. I've had colds that lasted longer and meant more."
@@ -3523,7 +3409,7 @@
         "t": "Shows up late to every battle and says a wizard arrives precisely when he means to. That's not wisdom. That's every builder I've ever hired."
       },
       {
-        "t": "Knew about the giant eagles the whole time. The whole time. Let two small barefoot men walk to a volcano. Said nothing. Smoked his pipe."
+        "t": "Hands a hobbit the most dangerous object in the world, says keep it secret, keep it safe, and pops out to do some reading. In the book he's gone seventeen years."
       },
       {
         "t": "Died. Came back from the dead. And the only thing that changed was the colour of his robe. I've seen people come back from a weekend in Lisbon with more to say."
@@ -3544,7 +3430,7 @@
         "t": "Bought the mug himself. It's the only performance review he's ever passed."
       },
       {
-        "t": "Hit an employee with his car in the car park and spent three episodes on how hard it had been for him."
+        "t": "Hit an employee with his car in the car park, then organised a charity run so everyone could see how hard it had been for him."
       },
       {
         "t": "Once promised a class of children he'd pay for college. Turned up ten years later with laptop batteries. Not laptops. The batteries."
@@ -4029,5 +3915,75 @@
     "slides": [],
     "caption": "same field, different light, and he sold them. that's the bit i'm still working on.",
     "tags": "#monet #haystacks #impressionism"
+  },
+  {
+    "id": "take-home-alone",
+    "kind": "take",
+    "label": "HOT TAKE",
+    "title": "Hot take",
+    "quote": "The best acting in Home Alone is the mother. Catherine O'Hara plays a real panic attack in a children's comedy and nobody gives her credit.",
+    "slides": [],
+    "caption": "watch her face on the plane when she works it out. that's not a christmas film performance. that's a woman in an actual nightmare.\n\nthe kid is fine. the kid is having a great week.",
+    "tags": "#homealone #catherineohara #christmasfilms"
+  },
+  {
+    "id": "take-ratatouille",
+    "kind": "take",
+    "label": "HOT TAKE",
+    "title": "Hot take",
+    "quote": "Ratatouille is the best film ever made about critics, and critics know it. That's why they all cried.",
+    "slides": [],
+    "caption": "one bite and the meanest man in paris is a small boy in a doorway again. no essay about criticism has ever landed a punch like that.\n\nand it was done by a rat.",
+    "tags": "#ratatouille #pixar #antonego"
+  },
+  {
+    "id": "take-before-money",
+    "kind": "take",
+    "label": "HOT TAKE",
+    "title": "Hot take",
+    "quote": "Most directors make their best film right before somebody gives them all the money.",
+    "slides": [],
+    "caption": "memento. reservoir dogs. brick. no time, no budget, one good idea and nowhere to hide it.\n\nthen comes the blank cheque and the three hour runtime.",
+    "tags": "#filmmaking #lowbudget #directors"
+  },
+  {
+    "id": "take-post-credits",
+    "kind": "take",
+    "label": "HOT TAKE",
+    "title": "Hot take",
+    "quote": "If a film needs a scene after the credits to get you excited, the film did not get you excited.",
+    "slides": [],
+    "caption": "two hours in a seat and the best bit is thirty seconds of a man in a coat saying a name you're meant to recognise.\n\nthat's not an ending. that's an advert.",
+    "tags": "#postcredits #blockbusters #cinema"
+  },
+  {
+    "id": "thought-andy",
+    "kind": "thought",
+    "label": "RANDOM THOUGHT",
+    "title": "Random thought",
+    "quote": "Andy goes to college never knowing his toys loved him back. That's the actual tragedy of Toy Story.",
+    "slides": [],
+    "caption": "they crossed a motorway for him. they nearly got melted for him. he thinks he just had a nice cowboy.",
+    "tags": "#toystory #pixar #andy"
+  },
+  {
+    "id": "thought-jaws-shark",
+    "kind": "thought",
+    "label": "RANDOM THOUGHT",
+    "title": "Random thought",
+    "quote": "The shark in Jaws is on screen for roughly four minutes. The scariest thing in the film is that the prop kept breaking.",
+    "slides": [],
+    "caption": "the mechanical shark sank, so Spielberg had to film the water instead. two notes on a cello did the rest.\n\ngreatest special effect ever made: not having one.",
+    "tags": "#jaws #spielberg #filmmaking"
+  },
+  {
+    "id": "thought-pitt-eating",
+    "kind": "thought",
+    "label": "RANDOM THOUGHT",
+    "title": "Random thought",
+    "quote": "Brad Pitt is eating in nearly every scene of Ocean's Eleven and not one character mentions it. That's what real confidence looks like.",
+    "slides": [],
+    "caption": "nachos, a burger, shrimp cocktail, mid heist, mid sentence. nobody says a word. I can't eat a sandwich in a meeting without apologising.",
+    "tags": "#oceanseleven #bradpitt #heistfilms"
   }
 ]
