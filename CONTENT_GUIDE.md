@@ -21,6 +21,30 @@ Tarkovsky frame can sit next to a joke about Shrek.
 - **Swearing is fine** where it is funny or the original joke has it. Use it
   like seasoning. Nothing sexual, hateful, or cruel to real people.
 
+## The bar
+
+Most of what gets written for accounts like this is filler, and filler is
+worse than posting nothing. Before a post goes in the queue it has to pass
+all of these. If it fails one, cut it; do not patch it.
+
+- **Could a thousand other accounts have posted it?** Then it is out. That
+  rules out every familiar meme shape: "me after", "nobody:", "adulting",
+  "main character", "this meeting could have been an email", "romanticising
+  my life", "3am thoughts", anything about coffee or mondays.
+- **Is there one detail nobody else would have picked?** A kebab shop in
+  2016, the fourth bag of spinach, a kid who could draw horses. The odd,
+  exact detail is the whole joke. A general statement is never funny.
+- **Does it have a point of view?** A fact needs an opinion attached. An
+  opinion needs a reason. "This film is a masterpiece" is neither.
+- **Is it borrowed?** Never reuse a joke, tweet or caption seen elsewhere,
+  even reworded. If a line feels familiar, assume it is someone else's.
+- **Would you send it to one specific friend?** If you cannot name who, cut.
+- **Sincere is fine, wise is not.** A small true observation works. Anything
+  that could be printed on a poster with a sunset does not.
+
+Write twice as many as needed and keep the better half. Ten good posts beat
+twenty-one passable ones; a short week is acceptable.
+
 ## What works on Instagram
 
 - Carousels do best with real substance: write **four** text slides when the

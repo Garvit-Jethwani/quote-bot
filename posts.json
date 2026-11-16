@@ -3702,136 +3702,147 @@
     "doodle": "clock"
   },
   {
-    "id": "mood-one-email",
+    "id": "mood-floor",
     "kind": "mood",
     "label": "MOOD",
     "title": "Mood",
     "doodle": "guy-floor",
-    "quote": "me after sending one (1) email",
+    "quote": "the floor has never once asked me how the job search is going",
     "slides": [],
-    "caption": "i'd like the rest of the day off please.",
-    "tags": "#worklife #relatable #officehumor"
+    "caption": "underrated piece of furniture.",
+    "tags": "#floortime #jobsearch #deadpan"
   },
   {
-    "id": "mood-3am",
+    "id": "mood-romanovs",
     "kind": "mood",
     "label": "MOOD",
     "title": "Mood",
     "doodle": "guy-bed",
-    "quote": "my brain at 3am: remember that thing you said in 2014",
+    "quote": "3am. i have decided tonight is the night i finally learn what happened to the romanovs.",
     "slides": [],
-    "caption": "nobody else remembers. i checked. i still can't sleep.",
-    "tags": "#3am #overthinking #relatable"
+    "caption": "it's always a royal family or a shipwreck. never anything i can use.",
+    "tags": "#3am #wikipedia #insomnia"
   },
   {
-    "id": "mood-five-minutes",
+    "id": "mood-argument",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-bed",
+    "quote": "can't sleep, so i'm rehearsing an argument with someone i haven't seen since school. i'm winning.",
+    "slides": [],
+    "caption": "he doesn't know. he's probably asleep. coward.",
+    "tags": "#insomnia #overthinking #deadpan"
+  },
+  {
+    "id": "mood-lighthouses",
     "kind": "mood",
     "label": "MOOD",
     "title": "Mood",
     "doodle": "guy-desk",
-    "quote": "five more minutes, i said, four hours ago",
+    "quote": "opened the laptop to do one thing. i now know how lighthouses work. the thing remains.",
     "slides": [],
-    "caption": "the laptop is still open so technically i'm working.",
-    "tags": "#procrastination #relatable #worklife"
+    "caption": "fresnel lens. ask me anything except how the work is going.",
+    "tags": "#procrastination #wikipedia #deadpan"
   },
   {
-    "id": "mood-fridge",
+    "id": "mood-last-email",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-desk",
+    "quote": "typed 'per my last email' and felt what a medieval king must have felt declaring war",
+    "slides": [],
+    "caption": "then added 'hope you're well!' at the top, like a coward.",
+    "tags": "#officehumor #email #deadpan"
+  },
+  {
+    "id": "mood-cheese",
     "kind": "mood",
     "label": "MOOD",
     "title": "Mood",
     "doodle": "guy-fridge",
-    "quote": "checking the fridge again in case new food grew",
+    "quote": "it's not hunger. i'm just visiting the cheese.",
     "slides": [],
-    "caption": "third visit tonight. same mustard. still hopeful.",
-    "tags": "#relatable #latenight #snacks"
+    "caption": "fourth visit since nine. we're both doing fine.",
+    "tags": "#fridge #cheese #deadpan"
   },
   {
-    "id": "mood-unread",
+    "id": "mood-spinach",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-fridge",
+    "quote": "bought spinach again. that's the fourth bag i have personally escorted to its death.",
+    "slides": [],
+    "caption": "it comes in, it goes in the drawer, it becomes a liquid. i have never eaten one leaf.",
+    "tags": "#groceries #spinach #deadpan"
+  },
+  {
+    "id": "mood-landlord",
     "kind": "mood",
     "label": "MOOD",
     "title": "Mood",
     "doodle": "guy-cloud",
-    "quote": "everyone: what a beautiful day. me, with one unread message:",
+    "quote": "forecast: clear skies all week. me: one email from the landlord with no subject line.",
     "slides": [],
-    "caption": "it says 'can we talk'. it's from the dentist's office. doesn't matter.",
-    "tags": "#anxiety #relatable #overthinking"
+    "caption": "it said 'quick question'. there are no quick questions.",
+    "tags": "#renting #landlord #deadpan"
   },
   {
-    "id": "mood-party-dog",
+    "id": "mood-bookshelf",
     "kind": "mood",
     "label": "MOOD",
     "title": "Mood",
     "doodle": "guy-party",
-    "quote": "arrived at the party. looking for the dog.",
+    "quote": "at the party. found the bookshelf. i'll be judging the host from over here.",
     "slides": [],
-    "caption": "if there's no dog i'm reading every book spine in the house.",
-    "tags": "#introvert #relatable #party"
+    "caption": "three copies of the same self help book. i have so many questions and i will ask none.",
+    "tags": "#introvert #party #bookshelf"
   },
   {
-    "id": "mood-main-character",
+    "id": "mood-birthday",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-party",
+    "quote": "it's my birthday and i'd like everyone to please stop looking at me. thank you for coming.",
+    "slides": [],
+    "caption": "the singing part is the longest forty seconds in human life.",
+    "tags": "#birthday #introvert #deadpan"
+  },
+  {
+    "id": "mood-kebab-shop",
     "kind": "mood",
     "label": "MOOD",
     "title": "Mood",
     "doodle": "guy-headphones",
-    "quote": "one good song and suddenly i'm the main character on a bus",
+    "quote": "this song was playing in a kebab shop in 2016 and it has taken me nine years to find it. nobody speak to me.",
     "slides": [],
-    "caption": "window seat, light rain, a song from 2011. cinema.",
-    "tags": "#musictaste #relatable #maincharacter"
+    "caption": "no lyrics, no app, just me humming at strangers for a decade.",
+    "tags": "#musicdiscovery #songsearch #deadpan"
   },
   {
-    "id": "mood-early-night",
-    "kind": "mood",
-    "label": "MOOD",
-    "title": "Mood",
-    "doodle": "guy-bed",
-    "quote": "going to bed early tonight. (narrator: he did not.)",
-    "slides": [],
-    "caption": "one video about how they make pencils. then it was 2am.",
-    "tags": "#sleep #relatable #latenight"
-  },
-  {
-    "id": "mood-music-taste",
+    "id": "mood-live-1974",
     "kind": "mood",
     "label": "MOOD",
     "title": "Mood",
     "doodle": "guy-headphones",
-    "quote": "my music taste is 40% sad men with guitars and 60% one song on repeat",
+    "quote": "i don't have a favourite band. i have one live recording from 1974 and a grudge.",
     "slides": [],
-    "caption": "the one song changes every month. the sad men are permanent.",
-    "tags": "#musictaste #indiemusic #relatable"
+    "caption": "the studio version is fine if you've never been alive.",
+    "tags": "#musictaste #liverecording #vinyl"
   },
   {
-    "id": "mood-meeting",
-    "kind": "mood",
-    "label": "MOOD",
-    "title": "Mood",
-    "doodle": "guy-desk",
-    "quote": "the meeting could have been an email. the email could have been nothing.",
-    "slides": [],
-    "caption": "reply all if you agree. actually don't.",
-    "tags": "#worklife #meetings #officehumor"
-  },
-  {
-    "id": "mood-bored",
+    "id": "mood-age-seven",
     "kind": "mood",
     "label": "MOOD",
     "title": "Mood",
     "doodle": "guy-floor",
-    "quote": "lay on the floor doing nothing for an hour. best idea i've had all year.",
+    "quote": "an hour on the floor with no phone. remembered a kid i sat next to when i was seven. hope he's well.",
     "slides": [],
-    "caption": "being bored is where the ideas were hiding the whole time. put the phone in another room and try it.",
-    "tags": "#boredom #slowliving #relatable"
-  },
-  {
-    "id": "mood-dinner",
-    "kind": "mood",
-    "label": "MOOD",
-    "title": "Mood",
-    "doodle": "guy-fridge",
-    "quote": "adulthood is deciding what to eat for dinner every single day until you die",
-    "slides": [],
-    "caption": "nobody warned me about this part. i'd have stayed nine.",
-    "tags": "#adulting #relatable #dinner"
+    "caption": "he could draw horses. properly, with the legs right. i think about that.",
+    "tags": "#boredom #memory #slowliving"
   },
   {
     "id": "mood-lost-in-translation",
@@ -3840,10 +3851,10 @@
     "title": "Lost in Translation",
     "year": 2003,
     "director": "Sofia Coppola",
-    "quote": "being lonely somewhere beautiful still counts as travelling",
+    "quote": "jet lag is the only time i've been awake at 4am and felt it wasn't my fault",
     "slides": [],
-    "caption": "some trips are just you and a window. that's allowed.",
-    "tags": "#lostintranslation #sofiacoppola #solotravel"
+    "caption": "a hotel bar, a time zone, and for once an excuse.",
+    "tags": "#lostintranslation #sofiacoppola #jetlag"
   },
   {
     "id": "mood-paterson",
@@ -3852,10 +3863,10 @@
     "title": "Paterson",
     "year": 2016,
     "director": "Jim Jarmusch",
-    "quote": "a small, quiet, repeating life is still a whole life",
+    "quote": "he drives a bus, writes poems in a notebook, and nobody ever finds out. i think about that more than most films where things explode.",
     "slides": [],
-    "caption": "same bus route every day and he's the happiest man in cinema. think about it.",
-    "tags": "#paterson #jimjarmusch #slowliving"
+    "caption": "the most that happens is a dog eats something. it wrecked me.",
+    "tags": "#paterson #jimjarmusch #adamdriver"
   },
   {
     "id": "mood-taxi-driver",
@@ -3864,10 +3875,10 @@
     "title": "Taxi Driver",
     "year": 1976,
     "director": "Martin Scorsese",
-    "quote": "me walking home with headphones on as if the film is about me",
+    "quote": "every man who put this poster on his wall missed the point of the film, and i say that as one of them",
     "slides": [],
-    "caption": "it isn't. and given the film, thank god.",
-    "tags": "#taxidriver #scorsese #maincharacter"
+    "caption": "second year of university. next to a pulp fiction one. i've grown.",
+    "tags": "#taxidriver #scorsese #filmposter"
   },
   {
     "id": "mood-frances-ha",
@@ -3876,9 +3887,9 @@
     "title": "Frances Ha",
     "year": 2012,
     "director": "Noah Baumbach",
-    "quote": "27 and still waiting for the montage where it all comes together",
+    "quote": "27 is when you find out the friends with the nice flats had parents with the nice flats",
     "slides": [],
-    "caption": "turns out you're in the montage. it's just slower and nobody put music on it.",
+    "caption": "she figures it out on a weekend trip to paris she sleeps through. best scene in it.",
     "tags": "#francesha #gretagerwig #twenties"
   },
   {
@@ -3888,10 +3899,10 @@
     "title": "Perfect Days",
     "year": 2023,
     "director": "Wim Wenders",
-    "quote": "nobody tells you the quiet ordinary tuesday is the good part",
+    "quote": "he cleans public toilets in tokyo and has a better morning routine than every ceo with a podcast",
     "slides": [],
-    "caption": "a cassette, a sandwich, light through some trees. that's the film. that's also the point.",
-    "tags": "#perfectdays #wimwenders #slowliving"
+    "caption": "canned coffee, a cassette, a look at the sky. no cold plunge.",
+    "tags": "#perfectdays #wimwenders #kojiyakusho"
   },
   {
     "id": "mood-big-lebowski",
@@ -3900,10 +3911,10 @@
     "title": "The Big Lebowski",
     "year": 1998,
     "director": "Joel Coen",
-    "quote": "my entire personality on a day off",
+    "quote": "the only goal he states in the whole film is getting his rug back. respect a man with a clear objective.",
     "slides": [],
-    "caption": "dressing gown, no plans, strong opinions about a rug.",
-    "tags": "#thebiglebowski #coenbrothers #dayoff"
+    "caption": "it really did tie the room together. he was right the entire time.",
+    "tags": "#thebiglebowski #coenbrothers #thedude"
   },
   {
     "id": "mood-amelie",
@@ -3912,10 +3923,10 @@
     "title": "Amélie",
     "year": 2001,
     "director": "Jean-Pierre Jeunet",
-    "quote": "romanticising my life because nobody else is going to do it for me",
+    "quote": "she rearranged a stranger's entire life rather than say hello to one man. relatable to a worrying degree.",
     "slides": [],
-    "caption": "the spoon through the crème brûlée is free. take the small stuff.",
-    "tags": "#amelie #romanticizeyourlife #frenchcinema"
+    "caption": "a scavenger hunt across paris is still easier than a text.",
+    "tags": "#amelie #jeunet #frenchcinema"
   },
   {
     "id": "mood-fantastic-mr-fox",
@@ -3924,10 +3935,10 @@
     "title": "Fantastic Mr. Fox",
     "year": 2009,
     "director": "Wes Anderson",
-    "quote": "got dressed up properly to do something unbelievably stupid",
+    "quote": "a film about a midlife crisis, performed by a fox in a corduroy suit, sold to children. it got me instead.",
     "slides": [],
-    "caption": "if you're going to make a bad decision, wear the corduroy.",
-    "tags": "#fantasticmrfox #wesanderson #baddecisions"
+    "caption": "'i think i have this thing where i need everybody to think i'm the greatest.' in a kids' film. rude.",
+    "tags": "#fantasticmrfox #wesanderson #stopmotion"
   },
   {
     "id": "mood-la-grande-jatte",
@@ -3939,10 +3950,10 @@
     "image": {
       "aic": "A Sunday on La Grande Jatte"
     },
-    "quote": "group hangout where nobody speaks and everyone goes home satisfied",
+    "quote": "it took seurat two years of dots to paint people being bored in a park. there's a monkey on a lead. nobody's discussing the monkey.",
     "slides": [],
-    "caption": "the ideal sunday. also there's a monkey on a lead and no one is talking about it.",
-    "tags": "#seurat #arthistorymemes #introvert"
+    "caption": "bottom right. small, brown, on a lead, attending the park like everyone else.",
+    "tags": "#seurat #pointillism #arthistory"
   },
   {
     "id": "mood-the-bedroom",
@@ -3954,10 +3965,10 @@
     "image": {
       "aic": "The Bedroom"
     },
-    "quote": "cleaned my room. life fixed. (lasts about four hours.)",
+    "quote": "van gogh painted his bedroom three times. i can't get mine tidy enough to photograph once.",
     "slides": [],
-    "caption": "van gogh painted his three times. he understood.",
-    "tags": "#vangogh #arthistorymemes #cleanroom"
+    "caption": "note that even he left a towel on the hook.",
+    "tags": "#vangogh #thebedroom #arthistory"
   },
   {
     "id": "mood-moulin-rouge",
@@ -3969,10 +3980,10 @@
     "image": {
       "aic": "At the Moulin Rouge"
     },
-    "quote": "me at the party, staring into the middle distance, having a great time actually",
+    "quote": "there is always one person at the party lit from below like this. this week it's me.",
     "slides": [],
-    "caption": "the green face on the right is how i look in every group photo.",
-    "tags": "#toulouselautrec #arthistorymemes #introvert"
+    "caption": "he painted her green on purpose, in 1890s paris, and it's still the most accurate picture of 1am.",
+    "tags": "#toulouselautrec #moulinrouge #arthistory"
   },
   {
     "id": "mood-herring-net",
@@ -3984,10 +3995,10 @@
     "image": {
       "aic": "The Herring Net"
     },
-    "quote": "me and the one friend who replies, carrying the entire group chat",
+    "quote": "two men, one net, an open boat, the north atlantic, 1885. meanwhile my back hurts from a chair.",
     "slides": [],
-    "caption": "eleven people in there. two of us hauling. nine reading in silence.",
-    "tags": "#winslowhomer #arthistorymemes #groupchat"
+    "caption": "the chair is ergonomic. it cost more than their boat.",
+    "tags": "#winslowhomer #theherringnet #arthistory"
   },
   {
     "id": "mood-two-sisters",
@@ -3999,10 +4010,10 @@
     "image": {
       "aic": "Two Sisters"
     },
-    "quote": "listening to your friend describe a red flag as 'kind of funny actually'",
+    "quote": "renoir called this two sisters. they weren't sisters. the title has been wrong since 1881 and everyone's fine.",
     "slides": [],
-    "caption": "the face of someone who has given this exact advice four times already.",
-    "tags": "#renoir #arthistorymemes #friendship"
+    "caption": "the models weren't related. the art dealer called it on the terrace instead and nobody listened to him either.",
+    "tags": "#renoir #impressionism #arthistory"
   },
   {
     "id": "mood-haystacks",
@@ -4014,9 +4025,9 @@
     "image": {
       "aic": "Stacks of Wheat (End of Summer)"
     },
-    "quote": "monet painted the same haystacks about 25 times and called it a career. keep going.",
+    "quote": "monet painted the same haystacks about 25 times and it's called genius. so i'm not stuck. i'm working in series.",
     "slides": [],
-    "caption": "doing the same thing over and over until it turns out to be the work. it counts.",
-    "tags": "#monet #arthistory #keepgoing"
+    "caption": "same field, different light, and he sold them. that's the bit i'm still working on.",
+    "tags": "#monet #haystacks #impressionism"
   }
 ]
