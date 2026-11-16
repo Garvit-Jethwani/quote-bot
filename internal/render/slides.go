@@ -126,6 +126,14 @@ func Cover(p content.Post, th Theme, still image.Image, total int, cfg content.C
 		top, bottom := 150.0+608+64, fy-56
 		hookF, hook, lh = fit(Serif, p.Hook, width, bottom-top-metaH-40, 76, 40, 1.2)
 		y, gap = top, 40
+	} else if name := DoodleFor(p); name != "" { // a drawing above the words
+		const size = 400.0
+		top, bottom := 170.0, fy-56
+		hookF, hook, lh = fit(Serif, p.Hook, width, bottom-top-size-40-metaH-50, 96, 44, 1.16)
+		y = top + math.Floor((bottom-top-(size+40+float64(len(hook))*lh+50+metaH))/2)
+		Doodle(dc, name, M-10, y, size, th.FG, th.Accent, th.BG, 1, 0)
+		y += size + 40
+		gap = 50
 	} else { // typographic cover
 		top, bottom := 190.0, fy-56
 		hookF, hook, lh = fit(Serif, p.Hook, width, bottom-top-metaH-60, 112, 48, 1.16)
@@ -170,11 +178,11 @@ func Body(p content.Post, th Theme, s content.Slide, n, total int, cfg content.C
 
 // QuoteSlide draws a quotation with a large quote mark and a source line.
 func QuoteSlide(label string, th Theme, quote, by string, n, total int, cfg content.Config) image.Image {
-	return quoteSlide(label, th, quote, by, n, total, cfg, SerifItalic, 78)
+	return quoteSlide(label, th, quote, by, n, total, cfg, SerifItalic, 78, "")
 }
 
 // quoteSlide is QuoteSlide with a choice of typeface and largest text size.
-func quoteSlide(label string, th Theme, quote, by string, n, total int, cfg content.Config, typeface string, hi int) image.Image {
+func quoteSlide(label string, th Theme, quote, by string, n, total int, cfg content.Config, typeface string, hi int, doodle string) image.Image {
 	dc := canvas(th)
 	fy := chrome(dc, th, label, n, total, cfg.Handle, "")
 	width := float64(W - 2*M)
@@ -189,6 +197,9 @@ func quoteSlide(label string, th Theme, quote, by string, n, total int, cfg cont
 	block := 150 + float64(len(lines))*lh + 56 + 40 + byH
 	y := top + math.Floor((bottom-top-block)/2)
 	text(dc, face(SerifBold, 300), "“", M-8, y-70, th.Accent)
+	if doodle != "" {
+		Doodle(dc, doodle, W-M-170, y-6, 170, th.FG, th.Accent, th.BG, 1, len(quote))
+	}
 	y = para(dc, qF, lines, M, y+150, lh, th.FG) + 56
 	hline(dc, M, M+84, y, 3, th.Accent)
 	y += 40
@@ -207,7 +218,7 @@ func Post(p content.Post, cfg content.Config, stills []image.Image) []image.Imag
 		// A comedian's joke is set in italics and signed. The account's own
 		// takes are unsigned and set large and upright, like a poster.
 		if p.Kind == "comedy" {
-			return []image.Image{quoteSlide(p.Label, th, p.Quote, p.Title, 1, 1, cfg, SerifItalic, 92)}
+			return []image.Image{quoteSlide(p.Label, th, p.Quote, p.Title, 1, 1, cfg, SerifItalic, 92, DoodleFor(p))}
 		}
 		return []image.Image{Announce(p, th, cfg)}
 	}
@@ -262,6 +273,11 @@ func Page(p content.Post, th Theme, body string, n, total int, cfg content.Confi
 	fy := chrome(dc, th, p.Label, n, total, cfg.Handle, "")
 	width := float64(W - 2*M)
 	top, bottom := 190.0, fy-60
+	if name := DoodleFor(p); name != "" { // the post's drawing, small, in the corner
+		const size = 190.0
+		bottom -= size + 10
+		Doodle(dc, name, W-M-size, bottom+20, size, th.FG, th.Accent, th.BG, 1, n)
+	}
 	f, lines, lh := fit(SerifMedium, body, width, bottom-top-80, 84, 40, 1.3)
 	y := top + math.Floor((bottom-top-float64(len(lines))*lh)*2/5)
 	para(dc, f, lines, M, y, lh, th.FG)
@@ -274,9 +290,18 @@ func Outro(p content.Post, th Theme, line string, total int, cfg content.Config)
 	fy := chrome(dc, th, p.Label, total, total, cfg.Handle, "")
 	width := float64(W - 2*M)
 	top, bottom := 190.0, fy-60
-	f, lines, lh := fit(Serif, line, width, bottom-top-160, 92, 48, 1.18)
-	block := float64(len(lines))*lh + 56 + 34
+	name := DoodleFor(p)
+	var art float64
+	if name != "" {
+		art = 300
+	}
+	f, lines, lh := fit(Serif, line, width, bottom-top-160-art, 92, 48, 1.18)
+	block := art + float64(len(lines))*lh + 56 + 34
 	y := top + math.Floor((bottom-top-block)/2)
+	if name != "" {
+		Doodle(dc, name, M-8, y, 260, th.FG, th.Accent, th.BG, 1, total)
+		y += art
+	}
 	y = para(dc, f, lines, M, y, lh, th.FG) + 56
 	hline(dc, M, M+84, y-20, 3, th.Accent)
 	if cfg.Handle != "" {
@@ -298,6 +323,9 @@ func Announce(p content.Post, th Theme, cfg content.Config) image.Image {
 	f, lines, lh := fit(Serif, p.Quote, width, bottom-top-titleH-gap-40, 96, 44, 1.2)
 	block := titleH + gap + float64(len(lines))*lh
 	y := top + math.Floor((bottom-top-block)/2)
+	if name := DoodleFor(p); name != "" {
+		Doodle(dc, name, W-M-150, y-28, 150, th.FG, th.Accent, th.BG, 1, p.Number)
+	}
 	text(dc, titleF, "a "+strings.ToLower(p.Label), M, y, th.Accent)
 	y += titleH + gap/2
 	hline(dc, M, W-M, y, 2, th.Muted)

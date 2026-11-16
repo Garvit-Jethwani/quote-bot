@@ -103,6 +103,13 @@ Notes on each:
 - **Short Story**: a complete absurd story in three to six pages. One strange
   premise, played completely straight, with an ending that lands. The hook is
   the first sentence of the story.
+- **Drawings**: give each of these three a `"doodle"`, a small hand-drawn
+  picture shown on its slides and animated in its Reel. Pick the object the
+  joke turns on. Available: `bat`, `bone`, `book`, `bulb`, `clapper`, `clock`,
+  `dumbbell`, `flame`, `fridge`, `ghost`, `lift`, `martini`, `mic`, `mug`,
+  `parrot`, `phone`, `plate`, `ship`, `van`, `wifi`, `wizard`. If none fits,
+  leave the field out rather than forcing one. One-Liner, Hot Take and Random
+  Thought cards get a drawing by themselves.
 - These three post through their own workflow (**Post comedy**) and are kept
   out of the main rotation by `separate_series` in `config.json`.
 

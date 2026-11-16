@@ -31,6 +31,10 @@ Any carousel can also be made into a **Reel**: a short animated vertical video
 in which the hook, each point and the closing line move in over the film still
 or a plain backdrop, with progress bars along the top.
 
+Posts without a picture of their own (the humour series and the single cards)
+carry a small hand-drawn doodle. The doodles are drawn by the program in
+`internal/render/doodle.go`, so in a Reel they draw themselves stroke by stroke.
+
 ## Schedule
 
 All times are UTC and chosen so that each part of the world gets one post in

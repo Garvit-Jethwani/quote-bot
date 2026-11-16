@@ -53,6 +53,8 @@ type Post struct {
 	Wiki       string    `json:"wiki,omitempty"`
 	CoverTitle string    `json:"cover_title,omitempty"`
 	SkipStills int       `json:"skip_stills,omitempty"`
+	// Doodle names a small drawing for the post's slides. See Doodles.
+	Doodle string `json:"doodle,omitempty"`
 	// Ask replaces the series' usual closing line with one written for this post.
 	Ask string `json:"ask,omitempty"`
 	// Number is the post's position within its series, counted from 1. It is

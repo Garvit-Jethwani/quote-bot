@@ -3290,7 +3290,8 @@
       }
     ],
     "caption": "we did find the new password eventually. it was his own name, spelled wrong.",
-    "tags": "#deadpan #longjoke #darkcomedy"
+    "tags": "#deadpan #longjoke #darkcomedy",
+    "doodle": "wifi"
   },
   {
     "id": "deadpan-doctor",
@@ -3313,7 +3314,8 @@
       }
     ],
     "caption": "he also said I should cut down on salt. I said which salt. he wrote something down and underlined it.",
-    "tags": "#deadpan #longjoke #darkcomedy"
+    "tags": "#deadpan #longjoke #darkcomedy",
+    "doodle": "fridge"
   },
   {
     "id": "deadpan-self-help",
@@ -3336,7 +3338,8 @@
       }
     ],
     "caption": "I've since bought the follow-up. it's called Finish What You Start. it's still in the bag.",
-    "tags": "#deadpan #longjoke #procrastination"
+    "tags": "#deadpan #longjoke #procrastination",
+    "doodle": "book"
   },
   {
     "id": "deadpan-parrot",
@@ -3359,7 +3362,8 @@
       }
     ],
     "caption": "the other two words are \"again\" and \"fine\". you can pretty much rebuild the marriage from that.",
-    "tags": "#deadpan #longjoke #darkcomedy"
+    "tags": "#deadpan #longjoke #darkcomedy",
+    "doodle": "parrot"
   },
   {
     "id": "deadpan-gym",
@@ -3382,7 +3386,8 @@
       }
     ],
     "caption": "they send me a birthday email every year. nobody else does. I'm not cancelling now, we've got history.",
-    "tags": "#deadpan #longjoke #gymlife"
+    "tags": "#deadpan #longjoke #gymlife",
+    "doodle": "dumbbell"
   },
   {
     "id": "deadpan-funeral",
@@ -3405,7 +3410,8 @@
       }
     ],
     "caption": "she got it back in the end. smelled of soup. nobody could explain the soup.",
-    "tags": "#deadpan #longjoke #darkcomedy"
+    "tags": "#deadpan #longjoke #darkcomedy",
+    "doodle": "van"
   },
   {
     "id": "roast-ross-geller",
@@ -3428,7 +3434,8 @@
       }
     ],
     "caption": "and somehow he's the one who thinks he was wronged. ten seasons. \"we were on a break.\" sit down, Ross.",
-    "tags": "#friends #rossgeller #roast"
+    "tags": "#friends #rossgeller #roast",
+    "doodle": "bone"
   },
   {
     "id": "roast-batman",
@@ -3451,7 +3458,8 @@
       }
     ],
     "caption": "his butler raised him, dresses his wounds and does the laundry. the cape is dry clean only. nobody ever thanks Alfred.",
-    "tags": "#batman #dccomics #roast"
+    "tags": "#batman #dccomics #roast",
+    "doodle": "bat"
   },
   {
     "id": "roast-james-bond",
@@ -3474,7 +3482,8 @@
       }
     ],
     "caption": "licence to kill. no licence to do anything else. I guarantee that man has never renewed a passport on time.",
-    "tags": "#jamesbond #007 #roast"
+    "tags": "#jamesbond #007 #roast",
+    "doodle": "martini"
   },
   {
     "id": "roast-rose-titanic",
@@ -3497,7 +3506,8 @@
       }
     ],
     "caption": "the man drew her one picture and froze to death. she got a hundred more years, a pottery hobby and a helicopter ride. I'd call that a result.",
-    "tags": "#titanic #roast #moviehumor"
+    "tags": "#titanic #roast #moviehumor",
+    "doodle": "ship"
   },
   {
     "id": "roast-gandalf",
@@ -3520,7 +3530,8 @@
       }
     ],
     "caption": "also sends a hobbit to fight a dragon with zero training. Bilbo was a homeowner. he had doilies.",
-    "tags": "#lordoftherings #gandalf #roast"
+    "tags": "#lordoftherings #gandalf #roast",
+    "doodle": "wizard"
   },
   {
     "id": "roast-michael-scott",
@@ -3543,7 +3554,8 @@
       }
     ],
     "caption": "he also burned his foot on a grill he sleeps next to so he can wake up to bacon. this man ran a branch.",
-    "tags": "#theoffice #michaelscott #roast"
+    "tags": "#theoffice #michaelscott #roast",
+    "doodle": "mug"
   },
   {
     "id": "story-the-lift",
@@ -3566,7 +3578,8 @@
       }
     ],
     "caption": "there's also a B3. the car park stops at B2. nobody from accounts has been bold enough yet.",
-    "tags": "#shortstory #microfiction #weirdfiction"
+    "tags": "#shortstory #microfiction #weirdfiction",
+    "doodle": "lift"
   },
   {
     "id": "story-wrong-number",
@@ -3589,7 +3602,8 @@
       }
     ],
     "caption": "somewhere out there Brenda thinks she got ghosted. she did. by a phone company.",
-    "tags": "#shortstory #microfiction #lovestory"
+    "tags": "#shortstory #microfiction #lovestory",
+    "doodle": "phone"
   },
   {
     "id": "story-the-audition",
@@ -3612,7 +3626,8 @@
       }
     ],
     "caption": "they're doing a sequel. he's been asked to consult. unpaid.",
-    "tags": "#shortstory #microfiction #hollywood"
+    "tags": "#shortstory #microfiction #hollywood",
+    "doodle": "clapper"
   },
   {
     "id": "story-the-review",
@@ -3635,7 +3650,8 @@
       }
     ],
     "caption": "she's reported the review. he's reported the reply. they're both coming for sunday lunch.",
-    "tags": "#shortstory #microfiction #comedy"
+    "tags": "#shortstory #microfiction #comedy",
+    "doodle": "plate"
   },
   {
     "id": "story-the-ghost",
@@ -3658,7 +3674,8 @@
       }
     ],
     "caption": "the kids call it Alan. it hates that. you can tell because the lights flicker in a hurt sort of way.",
-    "tags": "#shortstory #microfiction #ghoststory"
+    "tags": "#shortstory #microfiction #ghoststory",
+    "doodle": "ghost"
   },
   {
     "id": "story-time-traveller",
@@ -3681,6 +3698,7 @@
       }
     ],
     "caption": "he's building another one. this time he's bringing a pen.",
-    "tags": "#shortstory #microfiction #timetravel"
+    "tags": "#shortstory #microfiction #timetravel",
+    "doodle": "clock"
   }
 ]

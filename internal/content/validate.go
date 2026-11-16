@@ -68,6 +68,9 @@ func Validate(posts []Post) []string {
 		if n := len(strings.Fields(p.Tags)); n == 0 || n > maxTags {
 			add(p, "needs 1 to %d tags, has %d", maxTags, n)
 		}
+		if p.Doodle != "" && !Doodles[p.Doodle] {
+			add(p, "unknown doodle %q", p.Doodle)
+		}
 		if n := len(p.Slides); n < series.Min || n > series.Max {
 			add(p, "%s needs %d to %d slides, has %d", p.Label, series.Min, series.Max, n)
 		}
@@ -152,4 +155,13 @@ func clipTo(s string, n int) string {
 		return string(r[:n]) + "..."
 	}
 	return s
+}
+
+// Doodles are the drawings a post can name in its "doodle" field. The render
+// package draws them; its tests check the two lists agree.
+var Doodles = map[string]bool{
+	"bat": true, "bone": true, "book": true, "bulb": true, "clapper": true, "clock": true,
+	"dumbbell": true, "flame": true, "fridge": true, "ghost": true, "lift": true, "martini": true,
+	"mic": true, "mug": true, "parrot": true, "phone": true, "plate": true, "ship": true,
+	"van": true, "wifi": true, "wizard": true,
 }

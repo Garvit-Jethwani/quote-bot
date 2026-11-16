@@ -257,6 +257,10 @@ func Motion(p content.Post, cfg content.Config, stills []image.Image) *Clip {
 		backdrop = func(i int) *image.RGBA { return soft[i%len(soft)] }
 	}
 	clip := &Clip{bar: pal}
+	doodle := DoodleFor(p)
+	if len(stills) > 0 {
+		doodle = "" // drawings are for posts with no picture of their own
+	}
 
 	// ---- cover
 	fullBleed := len(stills) > 0 && landscape(stills[0]) && p.Kind != "art"
@@ -288,6 +292,10 @@ func Motion(p content.Post, cfg content.Config, stills []image.Image) *Clip {
 		}
 		block := float64(len(hook))*hookLH + 64 + float64(len(titleLines))*58 + 44
 		y := reelEnd - block
+		if card == nil && !fullBleed && doodle != "" { // the drawing draws itself, then keeps moving a little
+			size := math.Min(560, y-reelTop-110)
+			Doodle(dc, doodle, reelX-10, y-size-50, size, pal.fg, pal.accent, th.BG, (t-0.15)/1.3, int(t*6))
+		}
 		y = rise(dc, hookF, hook, reelX, y, hookLH, pal.fg, t, 0.3, 0.16)
 		a, _ := appear(t, 0.9)
 		hline(dc, reelX, reelX+90*a, y+34, 4, pal.accent)
@@ -304,9 +312,12 @@ func Motion(p content.Post, cfg content.Config, stills []image.Image) *Clip {
 		bg := backdrop(i + 1)
 		switch {
 		case s.Text != "":
-			f, lines, lh := fit(SerifMedium, s.Text, reelW, 900, 78, 44, 1.3)
+			f, lines, lh := fit(SerifMedium, s.Text, reelW, 800, 78, 44, 1.3)
 			clip.scenes = append(clip.scenes, scene{dur: readTime(len(strings.Fields(s.Text))), bg: bg, draw: func(dc *gg.Context, t float64) {
 				y := reelTop + math.Floor((reelEnd-reelTop-float64(len(lines))*lh)/2)
+				if doodle != "" {
+					Doodle(dc, doodle, RW-reelX-200, y-270, 200, pal.fg, pal.accent, th.BG, t/0.7, n*7+int(t*6))
+				}
 				rise(dc, f, lines, reelX, y, lh, pal.fg, t, 0.2, 0.12)
 			}})
 		case s.IsQuote():
@@ -350,6 +361,9 @@ func Motion(p content.Post, cfg content.Config, stills []image.Image) *Clip {
 	clip.scenes = append(clip.scenes, scene{dur: 2.6, bg: backdrop(len(p.Slides) + 1), draw: func(dc *gg.Context, t float64) {
 		block := float64(len(lastLines))*lastLH + 80
 		y := reelTop + math.Floor((reelEnd-reelTop-block)/2)
+		if doodle != "" {
+			Doodle(dc, doodle, reelX-10, y-360, 320, pal.fg, pal.accent, th.BG, t/0.9, 99+int(t*6))
+		}
 		y = rise(dc, lastF, lastLines, reelX, y, lastLH, pal.fg, t, 0.2, 0.14)
 		a, _ := appear(t, 0.7)
 		hline(dc, reelX, reelX+90*a, y+36, 4, pal.accent)
