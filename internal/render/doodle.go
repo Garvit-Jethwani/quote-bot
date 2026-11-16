@@ -4,6 +4,7 @@ import (
 	"image/color"
 	"math"
 	"sort"
+	"strings"
 
 	"github.com/Garvit-Jethwani/quote-bot/internal/content"
 	"github.com/fogleman/gg"
@@ -24,6 +25,8 @@ const (
 	accentFill
 	inkFill
 	paperFill
+	sunFill  // yellow, for the marker cartoons
+	pinkFill // pink, for the marker cartoons
 )
 
 type dstroke struct {
@@ -466,6 +469,13 @@ func Doodle(dc *gg.Context, name string, x, y, size float64, ink, accent, paper 
 	}
 	strokes := make_()
 	u := size / 100
+	// The "guy" cartoons are drawn with a fat marker: thicker, shakier lines
+	// and flat colour that stays inside them.
+	marker := strings.HasPrefix(name, "guy-")
+	width, amp, register := 1.9, 0.55, 2.2
+	if marker {
+		width, amp, register = 2.7, 0.8, 0
+	}
 	var total float64
 	for _, s := range strokes {
 		total += pathLen(s.pts)
@@ -493,14 +503,18 @@ func Doodle(dc *gg.Context, name string, x, y, size float64, ink, accent, paper 
 		done := math.Min(1, budget/math.Max(length, 0.001))
 		budget -= length
 		seed := float64(i)*1.618 + float64(boil)*0.73
-		p := rough(s.pts, seed, 0.55)
+		p := rough(s.pts, seed, amp)
 
 		if s.fill != noFill {
 			var c color.RGBA
 			var off float64
 			switch s.fill {
 			case accentFill: // printed slightly out of register, like a cheap poster
-				c, off = accent, 2.2
+				c, off = accent, register
+			case sunFill:
+				c = Hex("#F4DC3B")
+			case pinkFill:
+				c = Hex("#F29AD0")
 			case inkFill:
 				c = ink
 			case paperFill:
@@ -525,10 +539,13 @@ func Doodle(dc *gg.Context, name string, x, y, size float64, ink, accent, paper 
 			line = accent
 		}
 		dc.SetColor(line)
-		dc.SetLineWidth(math.Max(2.5, 1.9*u))
+		dc.SetLineWidth(math.Max(2.5, width*u))
 		trace(part, 0, 0)
 		dc.Stroke()
 		// a second, lighter pass a hair off the first, as when a pen goes over a line twice
+		if marker {
+			continue
+		}
 		again := rough(s.pts, seed+9.1, 0.8)
 		if done < 1 {
 			again = again[:len(part)]
@@ -554,4 +571,124 @@ func DoodleFor(p content.Post) string {
 		return p.Doodle
 	}
 	return seriesDoodle[p.Label]
+}
+
+// ---- marker cartoons: one small round person in various states
+
+// guy draws the person standing with feet at (cx, base). He is about 70 tall.
+func guy(cx, base float64, eyesShut bool) []dstroke {
+	s := []dstroke{
+		line(pl(cx-7, base-14, cx-8, base-2)),
+		line(pl(cx+7, base-14, cx+8, base-2)),
+		{pts: ring(cx-10, base-1, 7, 3.6), fill: inkFill},
+		{pts: ring(cx+10, base-1, 7, 3.6), fill: inkFill},
+		line(quad(cx-13, base-40, cx-21, base-30, cx-18, base-18)),
+		line(quad(cx+13, base-40, cx+21, base-30, cx+18, base-18)),
+		shape(ring(cx, base-30, 15, 20), paperFill),
+		shape(ring(cx, base-58, 10.5, 10), paperFill),
+	}
+	return append(s, face_(cx, base-58, eyesShut)...)
+}
+
+func face_(cx, cy float64, eyesShut bool) []dstroke {
+	if eyesShut {
+		return []dstroke{line(pl(cx-5.5, cy-1, cx-2, cy-1)), line(pl(cx+2, cy-1, cx+5.5, cy-1)), line(pl(cx-2, cy+4.5, cx+2, cy+4.5))}
+	}
+	return []dstroke{dot(cx-3.6, cy-1.5, 1.3), dot(cx+3.6, cy-1.5, 1.3), line(pl(cx-2.5, cy+4.5, cx+2.5, cy+4.5))}
+}
+
+func init() {
+	doodles["guy-cloud"] = func() []dstroke {
+		cloud := join(arc(36, 20, 10, 9, 110, 290), arc(50, 13, 11, 10, 200, 340), arc(64, 20, 10, 9, 250, 430), pl(62, 29, 38, 29))
+		s := []dstroke{{pts: ring(88, 12, 7, 7), fill: sunFill}}
+		for _, a := range []float64{100, 140, 180, 220} {
+			sn, cs := math.Sincos(a * math.Pi / 180)
+			s = append(s, line(pl(88+10*cs, 12+10*sn, 88+14*cs, 12+14*sn)))
+		}
+		s = append(s, shape(cloud, paperFill),
+			line(pl(40, 33, 38, 39)), line(pl(48, 33, 46, 39)), line(pl(56, 33, 54, 39)), line(pl(64, 33, 62, 39)),
+			line(pl(34, 44, 32, 50)), line(pl(68, 44, 66, 50)))
+		s = append(s, guy(50, 96, false)...)
+		return append(s, line(pl(4, 97, 96, 97)))
+	}
+	doodles["guy-floor"] = func() []dstroke {
+		return []dstroke{
+			line(pl(2, 86, 98, 86)),
+			{pts: ring(88, 80, 4, 6), fill: inkFill},
+			{pts: ring(80, 81, 4, 5.5), fill: inkFill},
+			shape(ring(56, 75, 27, 10.5), paperFill),
+			line(quad(40, 80, 34, 86, 24, 85)),
+			shape(ring(22, 75, 10.5, 10), paperFill),
+			line(quad(14, 68, 12, 60, 18, 62)),
+			line(quad(20, 66, 20, 58, 26, 61)),
+			shape(pl(3, 80, 11, 80, 11, 85, 3, 85), sunFill),
+			dot(40, 50, 1.6), dot(48, 50, 1.6), dot(56, 50, 1.6),
+		}
+	}
+	doodles["guy-bed"] = func() []dstroke {
+		return []dstroke{
+			{pts: ring(80, 20, 11, 11), fill: sunFill},
+			line(pl(80, 20, 80, 13)), line(pl(80, 20, 85, 20)),
+			line(pl(8, 82, 8, 92)), line(pl(92, 82, 92, 92)),
+			line(pl(6, 44, 6, 82)),
+			shape(ring(22, 60, 13, 6), paperFill),
+			shape(ring(24, 53, 10.5, 10), paperFill),
+			line(ring(20.5, 51.5, 2.6, 2.6)), line(ring(28, 51.5, 2.6, 2.6)),
+			dot(20.5, 51.5, 0.9), dot(28, 51.5, 0.9),
+			line(pl(22, 58, 27, 58)),
+			shape(join(quad(34, 66, 62, 36, 94, 66)), accentFill),
+			shape(pl(6, 66, 94, 66, 94, 82, 6, 82), paperFill),
+		}
+	}
+	doodles["guy-desk"] = func() []dstroke {
+		return []dstroke{
+			shape(ring(22, 74, 15, 20), paperFill),
+			shape(pl(4, 70, 96, 70, 96, 76, 4, 76), paperFill),
+			line(pl(10, 76, 10, 96)), line(pl(90, 76, 90, 96)),
+			shape(pl(56, 40, 82, 40, 84, 68, 58, 68), sunFill),
+			line(pl(50, 70, 58, 68)),
+			shape(ring(36, 61, 10.5, 9.5), paperFill),
+			line(pl(31, 60, 35, 61)), line(pl(38, 62, 42, 63)),
+			line(quad(24, 62, 30, 72, 46, 69)),
+			line(pl(46, 46, 52, 46, 46, 52, 52, 52)),
+			line(pl(54, 32, 58, 32, 54, 36, 58, 36)),
+			shape(pl(88, 58, 95, 58, 94, 69, 89, 69), accentFill),
+		}
+	}
+	doodles["guy-fridge"] = func() []dstroke {
+		s := []dstroke{
+			shape(pl(58, 12, 90, 12, 90, 94, 58, 94), sunFill),
+			line(pl(58, 36, 90, 36)), line(pl(58, 58, 90, 58)), line(pl(58, 76, 90, 76)),
+			shape(pl(66, 28, 72, 28, 72, 36, 66, 36), paperFill),
+			shape(ring(80, 53, 4, 4.5), accentFill),
+			shape(pl(58, 12, 46, 18, 46, 99, 58, 94), paperFill),
+			line(pl(2, 97, 44, 97)),
+		}
+		return append(s, guy(24, 96, false)...)
+	}
+	doodles["guy-party"] = func() []dstroke {
+		s := []dstroke{
+			line(quad(70, 34, 76, 54, 74, 80)), line(quad(84, 42, 78, 58, 74, 80)), line(quad(60, 46, 70, 60, 74, 80)),
+			{pts: ring(70, 22, 9, 11), fill: accentFill},
+			{pts: ring(86, 30, 9, 11), fill: sunFill},
+			{pts: ring(58, 34, 9, 11), fill: pinkFill},
+			dot(46, 14, 1.2), dot(92, 60, 1.2), dot(54, 62, 1.2), dot(10, 20, 1.2), dot(94, 8, 1.2),
+			line(pl(4, 97, 96, 97)),
+		}
+		s = append(s, guy(26, 96, false)...)
+		return append(s, shape(pl(19, 30, 33, 30, 26, 10), accentFill), dot(26, 9, 2))
+	}
+	doodles["guy-headphones"] = func() []dstroke {
+		s := guy(46, 96, true)
+		note := func(x, y float64) []dstroke {
+			return []dstroke{{pts: ring(x, y, 3.2, 2.6), fill: inkFill}, line(pl(x+3, y, x+3, y-13)), line(quad(x+3, y-13, x+9, y-11, x+8, y-6))}
+		}
+		s = append(s, line(arc(46, 38, 12.5, 13, 185, 355)),
+			dstroke{pts: ring(34.5, 39, 3.6, 5.5), fill: accentFill},
+			dstroke{pts: ring(57.5, 39, 3.6, 5.5), fill: accentFill},
+			line(pl(4, 97, 96, 97)))
+		s = append(s, note(76, 34)...)
+		s = append(s, note(86, 56)...)
+		return append(s, note(14, 28)...)
+	}
 }

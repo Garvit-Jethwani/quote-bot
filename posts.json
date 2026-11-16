@@ -3700,5 +3700,323 @@
     "caption": "he's building another one. this time he's bringing a pen.",
     "tags": "#shortstory #microfiction #timetravel",
     "doodle": "clock"
+  },
+  {
+    "id": "mood-one-email",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-floor",
+    "quote": "me after sending one (1) email",
+    "slides": [],
+    "caption": "i'd like the rest of the day off please.",
+    "tags": "#worklife #relatable #officehumor"
+  },
+  {
+    "id": "mood-3am",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-bed",
+    "quote": "my brain at 3am: remember that thing you said in 2014",
+    "slides": [],
+    "caption": "nobody else remembers. i checked. i still can't sleep.",
+    "tags": "#3am #overthinking #relatable"
+  },
+  {
+    "id": "mood-five-minutes",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-desk",
+    "quote": "five more minutes, i said, four hours ago",
+    "slides": [],
+    "caption": "the laptop is still open so technically i'm working.",
+    "tags": "#procrastination #relatable #worklife"
+  },
+  {
+    "id": "mood-fridge",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-fridge",
+    "quote": "checking the fridge again in case new food grew",
+    "slides": [],
+    "caption": "third visit tonight. same mustard. still hopeful.",
+    "tags": "#relatable #latenight #snacks"
+  },
+  {
+    "id": "mood-unread",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-cloud",
+    "quote": "everyone: what a beautiful day. me, with one unread message:",
+    "slides": [],
+    "caption": "it says 'can we talk'. it's from the dentist's office. doesn't matter.",
+    "tags": "#anxiety #relatable #overthinking"
+  },
+  {
+    "id": "mood-party-dog",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-party",
+    "quote": "arrived at the party. looking for the dog.",
+    "slides": [],
+    "caption": "if there's no dog i'm reading every book spine in the house.",
+    "tags": "#introvert #relatable #party"
+  },
+  {
+    "id": "mood-main-character",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-headphones",
+    "quote": "one good song and suddenly i'm the main character on a bus",
+    "slides": [],
+    "caption": "window seat, light rain, a song from 2011. cinema.",
+    "tags": "#musictaste #relatable #maincharacter"
+  },
+  {
+    "id": "mood-early-night",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-bed",
+    "quote": "going to bed early tonight. (narrator: he did not.)",
+    "slides": [],
+    "caption": "one video about how they make pencils. then it was 2am.",
+    "tags": "#sleep #relatable #latenight"
+  },
+  {
+    "id": "mood-music-taste",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-headphones",
+    "quote": "my music taste is 40% sad men with guitars and 60% one song on repeat",
+    "slides": [],
+    "caption": "the one song changes every month. the sad men are permanent.",
+    "tags": "#musictaste #indiemusic #relatable"
+  },
+  {
+    "id": "mood-meeting",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-desk",
+    "quote": "the meeting could have been an email. the email could have been nothing.",
+    "slides": [],
+    "caption": "reply all if you agree. actually don't.",
+    "tags": "#worklife #meetings #officehumor"
+  },
+  {
+    "id": "mood-bored",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-floor",
+    "quote": "lay on the floor doing nothing for an hour. best idea i've had all year.",
+    "slides": [],
+    "caption": "being bored is where the ideas were hiding the whole time. put the phone in another room and try it.",
+    "tags": "#boredom #slowliving #relatable"
+  },
+  {
+    "id": "mood-dinner",
+    "kind": "mood",
+    "label": "MOOD",
+    "title": "Mood",
+    "doodle": "guy-fridge",
+    "quote": "adulthood is deciding what to eat for dinner every single day until you die",
+    "slides": [],
+    "caption": "nobody warned me about this part. i'd have stayed nine.",
+    "tags": "#adulting #relatable #dinner"
+  },
+  {
+    "id": "mood-lost-in-translation",
+    "kind": "film",
+    "label": "MOOD",
+    "title": "Lost in Translation",
+    "year": 2003,
+    "director": "Sofia Coppola",
+    "quote": "being lonely somewhere beautiful still counts as travelling",
+    "slides": [],
+    "caption": "some trips are just you and a window. that's allowed.",
+    "tags": "#lostintranslation #sofiacoppola #solotravel"
+  },
+  {
+    "id": "mood-paterson",
+    "kind": "film",
+    "label": "MOOD",
+    "title": "Paterson",
+    "year": 2016,
+    "director": "Jim Jarmusch",
+    "quote": "a small, quiet, repeating life is still a whole life",
+    "slides": [],
+    "caption": "same bus route every day and he's the happiest man in cinema. think about it.",
+    "tags": "#paterson #jimjarmusch #slowliving"
+  },
+  {
+    "id": "mood-taxi-driver",
+    "kind": "film",
+    "label": "MOOD",
+    "title": "Taxi Driver",
+    "year": 1976,
+    "director": "Martin Scorsese",
+    "quote": "me walking home with headphones on as if the film is about me",
+    "slides": [],
+    "caption": "it isn't. and given the film, thank god.",
+    "tags": "#taxidriver #scorsese #maincharacter"
+  },
+  {
+    "id": "mood-frances-ha",
+    "kind": "film",
+    "label": "MOOD",
+    "title": "Frances Ha",
+    "year": 2012,
+    "director": "Noah Baumbach",
+    "quote": "27 and still waiting for the montage where it all comes together",
+    "slides": [],
+    "caption": "turns out you're in the montage. it's just slower and nobody put music on it.",
+    "tags": "#francesha #gretagerwig #twenties"
+  },
+  {
+    "id": "mood-perfect-days",
+    "kind": "film",
+    "label": "MOOD",
+    "title": "Perfect Days",
+    "year": 2023,
+    "director": "Wim Wenders",
+    "quote": "nobody tells you the quiet ordinary tuesday is the good part",
+    "slides": [],
+    "caption": "a cassette, a sandwich, light through some trees. that's the film. that's also the point.",
+    "tags": "#perfectdays #wimwenders #slowliving"
+  },
+  {
+    "id": "mood-big-lebowski",
+    "kind": "film",
+    "label": "MOOD",
+    "title": "The Big Lebowski",
+    "year": 1998,
+    "director": "Joel Coen",
+    "quote": "my entire personality on a day off",
+    "slides": [],
+    "caption": "dressing gown, no plans, strong opinions about a rug.",
+    "tags": "#thebiglebowski #coenbrothers #dayoff"
+  },
+  {
+    "id": "mood-amelie",
+    "kind": "film",
+    "label": "MOOD",
+    "title": "Amélie",
+    "year": 2001,
+    "director": "Jean-Pierre Jeunet",
+    "quote": "romanticising my life because nobody else is going to do it for me",
+    "slides": [],
+    "caption": "the spoon through the crème brûlée is free. take the small stuff.",
+    "tags": "#amelie #romanticizeyourlife #frenchcinema"
+  },
+  {
+    "id": "mood-fantastic-mr-fox",
+    "kind": "film",
+    "label": "MOOD",
+    "title": "Fantastic Mr. Fox",
+    "year": 2009,
+    "director": "Wes Anderson",
+    "quote": "got dressed up properly to do something unbelievably stupid",
+    "slides": [],
+    "caption": "if you're going to make a bad decision, wear the corduroy.",
+    "tags": "#fantasticmrfox #wesanderson #baddecisions"
+  },
+  {
+    "id": "mood-la-grande-jatte",
+    "kind": "art",
+    "label": "MOOD",
+    "title": "A Sunday on La Grande Jatte",
+    "year": 1884,
+    "artist": "Georges Seurat",
+    "image": {
+      "aic": "A Sunday on La Grande Jatte"
+    },
+    "quote": "group hangout where nobody speaks and everyone goes home satisfied",
+    "slides": [],
+    "caption": "the ideal sunday. also there's a monkey on a lead and no one is talking about it.",
+    "tags": "#seurat #arthistorymemes #introvert"
+  },
+  {
+    "id": "mood-the-bedroom",
+    "kind": "art",
+    "label": "MOOD",
+    "title": "The Bedroom",
+    "year": 1889,
+    "artist": "Vincent van Gogh",
+    "image": {
+      "aic": "The Bedroom"
+    },
+    "quote": "cleaned my room. life fixed. (lasts about four hours.)",
+    "slides": [],
+    "caption": "van gogh painted his three times. he understood.",
+    "tags": "#vangogh #arthistorymemes #cleanroom"
+  },
+  {
+    "id": "mood-moulin-rouge",
+    "kind": "art",
+    "label": "MOOD",
+    "title": "At the Moulin Rouge",
+    "year": 1895,
+    "artist": "Henri de Toulouse-Lautrec",
+    "image": {
+      "aic": "At the Moulin Rouge"
+    },
+    "quote": "me at the party, staring into the middle distance, having a great time actually",
+    "slides": [],
+    "caption": "the green face on the right is how i look in every group photo.",
+    "tags": "#toulouselautrec #arthistorymemes #introvert"
+  },
+  {
+    "id": "mood-herring-net",
+    "kind": "art",
+    "label": "MOOD",
+    "title": "The Herring Net",
+    "year": 1885,
+    "artist": "Winslow Homer",
+    "image": {
+      "aic": "The Herring Net"
+    },
+    "quote": "me and the one friend who replies, carrying the entire group chat",
+    "slides": [],
+    "caption": "eleven people in there. two of us hauling. nine reading in silence.",
+    "tags": "#winslowhomer #arthistorymemes #groupchat"
+  },
+  {
+    "id": "mood-two-sisters",
+    "kind": "art",
+    "label": "MOOD",
+    "title": "Two Sisters (On the Terrace)",
+    "year": 1881,
+    "artist": "Pierre-Auguste Renoir",
+    "image": {
+      "aic": "Two Sisters"
+    },
+    "quote": "listening to your friend describe a red flag as 'kind of funny actually'",
+    "slides": [],
+    "caption": "the face of someone who has given this exact advice four times already.",
+    "tags": "#renoir #arthistorymemes #friendship"
+  },
+  {
+    "id": "mood-haystacks",
+    "kind": "art",
+    "label": "MOOD",
+    "title": "Stacks of Wheat (End of Summer)",
+    "year": 1891,
+    "artist": "Claude Monet",
+    "image": {
+      "aic": "Stacks of Wheat (End of Summer)"
+    },
+    "quote": "monet painted the same haystacks about 25 times and called it a career. keep going.",
+    "slides": [],
+    "caption": "doing the same thing over and over until it turns out to be the work. it counts.",
+    "tags": "#monet #arthistory #keepgoing"
   }
 ]

@@ -214,6 +214,13 @@ func quoteSlide(label string, th Theme, quote, by string, n, total int, cfg cont
 // first goes on the cover, the second on the first text slide.
 func Post(p content.Post, cfg content.Config, stills []image.Image) []image.Image {
 	th := ThemeFor(p.Kind)
+	if p.Label == "MOOD" {
+		var still image.Image
+		if len(stills) > 0 {
+			still = stills[0]
+		}
+		return []image.Image{Mood(p, cfg, still)}
+	}
 	if p.Quote != "" { // a one-liner: a single card
 		// A comedian's joke is set in italics and signed. The account's own
 		// takes are unsigned and set large and upright, like a poster.
@@ -363,4 +370,64 @@ func minInt(a, b int) int {
 		return a
 	}
 	return b
+}
+
+// Mood draws a single image in the manner of a meme: one line and one
+// picture, with none of the account's usual header and footer.
+//
+//   - a film or series still fills the frame and the line sits over it;
+//   - a painting sits under the line, on white, shown whole;
+//   - with no picture, the line sits over a marker cartoon.
+func Mood(p content.Post, cfg content.Config, still image.Image) image.Image {
+	white, black, grey := Hex("#FFFFFF"), Hex("#111111"), Hex("#9A9A9A")
+	dc := gg.NewContext(W, H)
+	dc.SetColor(white)
+	dc.Clear()
+	hf := face(SansMedium, 22)
+	handle := func(c color.Color) {
+		if cfg.Handle != "" {
+			tracked(dc, hf, cfg.Handle, W-56-trackedWidth(hf, cfg.Handle, 1), H-58, 1, c)
+		}
+	}
+
+	if still != nil && p.Kind != "art" { // words over the picture
+		dc.DrawImage(cover(still, W, H, 0.5, 0.35), 0, 0)
+		grad := gg.NewLinearGradient(0, 600, 0, H)
+		grad.AddColorStop(0, color.NRGBA{0, 0, 0, 0})
+		grad.AddColorStop(1, color.NRGBA{0, 0, 0, 190})
+		dc.SetFillStyle(grad)
+		dc.DrawRectangle(0, 600, W, H-600)
+		dc.Fill()
+		f, lines, lh := fit(SansBold, p.Quote, W-200, 520, 66, 40, 1.22)
+		y := float64(H) - 130 - float64(len(lines))*lh
+		for _, l := range lines {
+			x := (W - textWidth(f, l)) / 2
+			for _, o := range [][2]float64{{-3, 0}, {3, 0}, {0, -3}, {0, 3}, {-2, -2}, {2, 2}, {-2, 2}, {2, -2}} {
+				text(dc, f, l, x+o[0], y+o[1], color.NRGBA{0, 0, 0, 200})
+			}
+			text(dc, f, l, x, y, white)
+			y += lh
+		}
+		handle(color.NRGBA{255, 255, 255, 170})
+		return dc.Image()
+	}
+
+	const side = 64.0
+	f, lines, lh := fit(SansHeavy, p.Quote, W-2*side, 400, 68, 40, 1.18)
+	y := para(dc, f, lines, side, 76, lh, black) + 36
+	room := float64(H) - 96 - y
+	if still != nil {
+		fitted := contain(still, W-2*40, int(room))
+		b := fitted.Bounds()
+		if float64(b.Dx()) < float64(W-80)*0.8 { // a narrow picture: crop to fill instead of floating
+			fitted = cover(still, W-80, int(room), 0.5, 0.4)
+			b = fitted.Bounds()
+		}
+		dc.DrawImage(fitted, (W-b.Dx())/2, int(y))
+	} else if name := p.Doodle; name != "" {
+		size := math.Min(room, W-2*side)
+		Doodle(dc, name, (W-size)/2, y+(room-size)/2, size, black, Hex("#E5483A"), white, 1, 0)
+	}
+	handle(grey)
+	return dc.Image()
 }

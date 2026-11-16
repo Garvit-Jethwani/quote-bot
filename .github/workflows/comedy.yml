@@ -14,7 +14,7 @@ on:
       series:
         description: "Which kind to post"
         type: choice
-        options: ["any", "DEADPAN", "ROAST", "SHORT STORY", "ONE-LINER"]
+        options: ["any", "MOOD", "DEADPAN", "ROAST", "SHORT STORY", "ONE-LINER"]
         default: "any"
       id:
         description: "Post id from posts.json (leave empty for a random unposted one)"
@@ -45,7 +45,7 @@ jobs:
           set -o pipefail
           if [ "$EVENT" = "push" ]; then POST_ID="$(tr -d '[:space:]' < .github/run-comedy)"; fi
           if [ "$POST_ID" = "next" ]; then POST_ID=""; fi
-          if [ -z "$SERIES" ] || [ "$SERIES" = "any" ]; then SERIES="DEADPAN,ROAST,SHORT STORY,ONE-LINER"; fi
+          if [ -z "$SERIES" ] || [ "$SERIES" = "any" ]; then SERIES="MOOD,DEADPAN,ROAST,SHORT STORY,ONE-LINER"; fi
           "$RUNNER_TEMP/quotebot" render -series "$SERIES" ${POST_ID:+-id "$POST_ID"} 2>&1 | tee "$RUNNER_TEMP/run.log"
         env:
           EVENT: ${{ github.event_name }}

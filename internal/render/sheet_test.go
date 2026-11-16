@@ -36,7 +36,17 @@ func TestDoodleSheet(t *testing.T) {
 	}
 	names := DoodleNames()
 	th := Themes["bit"]
-	const cell, cols = 300, 6
+	if os.Getenv("DOODLE_ONLY") != "" {
+		th.BG = Hex("#FFFFFF")
+		var keep []string
+		for _, n := range names {
+			if len(n) > 4 && n[:4] == os.Getenv("DOODLE_ONLY") {
+				keep = append(keep, n)
+			}
+		}
+		names = keep
+	}
+	const cell, cols = 300, 4
 	rows := (len(names) + cols - 1) / cols
 	dc := gg.NewContext(cols*cell, rows*cell)
 	dc.SetColor(th.BG)

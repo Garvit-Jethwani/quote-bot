@@ -63,6 +63,7 @@ Multi-slide posts also need `hook`, `year` and a maker.
 | One-Liner | `comedy` | `ONE-LINER` | `quote`; `title` is the comedian | none |
 | Hot Take | `take` | `HOT TAKE` | `quote`; `title` is `Hot take` | none |
 | Random Thought | `thought` | `RANDOM THOUGHT` | `quote`; `title` is `Random thought` | none |
+| Mood | `mood`, `film`, `series` or `art` | `MOOD` | `quote`; see below | none |
 | Deadpan | `bit` | `DEADPAN` | `hook`; `title` is a dry subtitle | 3 to 6 pages |
 | Roast | `bit` | `ROAST` | `hook`; `title` is where the target is from | 3 to 6 pages |
 | Short Story | `bit` | `SHORT STORY` | `hook`; `title` is `A very short story` | 3 to 6 pages |
@@ -92,6 +93,19 @@ Notes on each:
 - **Hot Take** and **Random Thought**: the account's own voice, one or two
   sentences, written to be argued with or sent to a friend. The caption backs
   it up or makes it worse.
+
+- **Mood**: one image in the manner of a meme: a single relatable line and a
+  picture, nothing else. Lowercase, first person, under 26 words. About half
+  should be funny (small daily failures, overthinking, music taste, work) and
+  half quietly sincere (boredom, routine, being alone and fine with it). No
+  advice-poster wisdom. Three forms:
+  - `kind: "mood"` with a `doodle` starting `guy-` (`guy-bed`, `guy-cloud`,
+    `guy-desk`, `guy-floor`, `guy-fridge`, `guy-headphones`, `guy-party`):
+    the line over a marker cartoon. `title` is `Mood`.
+  - `kind: "film"` (or `series`) with `title`, `year` and maker: the line is
+    set over a still from it. Pick films whose look carries the feeling.
+  - `kind: "art"` with `artist`, `year` and `image.aic`: the line above a
+    public-domain painting, read as if it showed modern life.
 
 - **Deadpan**: an original long joke told flat, in the first person, one beat
   per page. The setup is ordinary, the delivery is patient, and the last page

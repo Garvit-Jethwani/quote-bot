@@ -24,6 +24,7 @@ var Series = map[string]struct {
 	"DEADPAN":        {[]string{"bit"}, 3, 6},
 	"ROAST":          {[]string{"bit"}, 3, 6},
 	"SHORT STORY":    {[]string{"bit"}, 3, 6},
+	"MOOD":           {[]string{"mood", "film", "series", "art"}, 0, 0},
 }
 
 const (
@@ -31,6 +32,7 @@ const (
 	maxPageWords = 48
 	maxHookWords = 16
 	maxTags      = 4
+	maxMoodWords = 26
 )
 
 // Validate checks every post and returns one message per problem. An empty
@@ -75,8 +77,21 @@ func Validate(posts []Post) []string {
 			add(p, "%s needs %d to %d slides, has %d", p.Label, series.Min, series.Max, n)
 		}
 
-		quoteCard := p.Kind == "comedy" || p.Kind == "take" || p.Kind == "thought"
-		if quoteCard {
+		quoteCard := p.Kind == "comedy" || p.Kind == "take" || p.Kind == "thought" || p.Kind == "mood"
+		if p.Label == "MOOD" {
+			if p.Quote == "" {
+				add(p, "missing quote")
+			}
+			if n := len(strings.Fields(p.Quote)); n > maxMoodWords {
+				add(p, "mood line is %d words; keep it to %d", n, maxMoodWords)
+			}
+			if p.Kind == "mood" && !strings.HasPrefix(p.Doodle, "guy-") {
+				add(p, "a mood post with no picture needs a guy- doodle")
+			}
+			if p.Kind != "mood" && (p.Year == 0 || p.Maker() == "") {
+				add(p, "missing year or maker")
+			}
+		} else if quoteCard {
 			if p.Quote == "" {
 				add(p, "missing quote")
 			}
@@ -164,4 +179,6 @@ var Doodles = map[string]bool{
 	"dumbbell": true, "flame": true, "fridge": true, "ghost": true, "lift": true, "martini": true,
 	"mic": true, "mug": true, "parrot": true, "phone": true, "plate": true, "ship": true,
 	"van": true, "wifi": true, "wizard": true,
+	"guy-bed": true, "guy-cloud": true, "guy-desk": true, "guy-floor": true,
+	"guy-fridge": true, "guy-headphones": true, "guy-party": true,
 }

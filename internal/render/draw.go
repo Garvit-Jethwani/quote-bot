@@ -38,6 +38,7 @@ const (
 	Sans        = "Inter-Regular"
 	SansMedium  = "Inter-Medium"
 	SansBold    = "Inter-SemiBold"
+	SansHeavy   = "Inter-ExtraBold"
 )
 
 var (

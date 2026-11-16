@@ -23,6 +23,7 @@ row and never the same post twice.
 | One-Liner | A stand-up joke | Single card |
 | Hot Take | An opinion to argue with | Single card |
 | Random Thought | An observation about films, TV or music | Single card |
+| Mood | One relatable line over a marker cartoon, a film still or a painting | Single image |
 | Deadpan | An original long joke, told flat, one beat per slide | Carousel |
 | Roast | Insult comedy aimed at a fictional character | Carousel |
 | Short Story | A complete absurd story in a few slides | Carousel |

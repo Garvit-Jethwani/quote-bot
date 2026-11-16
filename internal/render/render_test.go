@@ -96,3 +96,29 @@ func TestAccent(t *testing.T) {
 		t.Errorf("a red image should give a warm accent, got %v", got)
 	}
 }
+
+func TestMood(t *testing.T) {
+	cfg := content.Config{Handle: "@x"}
+	wide := solid(1920, 1080, color.RGBA{60, 90, 120, 255})
+	for _, c := range []struct {
+		p     content.Post
+		still image.Image
+	}{
+		{content.Post{Label: "MOOD", Kind: "mood", Doodle: "guy-floor", Quote: "me after one email"}, nil},
+		{content.Post{Label: "MOOD", Kind: "film", Quote: "a quiet line over a still"}, wide},
+		{content.Post{Label: "MOOD", Kind: "art", Quote: "a line above a painting"}, wide},
+		{content.Post{Label: "MOOD", Kind: "art", Quote: "no picture was found"}, nil},
+	} {
+		var stills []image.Image
+		if c.still != nil {
+			stills = []image.Image{c.still}
+		}
+		out := Post(c.p, cfg, stills)
+		if len(out) != 1 {
+			t.Fatalf("%s mood drew %d images, want 1", c.p.Kind, len(out))
+		}
+		if b := out[0].Bounds(); b.Dx() != W || b.Dy() != H {
+			t.Errorf("%s mood is %dx%d", c.p.Kind, b.Dx(), b.Dy())
+		}
+	}
+}
