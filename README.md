@@ -27,8 +27,9 @@ row and never the same post twice.
 | Roast | Insult comedy aimed at a fictional character | Carousel |
 | Short Story | A complete absurd story in a few slides | Carousel |
 
-Any carousel can also go out as a **Reel**: a vertical video that shows each
-slide long enough to read, with a progress bar.
+Any carousel can also be made into a **Reel**: a short animated vertical video
+in which the hook, each point and the closing line move in over the film still
+or a plain backdrop, with progress bars along the top.
 
 ## Schedule
 
@@ -41,7 +42,8 @@ its evening.
 | 17:37 | Comedy | Europe |
 | 01:07 | Post | The Americas |
 
-Reels are not scheduled. They can be made by hand from the Actions tab.
+Reels are not scheduled. **Make a Reel** builds one for you to post from the
+app with a song of your choice.
 
 Change the `cron` lines in `.github/workflows/post.yml` and `reel.yml` to move
 them.
@@ -74,9 +76,11 @@ Paintings from the Art Institute of Chicago are public domain.
 
 ## Limits
 
-- **No music.** Instagram's API cannot attach a song. Reels are silent. To post
-  one with music, run **Post a Reel** with *publish* set to *no*, download the
-  video from the run's **Artifacts**, and upload it from the app.
+- **No music.** Instagram's API cannot attach a song, so **Make a Reel** does
+  not publish by default. Open the finished run: its summary has a link to the
+  video and the caption to paste. Save the video on your phone, post it as a
+  Reel from the app, and add a song there. The bot marks the post as used so it
+  never comes up again.
 - **No Stories, no replies, no editing** of posts already published.
 
 ## Running it by hand
@@ -86,7 +90,8 @@ In the repository's **Actions** tab:
 - **Post to Instagram**: posts now. Type a post's `id` to choose which.
 - **Post comedy**: posts from the humour series only (Deadpan, Roast, Short
   Story, One-Liner). You can choose which kind. It also runs daily at 17:37 UTC.
-- **Post a Reel**: posts a video, or only makes the file.
+- **Make a Reel**: makes an animated video and its caption for you to post
+  with music. Set *publish* to *yes* only if you want the bot to post it silent.
 - **Checks**: runs the tests and validates `posts.json`. It runs by itself on
   every change.
 - **Check setup**: tests the secrets, the connection to Instagram and TMDB, and
@@ -163,8 +168,8 @@ go run ./cmd/quotebot status
 | `cmd/quotebot` | The command-line program and the end-to-end tests |
 | `internal/content` | Queue types, validation, random selection, captions |
 | `internal/images` | Image sources and their fallback order |
-| `internal/render` | Slide drawing; fonts are embedded in the program |
-| `internal/reel` | Video building with ffmpeg |
+| `internal/render` | Slide drawing and Reel animation; fonts are embedded in the program |
+| `internal/reel` | Video encoding with ffmpeg |
 | `internal/instagram` | The publishing client, with retries |
 | `posts.json` | The queue |
 | `quotes.json` | Plain quote cards, used only if the queue ever runs dry |

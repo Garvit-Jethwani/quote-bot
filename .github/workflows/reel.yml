@@ -1,6 +1,8 @@
-name: Post a Reel
+name: Make a Reel
 
-# Turns a multi-slide post into a vertical video.
+# Turns a multi-slide post into a short animated vertical video. By default it
+# only makes the file, for you to post from the Instagram app with your own
+# music: Instagram's API cannot attach a song.
 on:
   # No schedule: Reels are made only when started by hand (or by a commit, below).
   # Committing a post id (or the word "next") into .github/run-reel starts a run.
@@ -14,10 +16,10 @@ on:
         description: "Post id from posts.json (leave empty for a random unposted one)"
         required: false
       publish:
-        description: "Publish to Instagram? Choose no to only make the video file"
+        description: "Let the bot publish it, silent? Choose no to post it yourself with music"
         type: choice
-        options: ["yes", "no"]
-        default: "yes"
+        options: ["no", "yes"]
+        default: "no"
 
 permissions:
   contents: write
@@ -53,6 +55,31 @@ jobs:
           POST_ID: ${{ inputs.id }}
           TMDB_KEY: ${{ secrets.TMDB_KEY }}
 
+      - name: Save the video and its caption for posting by hand
+        if: inputs.publish != 'yes'
+        run: |
+          VIDEO="$(ls out/*-reel.mp4 | tail -n 1)"
+          CAPTION="${VIDEO%.mp4}.txt"
+          git config user.name "quote-bot"
+          git config user.email "quote-bot@users.noreply.github.com"
+          "$RUNNER_TEMP/quotebot" record
+          git rm -q --ignore-unmatch last-error.log
+          git add -A out posted.json
+          git commit -m "Add reel to post by hand"
+          git pull --rebase
+          git push
+          {
+            echo "## Your Reel is ready"
+            echo
+            echo "1. Open this link on your phone and save the video: https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/${VIDEO}"
+            echo "2. In Instagram, tap **+**, choose **Reel**, pick the video, and add a song."
+            echo "3. Paste this caption:"
+            echo
+            echo '```'
+            cat "$CAPTION"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Keep the video as a download
         uses: actions/upload-artifact@v4
         with:
@@ -60,7 +87,7 @@ jobs:
           path: out/*-reel.mp4
 
       - name: Push the video so Instagram can download it
-        if: inputs.publish != 'no'
+        if: inputs.publish == 'yes'
         run: |
           git config user.name "quote-bot"
           git config user.email "quote-bot@users.noreply.github.com"
@@ -70,7 +97,7 @@ jobs:
           git push
 
       - name: Publish to Instagram
-        if: inputs.publish != 'no'
+        if: inputs.publish == 'yes'
         run: |
           set -o pipefail
           "$RUNNER_TEMP/quotebot" publish 2>&1 | tee -a "$RUNNER_TEMP/run.log"
@@ -79,7 +106,7 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
 
       - name: Record the Reel so the post is never repeated
-        if: inputs.publish != 'no'
+        if: inputs.publish == 'yes'
         run: |
           git rm -q --ignore-unmatch last-error.log
           git add posted.json

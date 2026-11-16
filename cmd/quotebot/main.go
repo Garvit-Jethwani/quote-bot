@@ -5,6 +5,7 @@
 //	quotebot publish                   publish what render drew, then record it
 //	quotebot preview [-id ID]          draw posts into preview/ for a look
 //	quotebot validate                  check posts.json; non-zero exit on problems
+//	quotebot record                    mark what render drew as used, without publishing
 //	quotebot status                    show what is left in the queue
 //	quotebot stats                     save likes and comments per post to stats.json
 //	quotebot doctor                    check the secrets and the connection to Instagram
@@ -65,6 +66,8 @@ func main() {
 		err = cmdPreview(args)
 	case "validate":
 		err = cmdValidate(args)
+	case "record":
+		err = cmdRecord(args)
 	case "status":
 		err = cmdStatus(args)
 	case "stats":
@@ -164,27 +167,32 @@ func cmdRender(args []string) error {
 			cfg.SwipeHint = "" // nothing to swipe in a video
 		}
 		imgs, credit := stills(fetcher(), post)
-		slides := render.Post(post, cfg, imgs)
 		stem := filepath.Join("out", now.Format(stampLayout)+"-"+post.ID)
 		out.Caption = content.Caption(post, q.cfg, credit)
 		out.Entry = content.Entry{ID: post.ID, Type: "post", Date: now.Format("2006-01-02")}
 		if *asReel {
-			if len(slides) < 2 {
+			if len(post.Slides) < 2 {
 				return fmt.Errorf("%s has a single slide; a Reel needs at least two", post.ID)
 			}
-			th := render.ThemeFor(post.Kind)
+			clip := render.Motion(post, q.cfg, imgs)
 			out.Video = stem + "-reel.mp4"
-			secs, err := reel.Build(slides, reel.Durations(post, len(slides)), th.BG, th.Accent, out.Video)
+			secs, err := reel.Encode(clip, render.FPS, out.Video)
 			if err != nil {
 				return err
 			}
 			out.Cover = stem + "-cover.jpg"
-			if err := render.SaveJPEG(reel.Frame(slides[0], th.BG), out.Cover); err != nil {
+			if err := render.SaveJPEG(clip.Frame(int(2.4*render.FPS)), out.Cover); err != nil {
+				return err
+			}
+			// The caption goes in a text file beside the video, ready to paste
+			// when the Reel is posted by hand with music.
+			if err := os.WriteFile(stem+"-reel.txt", []byte(out.Caption+"\n"), 0o644); err != nil {
 				return err
 			}
 			out.Entry.Type = "reel"
 			logf("Drew %s as a %.0f second Reel", post.Title, secs)
 		} else {
+			slides := render.Post(post, cfg, imgs)
 			for i, s := range slides {
 				path := fmt.Sprintf("%s-%02d.jpg", stem, i+1)
 				if err := render.SaveJPEG(s, path); err != nil {
@@ -229,7 +237,7 @@ func prune(now time.Time) {
 	files, _ := filepath.Glob("out/*")
 	for _, f := range files {
 		name := filepath.Base(f)
-		if len(name) > 8 && name[:8] < cutoff && (strings.HasSuffix(name, ".jpg") || strings.HasSuffix(name, ".mp4")) {
+		if len(name) > 8 && name[:8] < cutoff && (strings.HasSuffix(name, ".jpg") || strings.HasSuffix(name, ".mp4") || strings.HasSuffix(name, ".txt")) {
 			os.Remove(f)
 		}
 	}
@@ -355,6 +363,27 @@ func cmdPublish(_ []string) error {
 		return err
 	}
 	p.Entry.Media = media
+	if err := content.SavePosted("posted.json", append(posted, p.Entry)); err != nil {
+		return err
+	}
+	return os.Remove("pending.json")
+}
+
+// cmdRecord marks what render drew as used without publishing it. It is for
+// Reels that are posted by hand from the app.
+func cmdRecord(_ []string) error {
+	data, err := os.ReadFile("pending.json")
+	if err != nil {
+		return errors.New("nothing to record: run `quotebot render` first")
+	}
+	var p pending
+	if err := json.Unmarshal(data, &p); err != nil {
+		return fmt.Errorf("pending.json: %w", err)
+	}
+	posted, err := content.LoadPosted("posted.json")
+	if err != nil {
+		return err
+	}
 	if err := content.SavePosted("posted.json", append(posted, p.Entry)); err != nil {
 		return err
 	}
