@@ -1,0 +1,239 @@
+{
+  "updated": "2026-11-22",
+  "followers": 71,
+  "note": "score = average likes + 3 x average comments. Series with fewer than 3 posts are too new to judge.",
+  "series": [
+    {
+      "series": "HOT TAKE",
+      "posts": 2,
+      "avg_likes": 0,
+      "avg_comments": 0,
+      "score": 0
+    },
+    {
+      "series": "SHORT STORY",
+      "posts": 1,
+      "avg_likes": 0,
+      "avg_comments": 0,
+      "score": 0
+    },
+    {
+      "series": "ROAST",
+      "posts": 2,
+      "avg_likes": 0,
+      "avg_comments": 0,
+      "score": 0
+    },
+    {
+      "series": "RANDOM THOUGHT",
+      "posts": 2,
+      "avg_likes": 0,
+      "avg_comments": 0,
+      "score": 0
+    },
+    {
+      "series": "DEADPAN",
+      "posts": 3,
+      "avg_likes": 0,
+      "avg_comments": 0,
+      "score": 0
+    },
+    {
+      "series": "ONE-LINER",
+      "posts": 2,
+      "avg_likes": 0,
+      "avg_comments": 0,
+      "score": 0
+    },
+    {
+      "series": "SCENE STUDY",
+      "posts": 1,
+      "avg_likes": 0,
+      "avg_comments": 0,
+      "score": 0
+    },
+    {
+      "series": "MOOD",
+      "posts": 1,
+      "avg_likes": 0,
+      "avg_comments": 0,
+      "score": 0
+    },
+    {
+      "series": "DID YOU NOTICE",
+      "posts": 1,
+      "avg_likes": 0,
+      "avg_comments": 0,
+      "score": 0
+    },
+    {
+      "series": "LINER NOTES",
+      "posts": 1,
+      "avg_likes": 0,
+      "avg_comments": 0,
+      "score": 0
+    },
+    {
+      "series": "LOOK CLOSER",
+      "posts": 1,
+      "avg_likes": 0,
+      "avg_comments": 0,
+      "score": 0
+    }
+  ],
+  "posts": [
+    {
+      "id": "mood-two-sisters",
+      "series": "MOOD",
+      "format": "single",
+      "date": "2026-11-16",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/DfzbwFVn3x0/"
+    },
+    {
+      "id": "take-home-alone",
+      "series": "HOT TAKE",
+      "format": "single",
+      "date": "2026-11-17",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/Df2MH1bjY4f/"
+    },
+    {
+      "id": "story-time-traveller",
+      "series": "SHORT STORY",
+      "format": "carousel",
+      "date": "2026-11-17",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/Df2tYevjAdM/"
+    },
+    {
+      "id": "notice-toy-story",
+      "series": "DID YOU NOTICE",
+      "format": "carousel",
+      "date": "2026-11-17",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/Df27PkJjCcA/"
+    },
+    {
+      "id": "roast-ross-geller",
+      "series": "ROAST",
+      "format": "carousel",
+      "date": "2026-11-17",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/Df3KbHKDEJa/"
+    },
+    {
+      "id": "thought-sad-major",
+      "series": "RANDOM THOUGHT",
+      "format": "single",
+      "date": "2026-11-18",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/Df4E-9fjUxp/"
+    },
+    {
+      "id": "psychopomp",
+      "series": "LINER NOTES",
+      "format": "carousel",
+      "date": "2026-11-18",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/Df5dl54mr-F/"
+    },
+    {
+      "id": "deadpan-doctor",
+      "series": "DEADPAN",
+      "format": "carousel",
+      "date": "2026-11-18",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/Df5slAyieLT/"
+    },
+    {
+      "id": "billy-connolly-1",
+      "series": "ONE-LINER",
+      "format": "single",
+      "date": "2026-11-19",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/Df6rNnCGXWt/"
+    },
+    {
+      "id": "the-bedroom",
+      "series": "LOOK CLOSER",
+      "format": "carousel",
+      "date": "2026-11-19",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/Df8C1QVj9Jm/"
+    },
+    {
+      "id": "roast-gandalf",
+      "series": "ROAST",
+      "format": "carousel",
+      "date": "2026-11-19",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/Df8S1TtjSsz/"
+    },
+    {
+      "id": "take-book-better",
+      "series": "HOT TAKE",
+      "format": "single",
+      "date": "2026-11-20",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/Df9OYb2k734/"
+    },
+    {
+      "id": "joan-rivers-2",
+      "series": "ONE-LINER",
+      "format": "single",
+      "date": "2026-11-20",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/Df-kvdLCYZC/"
+    },
+    {
+      "id": "deadpan-gym",
+      "series": "DEADPAN",
+      "format": "carousel",
+      "date": "2026-11-20",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/Df-0kQkjFYj/"
+    },
+    {
+      "id": "thought-inception-pitch",
+      "series": "RANDOM THOUGHT",
+      "format": "single",
+      "date": "2026-11-21",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/Df_xsMMl4Tu/"
+    },
+    {
+      "id": "perfect-days",
+      "series": "SCENE STUDY",
+      "format": "carousel",
+      "date": "2026-11-21",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/DgBC8JuGmiL/"
+    },
+    {
+      "id": "deadpan-funeral",
+      "series": "DEADPAN",
+      "format": "carousel",
+      "date": "2026-11-21",
+      "likes": 0,
+      "comments": 0,
+      "link": "https://www.instagram.com/p/DgBSll8koX7/"
+    }
+  ]
+}
